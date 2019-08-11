@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
-import Main from './../components/pages/Main.vue';
-import Login from './../components/pages/Login.vue';
-import Register from './../components/pages/Register';
-
-import Blank from './../components/pages/Blank.vue';
-import Dashboard from './../components/pages/Dashboard.vue';
 import store from './../store';
+
+import Main from './../pages/Main';
+import Login from './../pages/Login';
+import Register from './../pages/Register';
+
+import Blank from './../pages/Blank';
+import Dashboard from './../pages/Dashboard';
 
 Vue.use(Router);
 
@@ -21,7 +21,7 @@ export default new Router({
         if (store.state.token) {
           next();
         } else {
-          next('/login');
+          next();
         }
       },
       children: [

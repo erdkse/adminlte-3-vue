@@ -2,7 +2,7 @@
   <div class="register-box">
     <div class="register-logo">
       <router-link to="/">
-        <b>Palantis</b>
+        <b>Admin</b>LTE
       </router-link>
     </div>
 

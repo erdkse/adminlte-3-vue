@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import Main from "./components/pages/Main";
 
 export default {
   name: "app",

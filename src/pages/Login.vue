@@ -2,7 +2,7 @@
   <div class="login-box">
     <div class="login-logo">
       <router-link to="/">
-        <b>Palantis</b>
+        <b>Admin</b>LTE
       </router-link>
     </div>
     <!-- /.login-logo -->
@@ -76,7 +76,7 @@
 
 
 <script>
-import auth from "./../../controllers/auth.controller";
+import auth from "./../controllers/auth.controller";
 export default {
   name: "Login",
   data: function() {

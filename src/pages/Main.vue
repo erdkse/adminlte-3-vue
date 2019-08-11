@@ -4,7 +4,7 @@
     <SidebarMenu></SidebarMenu>
 
     <div class="content-wrapper">
-      <Dashboard></Dashboard>
+      <router-view></router-view>
     </div>
 
     <Footer></Footer>
@@ -14,19 +14,16 @@
 </template>
 
 <script>
-import Header from "./../main/Header";
-import SidebarMenu from "./../main/SidebarMenu";
-import Footer from "./../main/Footer";
-
-import Dashboard from "./Dashboard";
+import Header from "./../components/main/Header";
+import SidebarMenu from "./../components/main/SidebarMenu";
+import Footer from "./../components/main/Footer";
 
 export default {
   name: "Main",
   components: {
     Header,
     SidebarMenu,
-    Footer,
-    Dashboard
+    Footer
   }
 };
 </script>
