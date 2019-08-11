@@ -8,6 +8,7 @@ import Register from './../pages/Register';
 
 import Blank from './../pages/Blank';
 import Dashboard from './../pages/Dashboard';
+import Profile from './../pages/Profile';
 
 Vue.use(Router);
 
@@ -26,6 +27,7 @@ export default new Router({
       },
       children: [
         { path: '/blank', component: Blank },
+        { path: 'profile', component: Profile },
         { path: '/', component: Dashboard }
       ]
     },
