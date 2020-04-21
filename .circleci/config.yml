@@ -35,7 +35,7 @@ jobs:
       - checkout
       - heroku/install
       - attach_workspace:
-          at: ./build
+          at: ./dist
       - add-build-folder-to-git
       - heroku/deploy-via-git:
           force: true
