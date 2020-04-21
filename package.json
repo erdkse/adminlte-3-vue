@@ -1,33 +1,33 @@
 {
-  "name": "adminlte-3-vue",
+  "name": "adminlte-3",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev:serve": "vue-cli-service serve",
+    "dev:build": "vue-cli-service build",
+    "dev:lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.10.1",
-    "admin-lte": "3.0.0-beta.2",
-    "axios": "^0.19.0",
-    "bootstrap": "^4.3.1",
-    "core-js": "^2.6.5",
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "core-js": "^3.6.5",
     "font-awesome": "4.7.0",
     "fontawesome": "^5.6.3",
     "sweetalert": "^2.1.2",
-    "vue": "^2.6.10",
-    "vue-router": "^3.1.2",
-    "vuex": "^3.1.1"
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.2.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.10.0",
-    "@vue/cli-plugin-eslint": "^3.10.0",
-    "@vue/cli-service": "^3.10.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-plugin-eslint": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
+    "admin-lte": "3.0.4",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,

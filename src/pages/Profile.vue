@@ -5,14 +5,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Kullanıcı Profili</h1>
+            <h1>User Profile</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
                 <a>Home</a>
               </li>
-              <li class="breadcrumb-item active">Profil</li>
+              <li class="breadcrumb-item active">Profile</li>
             </ol>
           </div>
         </div>
@@ -42,17 +42,17 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Bugün</b>
+                    <b>Today</b>
                     <a class="float-right">1,322</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Toplam</b>
+                    <b>Total</b>
                     <a class="float-right">13,287</a>
                   </li>
                 </ul>
 
                 <button class="btn btn-primary btn-block">
-                  <b>Arkadaşını davet et</b>
+                  <b>Invite your friend</b>
                 </button>
               </div>
             </div>
@@ -66,14 +66,14 @@
                       class="nav-link"
                       v-bind:class="{'active':selectedTab === 'INFO'}"
                       v-on:click="selectedTab = 'INFO'"
-                    >Bilgiler</a>
+                    >Info</a>
                   </li>
                   <li
                     class="nav-item"
                     v-bind:class="{'active':selectedTab === 'SETTINGS'}"
                     v-on:click="selectedTab = 'SETTINGS'"
                   >
-                    <a class="nav-link">Ayarlar</a>
+                    <a class="nav-link">Settings</a>
                   </li>
                 </ul>
               </div>
@@ -89,11 +89,11 @@
                       </div>
                       <div class="form-row">
                         <div class="form-group col-sm-12 col-md-6">
-                          <label>İsim</label>
+                          <label>Name</label>
                           <input type="text" class="form-control" placeholder="İsim" />
                         </div>
                         <div class="form-group col-sm-12 col-md-6">
-                          <label>Soyisim</label>
+                          <label>Surname</label>
                           <input type="text" class="form-control" placeholder="Soyisim" />
                         </div>
                       </div>
@@ -104,14 +104,14 @@
                         <button
                           type="button"
                           class="btn btn-block btn-primary w-auto float-right"
-                        >Güncelle</button>
+                        >Update</button>
                       </div>
                     </form>
                   </div>
                   <div
                     class="tab-pane"
                     v-bind:class="{'active' : selectedTab === 'SETTINGS'}"
-                  >Ayarlar henüz hazır değil.</div>
+                  >Setting is not ready yet.</div>
                 </div>
               </div>
             </div>
