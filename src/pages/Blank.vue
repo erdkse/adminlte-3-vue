@@ -23,7 +23,7 @@
     <!-- Main content -->
     <section class="content">
       <!-- Default box -->
-      <div class="container-fluid">Boş Sayfa</div>
+      <div class="container-fluid">Blank page</div>
       <!-- /.card -->
     </section>
   </div>
