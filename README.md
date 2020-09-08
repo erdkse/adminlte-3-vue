@@ -1,3 +1,5 @@
+[![Run on Repl.it](https://repl.it/badge/github/erdkse/adminlte-3-vue)](https://repl.it/github/erdkse/adminlte-3-vue)
+
 # adminlte-3-vue
 
 ## Project setup
@@ -7,22 +9,17 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn run dev:serve
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
+yarn run dev:build
 ```
 
 ### Lints and fixes files
 ```
-yarn run lint
+yarn run dev:lint
 ```
 
 ### Customize configuration
