@@ -3,13 +3,15 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
+        "start": "node server.js",
+        "dev:serve": "vue-cli-service serve",
+        "dev:build": "vue-cli-service build",
         "test:unit": "vue-cli-service test:unit",
         "test:e2e": "vue-cli-service test:e2e",
-        "lint": "vue-cli-service lint"
+        "dev:lint": "vue-cli-service lint"
     },
     "dependencies": {
+        "express": "^4.17.1",
         "vue": "^3.0.0",
         "vue-class-component": "^8.0.0-0",
         "vue-router": "^4.0.0-0",
