@@ -1,57 +1,43 @@
 {
-  "name": "adminlte-3",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "node server.js",
-    "dev:serve": "vue-cli-service serve",
-    "dev:build": "vue-cli-service build",
-    "dev:lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
-    "core-js": "^3.6.5",
-    "express": "^4.17.1",
-    "font-awesome": "4.7.0",
-    "fontawesome": "^5.6.3",
-    "sweetalert": "^2.1.2",
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.6",
-    "vuex": "^3.2.0"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.3.1",
-    "@vue/cli-plugin-eslint": "^4.3.1",
-    "@vue/cli-service": "^4.3.1",
-    "admin-lte": "3.0.4",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "adminlte-3-vue",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "test:unit": "vue-cli-service test:unit",
+        "test:e2e": "vue-cli-service test:e2e",
+        "lint": "vue-cli-service lint"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
+    "dependencies": {
+        "vue": "^3.0.0",
+        "vue-class-component": "^8.0.0-0",
+        "vue-router": "^4.0.0-0",
+        "vuex": "^4.0.0-0"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.19",
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.18.0",
+        "@vue/cli-plugin-e2e-cypress": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-plugin-router": "~4.5.0",
+        "@vue/cli-plugin-typescript": "~4.5.0",
+        "@vue/cli-plugin-unit-jest": "~4.5.0",
+        "@vue/cli-plugin-vuex": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/compiler-sfc": "^3.0.0",
+        "@vue/eslint-config-prettier": "^6.0.0",
+        "@vue/eslint-config-typescript": "^7.0.0",
+        "@vue/test-utils": "^2.0.0-0",
+        "admin-lte": "^3.1.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-vue": "^7.0.0",
+        "node-sass": "^4.12.0",
+        "prettier": "^2.2.1",
+        "sass-loader": "^8.0.2",
+        "typescript": "~4.1.5",
+        "vue-jest": "^5.0.0-0"
     }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
 }

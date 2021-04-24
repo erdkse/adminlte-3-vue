@@ -1,29 +1,41 @@
-# adminlte-3-vue
+# admin-lte
 
 ## Project setup
+
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn run serve
+npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
-yarn run build
+npm run build
 ```
 
-### Run your tests
+### Run your unit tests
+
 ```
-yarn run test
+npm run test:unit
+```
+
+### Run your end-to-end tests
+
+```
+npm run test:e2e
 ```
 
 ### Lints and fixes files
+
 ```
-yarn run lint
+npm run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
