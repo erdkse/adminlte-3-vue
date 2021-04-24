@@ -4,7 +4,8 @@ import Main from '@/modules/main/main.vue';
 import Login from '@/modules/login/login.vue';
 import Register from '@/modules/register/register.vue';
 
-import Dashboard from '@/pages/dashboard/dashboard';
+import Dashboard from '@/pages/dashboard/dashboard.vue';
+import Profile from '@/pages/profile/profile.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -13,9 +14,14 @@ const routes: Array<RouteRecordRaw> = [
         component: Main,
         children: [
             {
-                path: '/',
+                path: '',
                 name: 'Dashboard',
                 component: Dashboard
+            },
+            {
+                path: 'profile',
+                name: 'Profile',
+                component: Profile
             }
         ]
     },
@@ -28,11 +34,6 @@ const routes: Array<RouteRecordRaw> = [
         path: '/register',
         name: 'Register',
         component: Register
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: () => import('../views/About.vue')
     }
 ];
 

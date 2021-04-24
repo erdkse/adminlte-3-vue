@@ -19,7 +19,9 @@
                 />
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <router-link to="/profile" class="d-block"
+                    >Alexander Pierce</router-link
+                >
             </div>
         </div>
 
@@ -31,16 +33,25 @@
                 data-accordion="false"
             >
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <router-link
+                        to="/"
+                        class="nav-link"
+                        exact
+                        exact-active-class="active"
+                    >
                         <i class="nav-icon fas fa-th"></i>
                         <p>Dashboard</p>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <router-link
+                        to="/profile"
+                        class="nav-link"
+                        active-class="active"
+                    >
                         <i class="nav-icon fas fa-th"></i>
                         <p>Profile</p>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </nav>
