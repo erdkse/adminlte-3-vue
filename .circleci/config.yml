@@ -20,7 +20,6 @@ jobs:
         steps:
             - checkout
             - node/install-packages
-            - run: npm install
             #- run: npm run dev:test
             - run: npm run dev:build
             - persist_to_workspace:
