@@ -6,6 +6,7 @@ import Register from '@/modules/register/register.vue';
 
 import Dashboard from '@/pages/dashboard/dashboard.vue';
 import Profile from '@/pages/profile/profile.vue';
+import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -34,6 +35,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/register',
         name: 'Register',
         component: Register
+    },
+    {
+        path: '/forgot-password',
+        name: 'ForgotPassword',
+        component: ForgotPassword
     }
 ];
 

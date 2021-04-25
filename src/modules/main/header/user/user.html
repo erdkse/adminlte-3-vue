@@ -44,10 +44,19 @@
         </li>
         <!-- Menu Footer-->
         <li class="user-footer">
-            <a href="#" class="btn btn-default btn-flat">Profile</a>
-            <a href="#" class="btn btn-default btn-flat float-right"
-                >Sign out</a
+            <router-link
+                to="/profile"
+                class="btn btn-default btn-flat"
+                @click="isDropdownOpened = false;"
             >
+                Profile
+            </router-link>
+            <button
+                @click="logout"
+                class="btn btn-default btn-flat float-right"
+            >
+                Sign out
+            </button>
         </li>
     </ul>
 </li>

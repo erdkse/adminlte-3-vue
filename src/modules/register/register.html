@@ -71,7 +71,11 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">
+                        <button
+                            type="submit"
+                            @click="login"
+                            class="btn btn-primary btn-block"
+                        >
                             Register
                         </button>
                     </div>
@@ -80,19 +84,22 @@
             </form>
 
             <div class="social-auth-links text-center">
-                <a href="#" class="btn btn-block btn-primary">
+                <button
+                    @click="loginByFacebook"
+                    class="btn btn-block btn-primary"
+                >
                     <i class="fab fa-facebook mr-2"></i>
                     Sign up using Facebook
-                </a>
-                <a href="#" class="btn btn-block btn-danger">
+                </button>
+                <button @click="loginByGoogle" class="btn btn-block btn-danger">
                     <i class="fab fa-google-plus mr-2"></i>
                     Sign up using Google+
-                </a>
+                </button>
             </div>
 
-            <a href="login.html" class="text-center"
-                >I already have a membership</a
-            >
+            <router-link to="/login" class="text-center">
+                I already have a membership
+            </router-link>
         </div>
         <!-- /.form-box -->
     </div>

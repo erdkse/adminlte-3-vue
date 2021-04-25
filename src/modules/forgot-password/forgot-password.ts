@@ -1,7 +1,7 @@
 import {Options, Vue} from 'vue-class-component';
 
 @Options({})
-export default class Login extends Vue {
+export default class ForgotPassword extends Vue {
     private appElement: HTMLElement | null = null;
 
     public mounted(): void {
@@ -11,17 +11,5 @@ export default class Login extends Vue {
 
     public unmounted(): void {
         (this.appElement as HTMLElement).classList.remove('login-page');
-    }
-
-    public login(): void {
-        this.$router.push('/');
-    }
-
-    public loginByFacebook(): void {
-        this.$router.push('/');
-    }
-
-    public loginByGoogle(): void {
-        this.$router.push('/');
     }
 }

@@ -12,4 +12,8 @@ import User from './user/user.vue';
         'user-dropdown': User
     }
 })
-export default class Header extends Vue {}
+export default class Header extends Vue {
+    public onToggleMenuSidebar(): void {
+        this.$emit('toggle-menu-sidebar');
+    }
+}

@@ -23,4 +23,8 @@ export default class User extends Vue {
             this.isDropdownOpened = false;
         }
     }
+
+    private logout() {
+        this.$router.push('/login');
+    }
 }
