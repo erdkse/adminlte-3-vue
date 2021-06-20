@@ -1,7 +1,3 @@
-<a href="https://trackgit.com">
-<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/kpmqugu9n0xyo2463rkp" alt="trackgit-views" />
-</a>
-
 # admin-lte
 
 ## Project setup
