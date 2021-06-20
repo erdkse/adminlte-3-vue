@@ -5,7 +5,7 @@
         data-toggle="dropdown"
     >
         <img
-            src="../../../../assets/img/default-profile.png"
+            src="@/assets/img/default-profile.png"
             class="user-image img-circle elevation-2"
             alt="User Image"
         />
@@ -17,14 +17,17 @@
         <!-- User image -->
         <li class="user-header bg-primary">
             <img
-                src="../../../../assets/img/default-profile.png"
+                src="@/assets/img/default-profile.png"
                 class="img-circle elevation-2"
                 alt="User Image"
             />
 
             <p>
-                Alexander Pierce - Web Developer
-                <small>Member since Nov. 2012</small>
+                <span>{{user && user.email}}</span>
+                <small>
+                    <span>Member since </span>
+                    <sapn>Nov. 2012</sapn>
+                </small>
             </p>
         </li>
         <!-- Menu Body -->

@@ -1,4 +1,9 @@
-# admin-lte
+# Admin LTE 3.1.0 - Vue 3.0.0
+
+To login website use:
+
+`username:` admin@example.com<br />
+`password:` admin<br />
 
 ## Project setup
 

@@ -3,6 +3,7 @@ import {Options, Vue} from 'vue-class-component';
 @Options({})
 export default class Login extends Vue {
     private appElement: HTMLElement | null = null;
+    public email: string = null;
 
     public mounted(): void {
         this.appElement = document.getElementById('app') as HTMLElement;
@@ -13,7 +14,7 @@ export default class Login extends Vue {
         (this.appElement as HTMLElement).classList.remove('login-page');
     }
 
-    public login(): void {
+    public loginByAuth(): void {
         this.$router.push('/');
     }
 

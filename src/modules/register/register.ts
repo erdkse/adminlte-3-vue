@@ -13,15 +13,15 @@ export default class Register extends Vue {
         (this.appElement as HTMLElement).classList.remove('register-page');
     }
 
-    public login(): void {
+    public registerByAuth(): void {
         this.$router.push('/');
     }
 
-    public loginByFacebook(): void {
+    public registerByFacebook(): void {
         this.$router.push('/');
     }
 
-    public loginByGoogle(): void {
+    public registerByGoogle(): void {
         this.$router.push('/');
     }
 }
