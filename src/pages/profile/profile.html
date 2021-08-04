@@ -28,7 +28,7 @@
                         <div class="text-center">
                             <img
                                 class="profile-user-img img-fluid img-circle"
-                                src="https://adminlte.io/themes/v3/dist/img/user4-128x128.jpg"
+                                src="../../assets/img/default-profile.png"
                                 alt="User profile picture"
                             />
                         </div>
@@ -121,40 +121,46 @@
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
-                                <a
-                                    class="nav-link active"
-                                    href="#activity"
-                                    data-toggle="tab"
-                                    >Activity</a
+                                <button
+                                    class="nav-link"
+                                    :class="{'active' : activeTab === 'ACTIVITY'}"
+                                    @click="setActiveTab('ACTIVITY')"
                                 >
+                                    Activity
+                                </button>
                             </li>
                             <li class="nav-item">
-                                <a
+                                <button
                                     class="nav-link"
-                                    href="#timeline"
-                                    data-toggle="tab"
-                                    >Timeline</a
+                                    :class="{'active' : activeTab === 'TIMELINE'}"
+                                    @click="setActiveTab('TIMELINE')"
                                 >
+                                    Timeline
+                                </button>
                             </li>
                             <li class="nav-item">
-                                <a
+                                <button
                                     class="nav-link"
-                                    href="#settings"
-                                    data-toggle="tab"
-                                    >Settings</a
+                                    :class="{'active' : activeTab === 'SETTINGS'}"
+                                    @click="setActiveTab('SETTINGS')"
                                 >
+                                    Settings
+                                </button>
                             </li>
                         </ul>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="active tab-pane" id="activity">
+                            <div
+                                class="tab-pane"
+                                :class="{'active' : activeTab === 'ACTIVITY'}"
+                            >
                                 <div class="post">
                                     <div class="user-block">
                                         <img
                                             class="img-circle img-bordered-sm"
-                                            src="https://adminlte.io/themes/v3/dist/img/user1-128x128.jpg"
+                                            src="../../assets/img/default-profile.png"
                                             alt="user image"
                                         />
                                         <span class="username">
@@ -215,7 +221,10 @@
                                 </div>
                             </div>
                             <!-- /.tab-pane -->
-                            <div class="tab-pane" id="timeline">
+                            <div
+                                class="tab-pane"
+                                :class="{'active' : activeTab === 'TIMELINE'}"
+                            >
                                 <!-- The timeline -->
                                 <div class="timeline timeline-inverse">
                                     <!-- timeline time label -->
@@ -345,19 +354,35 @@
 
                                             <div class="timeline-body">
                                                 <img
-                                                    src="https://placehold.it/150x100"
+                                                    src="../../assets/img/default-profile.png"
+                                                    style="
+                                                        width: 1.6rem;
+                                                        height: 1.6rem;
+                                                    "
                                                     alt="..."
                                                 />
                                                 <img
-                                                    src="https://placehold.it/150x100"
+                                                    src="../../assets/img/default-profile.png"
+                                                    style="
+                                                        width: 1.6rem;
+                                                        height: 1.6rem;
+                                                    "
                                                     alt="..."
                                                 />
                                                 <img
-                                                    src="https://placehold.it/150x100"
+                                                    src="../../assets/img/default-profile.png"
+                                                    style="
+                                                        width: 1.6rem;
+                                                        height: 1.6rem;
+                                                    "
                                                     alt="..."
                                                 />
                                                 <img
-                                                    src="https://placehold.it/150x100"
+                                                    src="../../assets/img/default-profile.png"
+                                                    style="
+                                                        width: 1.6rem;
+                                                        height: 1.6rem;
+                                                    "
                                                     alt="..."
                                                 />
                                             </div>
@@ -371,7 +396,10 @@
                             </div>
                             <!-- /.tab-pane -->
 
-                            <div class="tab-pane" id="settings">
+                            <div
+                                class="tab-pane"
+                                :class="{'active' : activeTab === 'SETTINGS'}"
+                            >
                                 <form class="form-horizontal">
                                     <div class="form-group row">
                                         <label
