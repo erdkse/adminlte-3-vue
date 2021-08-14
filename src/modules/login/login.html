@@ -7,7 +7,7 @@
         <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="../../index3.html" method="post">
+            <form @submit.prevent="loginByAuth">
                 <div class="input-group mb-3">
                     <input
                         type="email"
@@ -41,11 +41,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button
-                            type="submit"
-                            class="btn btn-primary btn-block"
-                            @click="login"
-                        >
+                        <button type="submit" class="btn btn-primary btn-block">
                             Sign In
                         </button>
                     </div>
