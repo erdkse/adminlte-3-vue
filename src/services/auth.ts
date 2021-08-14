@@ -20,3 +20,13 @@ export const registerByGoogle = async () => {
     const token = await Gatekeeper.registerByGoogle();
     return token;
 };
+
+export const loginByFacebook = async () => {
+    const token = await Gatekeeper.loginByFacebook();
+    return token;
+};
+
+export const registerByFacebook = async () => {
+    const token = await Gatekeeper.registerByFacebook();
+    return token;
+};
