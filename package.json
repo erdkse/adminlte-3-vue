@@ -13,10 +13,10 @@
         "axios": "0.21.1",
         "gatekeeper-client-sdk": "0.2.1",
         "luxon": "2.0.2",
-        "vue": "3.0.2",
-        "vue-class-component": "^8.0.0-0",
-        "vue-router": "^4.0.0-0",
-        "vuex": "^4.0.0-0",
+        "vue": "^3.2.2",
+        "vue-class-component": "^8.0.0-rc.1",
+        "vue-router": "^4.0.11",
+        "vuex": "^4.0.2",
         "yup": "^0.32.9"
     },
     "devDependencies": {
@@ -41,7 +41,7 @@
         "eslint-plugin-vue": "7.16.0",
         "node-sass": "^6.0.1",
         "prettier": "2.3.2",
-        "sass-loader": "^12.1.0",
+        "sass-loader": "^10.1.1",
         "typescript": "~4.3.5",
         "vue-jest": "^5.0.0-0"
     }
