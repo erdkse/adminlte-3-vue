@@ -4,7 +4,8 @@ import {loginByAuth, loginByGoogle, loginByFacebook} from '@/services/auth';
 @Options({})
 export default class Login extends Vue {
     private appElement: HTMLElement | null = null;
-    public email: string = null;
+    public email: string;
+    public password: string;
 
     public mounted(): void {
         this.appElement = document.getElementById('app') as HTMLElement;
@@ -17,7 +18,7 @@ export default class Login extends Vue {
 
     public async loginByAuth(): Promise<void> {
         try {
-            const token = await loginByAuth('test@email.com', '123');
+            const token = await loginByAuth(this.email, this.password);
             console.log(token);
         } catch (error) {
             console.log(error);
