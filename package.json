@@ -10,8 +10,8 @@
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
-        "axios": "0.21.1",
-        "gatekeeper-client-sdk": "0.2.1",
+        "axios": "0.21.4",
+        "gatekeeper-client-sdk": "0.3.0",
         "luxon": "2.0.2",
         "vue": "^3.2.2",
         "vue-class-component": "^8.0.0-rc.1",
