@@ -4,7 +4,7 @@ import router from '@/router/index';
 export default {
     login: (context: any, payload: string): any => {
         context.commit('setToken', payload);
-        router.push({path: '/'});
+        router.replace('/');
     },
     getUser: (context: any, payload: IUser): any => {
         context.commit('setUser', payload);
@@ -13,6 +13,6 @@ export default {
         context.commit('setToken', null);
         context.commit('setUser', null);
         localStorage.removeItem('gatekeeper_token');
-        router.push({path: '/login'});
+        router.replace('/login');
     }
 };

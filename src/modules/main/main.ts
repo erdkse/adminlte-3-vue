@@ -18,8 +18,12 @@ export default class Main extends Vue {
         this.appElement = document.getElementById('app') as HTMLElement;
         this.appElement.classList.add('sidebar-mini');
         this.appElement.classList.add('layout-fixed');
-        const user = await getProfile();
-        this.$store.dispatch('getUser', user);
+        try {
+            const user = await getProfile();
+            this.$store.dispatch('getUser', user);
+        } catch (error) {
+            this.$store.dispatch('logout');
+        }
     }
 
     public unmounted(): void {

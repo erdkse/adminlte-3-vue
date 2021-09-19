@@ -7,45 +7,74 @@ import Register from '@/modules/register/register.vue';
 import Dashboard from '@/pages/dashboard/dashboard.vue';
 import Profile from '@/pages/profile/profile.vue';
 import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
+import store from '@/store/index';
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'Main',
         component: Main,
+        meta: {
+            requiresAuth: true
+        },
         children: [
             {
                 path: '',
                 name: 'Dashboard',
-                component: Dashboard
+                component: Dashboard,
+                meta: {
+                    requiresAuth: true
+                }
             },
             {
                 path: 'profile',
                 name: 'Profile',
-                component: Profile
+                component: Profile,
+                meta: {
+                    requiresAuth: true
+                }
             }
         ]
     },
     {
         path: '/login',
         name: 'Login',
-        component: Login
+        component: Login,
+        meta: {
+            requiresUnauth: true
+        }
     },
     {
         path: '/register',
         name: 'Register',
-        component: Register
+        component: Register,
+        meta: {
+            requiresUnauth: true
+        }
     },
     {
         path: '/forgot-password',
         name: 'ForgotPassword',
-        component: ForgotPassword
+        component: ForgotPassword,
+        meta: {
+            requiresUnauth: true
+        }
     }
 ];
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes
+});
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresAuth && !store.getters.token) {
+        next('/login');
+    } else if (to.meta.requiresUnauth && !!store.getters.token) {
+        next('/');
+    } else {
+        next();
+    }
 });
 
 export default router;
