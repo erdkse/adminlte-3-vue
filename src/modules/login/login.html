@@ -8,60 +8,67 @@
             <p class="login-box-msg">Sign in to start your session</p>
 
             <form @submit.prevent="loginByAuth">
-                <div class="input-group mb-3">
-                    <input
-                        type="email"
-                        class="form-control"
-                        placeholder="Email"
-                        v-model="email"
-                    />
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-group mb-3">
-                    <input
-                        type="password"
-                        class="form-control"
-                        placeholder="Password"
-                        v-model="password"
-                    />
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                </div>
+                <app-input
+                    icon="envelope"
+                    class="mb-3"
+                    type="email"
+                    placeholder="Email"
+                    autocomplete="off"
+                    v-model="email"
+                />
+                <app-input
+                    icon="lock"
+                    class="mb-3"
+                    type="password"
+                    placeholder="Password"
+                    autocomplete="off"
+                    v-model="password"
+                />
+
                 <div class="row">
                     <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember" />
-                            <label for="remember"> Remember Me </label>
-                        </div>
+                        <app-checkbox v-model="rememberMe">
+                            Remember Me
+                        </app-checkbox>
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">
+                        <app-button
+                            class="btn-primary"
+                            type="submit"
+                            block="true"
+                            @click="loginByGoogle"
+                        >
                             Sign In
-                        </button>
+                        </app-button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
             <div class="social-auth-links text-center mt-2 mb-3">
-                <button
+                <!-- <button
                     @click="loginByFacebook"
                     class="btn btn-block btn-primary"
                 >
                     <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-                </button>
-                <button @click="loginByGoogle" class="btn btn-block btn-danger">
-                    <i class="fab fa-google-plus mr-2"></i> Sign in using
-                    Google+
-                </button>
+                </button> -->
+                <app-button
+                    class="btn-primary"
+                    icon="facebook"
+                    block="true"
+                    @click="loginByFacebook"
+                >
+                    Sign in using Facebook
+                </app-button>
+                <app-button
+                    class="btn-danger"
+                    icon="googlePlus"
+                    block="true"
+                    @click="loginByGoogle"
+                >
+                    Sign in using Google
+                </app-button>
             </div>
             <!-- /.social-auth-links -->
 

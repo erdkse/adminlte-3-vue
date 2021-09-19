@@ -1,11 +1,21 @@
 import {Options, Vue} from 'vue-class-component';
 import {loginByAuth, loginByGoogle, loginByFacebook} from '@/services/auth';
+import Checkbox from '@/components/checkbox/checkbox.vue';
+import Input from '@/components/input/input.vue';
+import Button from '@/components/button/button.vue';
 
-@Options({})
+@Options({
+    components: {
+        'app-checkbox': Checkbox,
+        'app-input': Input,
+        'app-button': Button
+    }
+})
 export default class Login extends Vue {
     private appElement: HTMLElement | null = null;
-    public email: string;
-    public password: string;
+    public email: string = '';
+    public password: string = '';
+    public rememberMe: boolean = false;
 
     public mounted(): void {
         this.appElement = document.getElementById('app') as HTMLElement;
