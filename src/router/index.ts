@@ -7,6 +7,8 @@ import Register from '@/modules/register/register.vue';
 import Dashboard from '@/pages/dashboard/dashboard.vue';
 import Profile from '@/pages/profile/profile.vue';
 import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
+import RecoverPassword from '@/modules/recover-password/recover-password.vue';
+import PrivacyPolicy from '@/modules/privacy-policy/privacy-policy.vue';
 import store from '@/store/index';
 
 const routes: Array<RouteRecordRaw> = [
@@ -59,6 +61,19 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
             requiresUnauth: true
         }
+    },
+    {
+        path: '/recover-password',
+        name: 'RecoverPassword',
+        component: RecoverPassword,
+        meta: {
+            requiresUnauth: true
+        }
+    },
+    {
+        path: '/privacy-policy',
+        name: 'RecoverPassword',
+        component: PrivacyPolicy
     }
 ];
 
