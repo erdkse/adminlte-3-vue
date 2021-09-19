@@ -36,15 +36,11 @@ export default class Login extends Vue {
             this.isAuthLoading = true;
             const token = await loginByAuth(this.email, this.password);
             this.$store.dispatch('login', token);
+            this.toast.success('Login succeeded');
             this.isAuthLoading = false;
         } catch (error: any) {
             console.log(error);
-            this.toast.error(
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                    'Failed'
-            );
+            this.toast.error(error.message);
             this.isAuthLoading = false;
         }
     }
@@ -56,13 +52,7 @@ export default class Login extends Vue {
             this.$store.dispatch('login', token);
             this.isFacebookLoading = false;
         } catch (error: any) {
-            console.log(error);
-            this.toast.error(
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                    'Failed'
-            );
+            this.toast.error(error.message);
             this.isFacebookLoading = false;
         }
     }
@@ -74,13 +64,7 @@ export default class Login extends Vue {
             this.$store.dispatch('login', token);
             this.isGoogleLoading = false;
         } catch (error: any) {
-            console.log(error);
-            this.toast.error(
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                    'Failed'
-            );
+            this.toast.error(error.message);
             this.isGoogleLoading = false;
         }
     }

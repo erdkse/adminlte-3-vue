@@ -12,6 +12,7 @@ export default {
     logout: (context: any) => {
         context.commit('setToken', null);
         context.commit('setUser', null);
+        localStorage.removeItem('gatekeeper_token');
         router.push({path: '/login'});
     }
 };
