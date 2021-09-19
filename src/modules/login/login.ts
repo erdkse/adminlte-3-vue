@@ -16,6 +16,9 @@ export default class Login extends Vue {
     public email: string = '';
     public password: string = '';
     public rememberMe: boolean = false;
+    public isAuthLoading: boolean = false;
+    public isFacebookLoading: boolean = false;
+    public isGoogleLoading: boolean = false;
 
     public mounted(): void {
         this.appElement = document.getElementById('app') as HTMLElement;
@@ -28,28 +31,37 @@ export default class Login extends Vue {
 
     public async loginByAuth(): Promise<void> {
         try {
+            this.isAuthLoading = true;
             const token = await loginByAuth(this.email, this.password);
+            this.isAuthLoading = false;
             console.log(token);
         } catch (error) {
+            this.isAuthLoading = false;
             console.log(error);
         }
     }
 
     public async loginByFacebook(): Promise<void> {
         try {
+            this.isFacebookLoading = true;
             const token = await loginByFacebook();
             console.log(token);
+            this.isFacebookLoading = false;
         } catch (error) {
             console.log(error);
+            this.isFacebookLoading = false;
         }
     }
 
     public async loginByGoogle(): Promise<void> {
         try {
+            this.isGoogleLoading = true;
             const token = await loginByGoogle();
             console.log(token);
+            this.isGoogleLoading = false;
         } catch (error) {
             console.log(error);
+            this.isGoogleLoading = false;
         }
     }
 }

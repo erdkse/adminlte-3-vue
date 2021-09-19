@@ -2,7 +2,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <router-link to="/" class="h1"><b>Admin</b>LTE</router-link>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>
@@ -26,18 +26,18 @@
                 />
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-7">
                         <app-checkbox v-model="rememberMe">
                             Remember Me
                         </app-checkbox>
                     </div>
                     <!-- /.col -->
-                    <div class="col-4">
+                    <div class="col-5">
                         <app-button
                             class="btn-primary"
                             type="submit"
                             block="true"
-                            @click="loginByGoogle"
+                            :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
                         >
                             Sign In
                         </app-button>
@@ -47,25 +47,21 @@
             </form>
 
             <div class="social-auth-links text-center mt-2 mb-3">
-                <!-- <button
-                    @click="loginByFacebook"
-                    class="btn btn-block btn-primary"
-                >
-                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-                </button> -->
                 <app-button
                     class="btn-primary"
                     icon="facebook"
                     block="true"
                     @click="loginByFacebook"
+                    :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
                 >
                     Sign in using Facebook
                 </app-button>
                 <app-button
                     class="btn-danger"
-                    icon="googlePlus"
+                    icon="google-plus"
                     block="true"
                     @click="loginByGoogle"
+                    :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
                 >
                     Sign in using Google
                 </app-button>

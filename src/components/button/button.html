@@ -1,4 +1,15 @@
-<button :class="{'btn':true, 'btn-block': block}" :type="type">
-    <font-awesome-icon :icon="['fab', icon]" class="mr-2" />
+<button
+    :class="{'btn':true, 'btn-block': block}"
+    :type="type"
+    :disabled="isDisabled"
+>
+    <font-awesome-icon
+        v-if="icon"
+        class="font-awesome-icon mr-2"
+        :icon="['fab', icon]"
+    />
     <slot />
+    <div v-if="loading" class="spinner-border ml-2" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
 </button>
