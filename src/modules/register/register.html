@@ -43,7 +43,8 @@
                             class="btn-primary"
                             type="submit"
                             block="true"
-                            :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
+                            :loading="isAuthLoading"
+                            :disabled="isFacebookLoading || isGoogleLoading"
                         >
                             Register
                         </app-button>
@@ -58,7 +59,8 @@
                     icon="facebook"
                     block="true"
                     @click="registerByFacebook"
-                    :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
+                    :loading="isFacebookLoading"
+                    :disabled="isAuthLoading || isGoogleLoading"
                 >
                     Sign up using Facebook
                 </app-button>
@@ -66,8 +68,9 @@
                     class="btn-danger"
                     icon="google-plus"
                     block="true"
-                    @click="registerBygoogle"
-                    :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
+                    @click="registerByGoogle"
+                    :loading="isGoogleLoading"
+                    :disabled="isAuthLoading || isFacebookLoading"
                 >
                     Sign up using Google
                 </app-button>

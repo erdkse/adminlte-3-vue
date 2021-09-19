@@ -30,3 +30,7 @@ export const registerByFacebook = async () => {
     const token = await Gatekeeper.registerByFacebook();
     return token;
 };
+export const getProfile = async () => {
+    const user = await Gatekeeper.getProfile();
+    return user;
+};

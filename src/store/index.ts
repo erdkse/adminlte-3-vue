@@ -6,10 +6,7 @@ import getters from './getters';
 export default createStore({
     state: {
         token: null,
-        user: {
-            email: 'mail@example.com',
-            picture: null
-        }
+        user: null
     },
     mutations,
     actions,

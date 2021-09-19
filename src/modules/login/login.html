@@ -37,7 +37,8 @@
                             class="btn-primary"
                             type="submit"
                             block="true"
-                            :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
+                            :loading="isAuthLoading"
+                            :disabled="isFacebookLoading || isGoogleLoading"
                         >
                             Sign In
                         </app-button>
@@ -52,7 +53,8 @@
                     icon="facebook"
                     block="true"
                     @click="loginByFacebook"
-                    :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
+                    :loading="isFacebookLoading"
+                    :disabled="isAuthLoading || isGoogleLoading"
                 >
                     Sign in using Facebook
                 </app-button>
@@ -61,7 +63,8 @@
                     icon="google-plus"
                     block="true"
                     @click="loginByGoogle"
-                    :loading="isAuthLoading || isFacebookLoading || isGoogleLoading"
+                    :loading="isGoogleLoading"
+                    :disabled="isAuthLoading || isFacebookLoading"
                 >
                     Sign in using Google
                 </app-button>

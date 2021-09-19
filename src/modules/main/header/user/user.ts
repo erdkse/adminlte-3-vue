@@ -4,11 +4,9 @@ import {Options, Vue} from 'vue-class-component';
 @Options({})
 export default class User extends Vue {
     private isDropdownOpened = false;
-    public user: IUser = null;
 
     public mounted(): void {
         document.addEventListener('click', this.documentClick);
-        this.user = this.$store.getters.user;
     }
 
     public unmounted(): void {
@@ -27,7 +25,11 @@ export default class User extends Vue {
         }
     }
 
+    get user(): IUser {
+        return this.$store.getters.user;
+    }
+
     private logout() {
-        this.$router.push('/login');
+        this.$store.dispatch('logout');
     }
 }
