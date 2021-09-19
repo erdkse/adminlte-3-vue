@@ -5,7 +5,7 @@
         data-toggle="dropdown"
     >
         <img
-            src="@/assets/img/default-profile.png"
+            :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
             class="user-image img-circle elevation-2"
             alt="User Image"
         />
@@ -17,7 +17,7 @@
         <!-- User image -->
         <li class="user-header bg-primary">
             <img
-                src="@/assets/img/default-profile.png"
+                :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
                 class="img-circle elevation-2"
                 alt="User Image"
             />

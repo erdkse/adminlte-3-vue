@@ -1,32 +1,74 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import {Gatekeeper} from 'gatekeeper-client-sdk';
 
+const getError = (error: any) => {
+    const message =
+        (error &&
+            error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+        'Failed';
+    return new Error(message);
+};
+
 export const loginByAuth = async (email: string, password: string) => {
-    const token = await Gatekeeper.loginByAuth(email, password);
-    return token;
+    try {
+        const token = await Gatekeeper.loginByAuth(email, password);
+        return token;
+    } catch (error: any) {
+        throw getError(error);
+    }
 };
 
 export const registerByAuth = async (email: string, password: string) => {
-    const token = await Gatekeeper.registerByAuth(email, password);
-    return token;
+    try {
+        const token = await Gatekeeper.registerByAuth(email, password);
+        return token;
+    } catch (error: any) {
+        throw getError(error);
+    }
 };
 
 export const loginByGoogle = async () => {
-    const token = await Gatekeeper.loginByGoogle();
-    return token;
+    try {
+        const token = await Gatekeeper.loginByGoogle();
+        return token;
+    } catch (error: any) {
+        throw getError(error);
+    }
 };
 
 export const registerByGoogle = async () => {
-    const token = await Gatekeeper.registerByGoogle();
-    return token;
+    try {
+        const token = await Gatekeeper.registerByGoogle();
+        return token;
+    } catch (error: any) {
+        throw getError(error);
+    }
 };
 
 export const loginByFacebook = async () => {
-    const token = await Gatekeeper.loginByFacebook();
-    return token;
+    try {
+        const token = await Gatekeeper.loginByFacebook();
+        return token;
+    } catch (error: any) {
+        throw getError(error);
+    }
 };
 
 export const registerByFacebook = async () => {
-    const token = await Gatekeeper.registerByFacebook();
-    return token;
+    try {
+        const token = await Gatekeeper.registerByFacebook();
+        return token;
+    } catch (error: any) {
+        throw getError(error);
+    }
+};
+export const getProfile = async () => {
+    try {
+        const user = await Gatekeeper.getProfile();
+        return user;
+    } catch (error: any) {
+        throw getError(error);
+    }
 };

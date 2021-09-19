@@ -1,10 +1,26 @@
 import {Options, Vue} from 'vue-class-component';
 import {loginByAuth, loginByGoogle, loginByFacebook} from '@/services/auth';
+import Checkbox from '@/components/checkbox/checkbox.vue';
+import Input from '@/components/input/input.vue';
+import Button from '@/components/button/button.vue';
+import {useToast} from 'vue-toastification';
 
-@Options({})
+@Options({
+    components: {
+        'app-checkbox': Checkbox,
+        'app-input': Input,
+        'app-button': Button
+    }
+})
 export default class Login extends Vue {
     private appElement: HTMLElement | null = null;
-    public email: string = null;
+    public email: string = '';
+    public password: string = '';
+    public rememberMe: boolean = false;
+    public isAuthLoading: boolean = false;
+    public isFacebookLoading: boolean = false;
+    public isGoogleLoading: boolean = false;
+    private toast = useToast();
 
     public mounted(): void {
         this.appElement = document.getElementById('app') as HTMLElement;
@@ -17,28 +33,39 @@ export default class Login extends Vue {
 
     public async loginByAuth(): Promise<void> {
         try {
-            const token = await loginByAuth('test@email.com', '123');
-            console.log(token);
-        } catch (error) {
+            this.isAuthLoading = true;
+            const token = await loginByAuth(this.email, this.password);
+            this.$store.dispatch('login', token);
+            this.toast.success('Login succeeded');
+            this.isAuthLoading = false;
+        } catch (error: any) {
             console.log(error);
+            this.toast.error(error.message);
+            this.isAuthLoading = false;
         }
     }
 
     public async loginByFacebook(): Promise<void> {
         try {
+            this.isFacebookLoading = true;
             const token = await loginByFacebook();
-            console.log(token);
-        } catch (error) {
-            console.log(error);
+            this.$store.dispatch('login', token);
+            this.isFacebookLoading = false;
+        } catch (error: any) {
+            this.toast.error(error.message);
+            this.isFacebookLoading = false;
         }
     }
 
     public async loginByGoogle(): Promise<void> {
         try {
+            this.isGoogleLoading = true;
             const token = await loginByGoogle();
-            console.log(token);
-        } catch (error) {
-            console.log(error);
+            this.$store.dispatch('login', token);
+            this.isGoogleLoading = false;
+        } catch (error: any) {
+            this.toast.error(error.message);
+            this.isGoogleLoading = false;
         }
     }
 }

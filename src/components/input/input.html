@@ -1,0 +1,15 @@
+<div class="input-group">
+    <input
+        :type="type"
+        class="form-control"
+        :placeholder="placeholder"
+        :value="modelValue"
+        :autocomplete="autocomplete"
+        @change="onValueChange($event)"
+    />
+    <div v-if="icon" class="input-group-append">
+        <div class="input-group-text">
+            <font-awesome-icon :icon="icon" />
+        </div>
+    </div>
+</div>

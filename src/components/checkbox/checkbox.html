@@ -1,0 +1,11 @@
+<div class="icheck-primary">
+    <input
+        type="checkbox"
+        :id="ID"
+        :checked="modelValue"
+        @change="onValueChange($event)"
+    />
+    <label :for="ID">
+        <slot />
+    </label>
+</div>

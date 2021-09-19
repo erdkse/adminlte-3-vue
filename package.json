@@ -10,18 +10,25 @@
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "1.2.36",
+        "@fortawesome/free-brands-svg-icons": "5.15.4",
+        "@fortawesome/free-solid-svg-icons": "5.15.4",
+        "@fortawesome/vue-fontawesome": "3.0.0-4",
         "axios": "0.21.4",
         "gatekeeper-client-sdk": "0.3.0",
         "luxon": "2.0.2",
+        "uuid": "^8.3.2",
         "vue": "^3.2.2",
         "vue-class-component": "^8.0.0-rc.1",
         "vue-router": "^4.0.11",
+        "vue-toastification": "^2.0.0-rc.1",
         "vuex": "^4.0.2",
         "yup": "^0.32.9"
     },
     "devDependencies": {
         "@types/jest": "^27.0.1",
         "@types/luxon": "^2.0.0",
+        "@types/uuid": "^8.3.1",
         "@typescript-eslint/eslint-plugin": "^4.29.1",
         "@typescript-eslint/parser": "^4.29.1",
         "@vue/cli-plugin-e2e-cypress": "~4.5.13",

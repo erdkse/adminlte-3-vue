@@ -5,11 +5,8 @@ import getters from './getters';
 
 export default createStore({
     state: {
-        token: null,
-        user: {
-            email: 'mail@example.com',
-            picture: null
-        }
+        token: localStorage.getItem('gatekeeper_token'),
+        user: null
     },
     mutations,
     actions,
