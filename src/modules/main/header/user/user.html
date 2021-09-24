@@ -1,20 +1,12 @@
-<li class="nav-item dropdown user-menu" ref="dropdown">
-    <button
-        @click="toggleDropdown"
-        class="nav-link dropdown-toggle"
-        data-toggle="dropdown"
-    >
+<app-dropdown class="user-menu">
+    <template v-slot:dropdown-button>
         <img
             :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
             class="user-image img-circle elevation-2"
             alt="User Image"
         />
-    </button>
-    <ul
-        class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
-        :class="{'show':isDropdownOpened}"
-    >
-        <!-- User image -->
+    </template>
+    <template v-slot:dropdown-menu>
         <li class="user-header bg-primary">
             <img
                 :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
@@ -61,5 +53,5 @@
                 Sign out
             </button>
         </li>
-    </ul>
-</li>
+    </template>
+</app-dropdown>

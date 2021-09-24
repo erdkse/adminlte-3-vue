@@ -1,12 +1,9 @@
-<li class="nav-item dropdown" ref="dropdown">
-    <button class="nav-link" data-toggle="dropdown" @click="toggleDropdown">
+<app-dropdown>
+    <template v-slot:dropdown-button>
         <i class="far fa-bell"></i>
         <span class="badge badge-warning navbar-badge">15</span>
-    </button>
-    <div
-        class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
-        :class="{'show':isDropdownOpened}"
-    >
+    </template>
+    <template v-slot:dropdown-menu>
         <span class="dropdown-item dropdown-header">15 Notifications</span>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
@@ -27,5 +24,5 @@
         <a href="#" class="dropdown-item dropdown-footer"
             >See All Notifications</a
         >
-    </div>
-</li>
+    </template>
+</app-dropdown>

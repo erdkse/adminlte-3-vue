@@ -1,0 +1,9 @@
+<li class="nav-item dropdown" ref="dropdown">
+    <button class="nav-link" @click="toggleDropdown">
+        <slot name="dropdown-button"></slot>
+    </button>
+
+    <app-dropdown-menu v-if="isOpen">
+        <slot name="dropdown-menu"></slot>
+    </app-dropdown-menu>
+</li>
