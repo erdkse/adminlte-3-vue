@@ -13,14 +13,10 @@ export default class DropdownMenu extends Vue {
     get fixStyles(): any {
         if (this.dropdownMenuElement) {
             const windowWidth = document.getElementById('app').offsetWidth;
-            const offsetLeft = this.dropdownMenuElement.offsetLeft;
+            const offsetLeft =
+                this.dropdownMenuElement.getBoundingClientRect().left;
             const offsetWidth = this.dropdownMenuElement.offsetWidth;
-            const visiblePart = windowWidth - Math.abs(offsetLeft);
-
-            console.log('windowWidth', windowWidth);
-            console.log('offsetLeft', offsetLeft);
-            console.log('offsetWidth', offsetWidth);
-            console.log('visiblePart', visiblePart);
+            const visiblePart = windowWidth - offsetLeft;
 
             if (offsetLeft < 0) {
                 return {
