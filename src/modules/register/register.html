@@ -4,7 +4,7 @@
             <router-link to="/" class="h1"><b>Admin</b>LTE</router-link>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Register a new membership</p>
+            <p class="login-box-msg">{{ $t("labels.registerMembership") }}</p>
 
             <form @submit.prevent="registerByAuth">
                 <app-input
@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-7">
                         <app-checkbox v-model="agreeTerms">
-                            I agree to the <a href="#">terms</a>
+                            {{ $t("labels.iAgree") }} <a href="#">{{ $t("labels.terms") }}</a>
                         </app-checkbox>
                     </div>
                     <!-- /.col -->
@@ -46,7 +46,7 @@
                             :loading="isAuthLoading"
                             :disabled="isFacebookLoading || isGoogleLoading"
                         >
-                            Register
+                            {{ $t("labels.register") }}
                         </app-button>
                     </div>
                     <!-- /.col -->
@@ -62,7 +62,7 @@
                     :loading="isFacebookLoading"
                     :disabled="isAuthLoading || isGoogleLoading"
                 >
-                    Sign up using Facebook
+                    {{ $t("labels.signUpUsingFB") }}
                 </app-button>
                 <app-button
                     class="btn-danger"
@@ -72,12 +72,12 @@
                     :loading="isGoogleLoading"
                     :disabled="isAuthLoading || isFacebookLoading"
                 >
-                    Sign up using Google
+                    {{ $t("labels.signUpUsingGoogle") }}
                 </app-button>
             </div>
 
             <router-link to="/login" class="text-center">
-                I already have a membership
+                {{ $t("labels.alreadyHaveMembership") }}
             </router-link>
         </div>
         <!-- /.form-box -->

@@ -25,7 +25,7 @@
             <p>
                 <span>{{user && user.email}}</span>
                 <small>
-                    <span>Member since </span>
+                    <span>{{ $t("labels.memberSince") }} </span>
                     <span>Nov. 2012</span>
                 </small>
             </p>
@@ -34,13 +34,13 @@
         <li class="user-body">
             <div class="row">
                 <div class="col-4 text-center">
-                    <a href="#">Followers</a>
+                    <a href="#">{{ $t("labels.followers") }}</a>
                 </div>
                 <div class="col-4 text-center">
-                    <a href="#">Sales</a>
+                    <a href="#">{{ $t("labels.sales") }}</a>
                 </div>
                 <div class="col-4 text-center">
-                    <a href="#">Friends</a>
+                    <a href="#">{{ $t("labels.friends") }}</a>
                 </div>
             </div>
             <!-- /.row -->
@@ -52,13 +52,13 @@
                 class="btn btn-default btn-flat"
                 @click="isDropdownOpened = false;"
             >
-                Profile
+                {{ $t("labels.profile") }}
             </router-link>
             <button
                 @click="logout"
                 class="btn btn-default btn-flat float-right"
             >
-                Sign out
+                {{ $t("labels.signOut") }}
             </button>
         </li>
     </ul>

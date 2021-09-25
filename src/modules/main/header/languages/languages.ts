@@ -23,4 +23,10 @@ export default class Languages extends Vue {
             this.isDropdownOpened = false;
         }
     }
+
+    public changeLanguage(langCode: string) {
+        if (this.$i18n.locale !== langCode) {
+            this.$i18n.locale = langCode;
+        }
+    }
 }
