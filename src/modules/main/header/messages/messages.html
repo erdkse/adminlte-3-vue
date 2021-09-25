@@ -1,14 +1,10 @@
-<li class="nav-item dropdown" ref="dropdown">
-    <button class="nav-link" @click="toggleDropdown">
+<app-dropdown>
+    <template v-slot:dropdown-button>
         <i class="far fa-comments"></i>
-        <span class="badge badge-danger navbar-badge">3</span>
-    </button>
-    <div
-        class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
-        :class="{'show':isDropdownOpened}"
-    >
+        <span class="badge badge-danger navbar-badge">4</span>
+    </template>
+    <template v-slot:dropdown-menu>
         <a href="#" class="dropdown-item">
-            <!-- Message Start -->
             <div class="media">
                 <img
                     src="../../../../assets/img/default-profile.png"
@@ -28,11 +24,9 @@
                     </p>
                 </div>
             </div>
-            <!-- Message End -->
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
-            <!-- Message Start -->
             <div class="media">
                 <img
                     src="../../../../assets/img/default-profile.png"
@@ -52,11 +46,9 @@
                     </p>
                 </div>
             </div>
-            <!-- Message End -->
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
-            <!-- Message Start -->
             <div class="media">
                 <img
                     src="../../../../assets/img/default-profile.png"
@@ -76,9 +68,8 @@
                     </p>
                 </div>
             </div>
-            <!-- Message End -->
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-    </div>
-</li>
+    </template>
+</app-dropdown>
