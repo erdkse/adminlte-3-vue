@@ -32,7 +32,7 @@
                 role="menu"
                 data-accordion="false"
             >
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <router-link
                         to="/"
                         class="nav-link"
@@ -52,7 +52,11 @@
                         <i class="nav-icon fas fa-user"></i>
                         <p>{{ $t("labels.profile") }}</p>
                     </router-link>
-                </li>
+                </li> -->
+                <app-menu-item
+                    v-for="item in menu"
+                    :menuItem="item"
+                ></app-menu-item>
             </ul>
         </nav>
     </div>

@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
+import store from '@/store/index';
 
 import Main from '@/modules/main/main.vue';
 import Login from '@/modules/login/login.vue';
@@ -9,7 +10,8 @@ import Profile from '@/pages/profile/profile.vue';
 import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
 import RecoverPassword from '@/modules/recover-password/recover-password.vue';
 import PrivacyPolicy from '@/modules/privacy-policy/privacy-policy.vue';
-import store from '@/store/index';
+import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
+import Blank from '@/pages/blank/blank.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -21,17 +23,41 @@ const routes: Array<RouteRecordRaw> = [
         },
         children: [
             {
-                path: '',
-                name: 'Dashboard',
-                component: Dashboard,
+                path: 'profile',
+                name: 'Profile',
+                component: Profile,
                 meta: {
                     requiresAuth: true
                 }
             },
             {
-                path: 'profile',
-                name: 'Profile',
-                component: Profile,
+                path: 'blank',
+                name: 'Blank',
+                component: Blank,
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: 'sub-menu-1',
+                name: 'Sub Menu 1',
+                component: SubMenu,
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: 'sub-menu-2',
+                name: 'Sub Menu 2',
+                component: Blank,
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: '',
+                name: 'Dashboard',
+                component: Dashboard,
                 meta: {
                     requiresAuth: true
                 }
