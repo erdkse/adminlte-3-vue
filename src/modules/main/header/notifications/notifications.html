@@ -4,25 +4,25 @@
         <span class="badge badge-warning navbar-badge">15</span>
     </template>
     <template v-slot:dropdown-menu>
-        <span class="dropdown-item dropdown-header">15 Notifications</span>
+        <span class="dropdown-item dropdown-header">15 {{ $t("labels.notifications") }}</span>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
+            <i class="fas fa-envelope mr-2"></i> 4 {{ $t("labels.newMessages") }}
+            <span class="float-right text-muted text-sm">3 {{ $t("labels.mins") }}</span>
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
+            <i class="fas fa-users mr-2"></i> 8 {{ $t("labels.friendRequests") }}
+            <span class="float-right text-muted text-sm">12 {{ $t("labels.hours") }}</span>
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
+            <i class="fas fa-file mr-2"></i> 3 {{ $t("labels.newReports") }}
+            <span class="float-right text-muted text-sm">2 {{ $t("labels.days") }}</span>
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer"
-            >See All Notifications</a
+            >{{ $t("labels.seeAllNotification") }}</a
         >
     </template>
 </app-dropdown>

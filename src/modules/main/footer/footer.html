@@ -1,14 +1,14 @@
 <footer class="main-footer">
     <strong>
-        <span>Copyright &copy; {{currentYear}}</span>
+        <span>{{ $t("labels.copyright") }} &copy; {{currentYear}}</span>
         <a href="https://erdkse.com" target="_blank" rel="noopener noreferrer">
             erdkse.com</a
         >
         <span>.</span>
     </strong>
-    <span> All rights reserved.</span>
+    <span> {{ $t("labels.allRightReserved") }}</span>
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version </b>
+        <b>{{ $t("labels.version") }} </b>
         <span>{{version}}</span>
     </div>
 </footer>

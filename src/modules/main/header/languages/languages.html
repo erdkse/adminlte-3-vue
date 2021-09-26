@@ -3,17 +3,17 @@
         <i class="flag-icon flag-icon-us"></i>
     </template>
     <template v-slot:dropdown-menu>
-        <a href="#" class="dropdown-item active">
-            <i class="flag-icon flag-icon-us mr-2"></i> English
+        <a href="#" class="dropdown-item active" @click="changeLanguage('en')">
+            <i class="flag-icon flag-icon-us mr-2"></i> {{ $t("languages.english") }}
         </a>
-        <a href="#" class="dropdown-item">
-            <i class="flag-icon flag-icon-de mr-2"></i> German
+        <a href="#" class="dropdown-item" @click="changeLanguage('de')">
+            <i class="flag-icon flag-icon-de mr-2"></i> {{ $t("languages.german") }}
         </a>
-        <a href="#" class="dropdown-item">
-            <i class="flag-icon flag-icon-fr mr-2"></i> French
+        <a href="#" class="dropdown-item" @click="changeLanguage('fr')">
+            <i class="flag-icon flag-icon-fr mr-2"></i> {{ $t("languages.french") }}
         </a>
-        <a href="#" class="dropdown-item">
-            <i class="flag-icon flag-icon-es mr-2"></i> Spanish
+        <a href="#" class="dropdown-item" @click="changeLanguage('es')">
+            <i class="flag-icon flag-icon-es mr-2"></i> {{ $t("languages.spanish") }}
         </a>
     </template>
 </app-dropdown>

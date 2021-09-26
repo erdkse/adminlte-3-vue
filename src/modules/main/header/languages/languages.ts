@@ -7,4 +7,10 @@ import Dropdown from '@/components/dropdown/dropdown.vue';
         'app-dropdown': Dropdown
     }
 })
-export default class Languages extends Vue {}
+export default class Languages extends Vue {
+    public changeLanguage(langCode: string) {
+        if (this.$i18n.locale !== langCode) {
+            this.$i18n.locale = langCode;
+        }
+    }
+}
