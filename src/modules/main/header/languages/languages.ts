@@ -9,6 +9,33 @@ import Dropdown from '@/components/dropdown/dropdown.vue';
 })
 export default class Languages extends Vue {
     public selectedLanguage: string = null;
+    public languages: any = [
+        {
+            key: 'en',
+            flag: 'flag-icon-us',
+            label: 'languages.english'
+        },
+        {
+            key: 'de',
+            flag: 'flag-icon-de',
+            label: 'languages.german'
+        },
+        {
+            key: 'fr',
+            flag: 'flag-icon-fr',
+            label: 'languages.french'
+        },
+        {
+            key: 'es',
+            flag: 'flag-icon-es',
+            label: 'languages.spanish'
+        },
+        {
+            key: 'tr',
+            flag: 'flag-icon-tr',
+            label: 'languages.turkish'
+        }
+    ];
 
     public mounted() {
         this.selectedLanguage = this.$i18n.locale;

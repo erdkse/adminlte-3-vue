@@ -1,6 +1,7 @@
 <div
     ref="dropdownMenu"
-    class="dropdown-menu dropdown-menu-lg dropdown-menu-right show"
+    class="dropdown-menu dropdown-menu-right show"
+    :class="`dropdown-menu-${size}`"
     :style="fixStyles"
 >
     <slot></slot>

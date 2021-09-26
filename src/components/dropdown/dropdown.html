@@ -3,7 +3,7 @@
         <slot name="dropdown-button"></slot>
     </button>
 
-    <app-dropdown-menu v-if="isOpen">
+    <app-dropdown-menu v-if="isOpen" :size="size">
         <slot name="dropdown-menu"></slot>
     </app-dropdown-menu>
 </li>

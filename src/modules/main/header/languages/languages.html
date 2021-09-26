@@ -5,35 +5,12 @@
     <template v-slot:dropdown-menu>
         <a
             class="dropdown-item"
-            :class="{'active': selectedLanguage === 'en'}"
-            @click="changeLanguage('en')"
+            :class="{'active': selectedLanguage === language.key}"
+            @click="changeLanguage(language.key)"
+            v-for="language in languages"
         >
-            <i class="flag-icon flag-icon-us mr-2"></i> {{
-            $t("languages.english") }}
-        </a>
-        <a
-            class="dropdown-item"
-            :class="{'active': selectedLanguage === 'de'}"
-            @click="changeLanguage('de')"
-        >
-            <i class="flag-icon flag-icon-de mr-2"></i> {{
-            $t("languages.german") }}
-        </a>
-        <a
-            class="dropdown-item"
-            :class="{'active': selectedLanguage === 'fr'}"
-            @click="changeLanguage('fr')"
-        >
-            <i class="flag-icon flag-icon-fr mr-2"></i> {{
-            $t("languages.french") }}
-        </a>
-        <a
-            class="dropdown-item"
-            :class="{'active': selectedLanguage === 'es'}"
-            @click="changeLanguage('es')"
-        >
-            <i class="flag-icon flag-icon-es mr-2"></i> {{
-            $t("languages.spanish") }}
+            <i class="flag-icon mr-2" :class="language.flag"></i>
+            {{ $t(language.label) }}
         </a>
     </template>
 </app-dropdown>

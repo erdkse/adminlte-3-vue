@@ -5,11 +5,15 @@ import DropdownMenu from './dropdown-menu/dropdown-menu.vue';
     name: 'app-dropdown',
     components: {
         'app-dropdown-menu': DropdownMenu
+    },
+    props: {
+        size: String
     }
 })
 export default class Dropdown extends Vue {
     private dropdownElement: HTMLElement;
     public isOpen: boolean = false;
+    public size: string = 'md';
 
     public mounted(): void {
         this.dropdownElement = this.$refs.dropdown as HTMLElement;

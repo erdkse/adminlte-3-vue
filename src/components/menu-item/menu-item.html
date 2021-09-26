@@ -5,7 +5,7 @@
         @click="handleMainMenuAction"
     >
         <i class="nav-icon fas fa-tachometer-alt"></i>
-        <p>{{ menuItem.name }}</p>
+        <p>{{ $t(menuItem.name) }}</p>
         <i v-if="isExpandable" class="right fas fa-angle-left"></i>
     </a>
     <ul class="nav nav-treeview" v-for="item in menuItem.children">
@@ -17,7 +17,7 @@
                 exact-active-class="active"
             >
                 <i class="far fa-circle nav-icon"></i>
-                <p>{{ item.name }}</p>
+                <p>{{ $t(item.name) }}</p>
             </router-link>
         </li>
     </ul>

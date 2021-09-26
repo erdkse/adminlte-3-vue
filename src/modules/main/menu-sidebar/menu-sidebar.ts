@@ -17,23 +17,23 @@ export default class MenuSidebar extends Vue {
 
 export const MENU = [
     {
-        name: 'Dashboard',
+        name: 'labels.dashboard',
         path: '/'
     },
     {
-        name: 'Blank',
+        name: 'labels.blank',
         path: '/blank'
     },
     {
-        name: 'Main Menu',
+        name: 'labels.mainMenu',
         children: [
             {
-                name: 'Sub Menu',
+                name: 'labels.subMenu',
                 path: '/sub-menu-1'
             },
 
             {
-                name: 'Blank',
+                name: 'labels.blank',
                 path: '/sub-menu-2'
             }
         ]

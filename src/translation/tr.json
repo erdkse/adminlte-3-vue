@@ -1,0 +1,60 @@
+{
+    "labels": {
+        "signInToStart": "Oturumunuzu başlatmak için giriş yapın",
+        "rememberMe": "Beni Hatırla",
+        "signIn": "Giriş Yap",
+        "signInUsingFB": "Facebook kullanarak giriş yap",
+        "signUpUsingFB": "Facebook kullanarak üye ol",
+        "SignInUsingGoogle": "Google kullanarak giriş yap",
+        "signUpUsingGoogle": "Google kullanarak üye ol",
+        "forgotPassword": "Şifremi unuttum",
+        "registerMembership": "Yeni üyelik oluştur",
+        "admin": "Admin",
+        "lte": "LTE",
+        "login": "Giriş Yap",
+        "loading": "Yükleniyor...",
+        "copyright": "Copyright",
+        "allRightReserved": "Tüm haklar saklıdır",
+        "version": "Versiyon",
+        "seeAllNotification": "Tüm bildirimleri gör",
+        "notifications": "Bildirimler",
+        "newMessages": "yeni mesajlar",
+        "mins": "dakika",
+        "hours": "saat",
+        "days": "gün",
+        "friendRequests": "arkadaşlık istekleri",
+        "newReports": "yeni raporlar",
+        "profile": "Profil",
+        "followers": "Takipçi",
+        "sales": "Satış",
+        "friends": "Arkadaş",
+        "signOut": "Çıkış Yap",
+        "memberSince": "Member since",
+        "home": "Anasayfa",
+        "contact": "İletişim",
+        "dashboard": "Pano",
+        "blank": "Boş",
+        "mainMenu": "Ana menü",
+        "subMenu": "Alt menü",
+        "privacyPolicy": "Gizlilik politikası",
+        "iAgree": "I agree to the",
+        "terms": "terms",
+        "register": "Üye ol",
+        "alreadyHaveMembership": "Zaten üyeliğim var",
+        "userProfile": "Kullanıcı Profili"
+    },
+    "messages": {
+        "retrieveNewPassword": "Şifreni mi unuttun? Buradan kolayca yeni bir şifre alabilirsin.",
+        "recoverYourPasswordNow": "Yeni şifrenden bir adım uzaktasın, şimdi şifreni kurtar."
+    },
+    "buttons": {
+        "requestNewPassword": "Yeni şifre talep et"
+    },
+    "languages": {
+        "english": "İngilizce",
+        "german": "Almanca",
+        "french": "Fransızca",
+        "spanish": "İspanyolca",
+        "turkish": "Türkçe"
+    }
+}

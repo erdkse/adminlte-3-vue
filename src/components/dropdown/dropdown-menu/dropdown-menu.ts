@@ -1,10 +1,14 @@
 import {Options, Vue} from 'vue-class-component';
 
 @Options({
-    name: 'app-dropdown-menu'
+    name: 'app-dropdown-menu',
+    props: {
+        size: String
+    }
 })
 export default class DropdownMenu extends Vue {
     private dropdownMenuElement: HTMLElement = null;
+    public size: string;
 
     public mounted(): void {
         this.dropdownMenuElement = this.$refs.dropdownMenu as HTMLElement;
