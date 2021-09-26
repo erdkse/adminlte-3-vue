@@ -1,11 +1,8 @@
-<li class="nav-item dropdown" ref="dropdown">
-    <button class="nav-link" data-toggle="dropdown" @click="toggleDropdown">
+<app-dropdown>
+    <template v-slot:dropdown-button>
         <i class="flag-icon flag-icon-us"></i>
-    </button>
-    <div
-        class="dropdown-menu dropdown-menu-right p-0"
-        :class="{'show':isDropdownOpened}"
-    >
+    </template>
+    <template v-slot:dropdown-menu>
         <a href="#" class="dropdown-item active" @click="changeLanguage('en')">
             <i class="flag-icon flag-icon-us mr-2"></i> {{ $t("languages.english") }}
         </a>
@@ -18,5 +15,5 @@
         <a href="#" class="dropdown-item" @click="changeLanguage('es')">
             <i class="flag-icon flag-icon-es mr-2"></i> {{ $t("languages.spanish") }}
         </a>
-    </div>
-</li>
+    </template>
+</app-dropdown>
