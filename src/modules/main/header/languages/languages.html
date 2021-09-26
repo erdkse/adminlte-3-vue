@@ -1,19 +1,39 @@
 <app-dropdown>
     <template v-slot:dropdown-button>
-        <i class="flag-icon flag-icon-us"></i>
+        <i class="flag-icon" :class="flagIcon"></i>
     </template>
     <template v-slot:dropdown-menu>
-        <a href="#" class="dropdown-item active" @click="changeLanguage('en')">
-            <i class="flag-icon flag-icon-us mr-2"></i> {{ $t("languages.english") }}
+        <a
+            class="dropdown-item"
+            :class="{'active': selectedLanguage === 'en'}"
+            @click="changeLanguage('en')"
+        >
+            <i class="flag-icon flag-icon-us mr-2"></i> {{
+            $t("languages.english") }}
         </a>
-        <a href="#" class="dropdown-item" @click="changeLanguage('de')">
-            <i class="flag-icon flag-icon-de mr-2"></i> {{ $t("languages.german") }}
+        <a
+            class="dropdown-item"
+            :class="{'active': selectedLanguage === 'de'}"
+            @click="changeLanguage('de')"
+        >
+            <i class="flag-icon flag-icon-de mr-2"></i> {{
+            $t("languages.german") }}
         </a>
-        <a href="#" class="dropdown-item" @click="changeLanguage('fr')">
-            <i class="flag-icon flag-icon-fr mr-2"></i> {{ $t("languages.french") }}
+        <a
+            class="dropdown-item"
+            :class="{'active': selectedLanguage === 'fr'}"
+            @click="changeLanguage('fr')"
+        >
+            <i class="flag-icon flag-icon-fr mr-2"></i> {{
+            $t("languages.french") }}
         </a>
-        <a href="#" class="dropdown-item" @click="changeLanguage('es')">
-            <i class="flag-icon flag-icon-es mr-2"></i> {{ $t("languages.spanish") }}
+        <a
+            class="dropdown-item"
+            :class="{'active': selectedLanguage === 'es'}"
+            @click="changeLanguage('es')"
+        >
+            <i class="flag-icon flag-icon-es mr-2"></i> {{
+            $t("languages.spanish") }}
         </a>
     </template>
 </app-dropdown>
