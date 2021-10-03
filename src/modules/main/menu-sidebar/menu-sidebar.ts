@@ -11,7 +11,7 @@ import MenuItem from '@/components/menu-item/menu-item.vue';
 export default class MenuSidebar extends Vue {
     public menu = MENU;
     get user(): IUser {
-        return this.$store.getters.user;
+        return this.$store.getters['auth/user'];
     }
 }
 

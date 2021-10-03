@@ -20,9 +20,9 @@ export default class Main extends Vue {
         this.appElement.classList.add('layout-fixed');
         try {
             const user = await getProfile();
-            this.$store.dispatch('getUser', user);
+            this.$store.dispatch('auth/getUser', user);
         } catch (error) {
-            this.$store.dispatch('logout');
+            this.$store.dispatch('auth/logout');
         }
     }
 

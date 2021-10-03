@@ -40,7 +40,7 @@ export default class Register extends Vue {
         try {
             this.isAuthLoading = true;
             const token = await registerByAuth(this.email, this.password);
-            this.$store.dispatch('login', token);
+            this.$store.dispatch('auth/login', token);
             this.toast.success('Register succeeded');
             this.isAuthLoading = false;
         } catch (error: any) {
@@ -53,7 +53,7 @@ export default class Register extends Vue {
         try {
             this.isFacebookLoading = true;
             const token = await registerByFacebook();
-            this.$store.dispatch('login', token);
+            this.$store.dispatch('auth/login', token);
             this.isFacebookLoading = false;
         } catch (error: any) {
             this.toast.error(error.message);
@@ -65,7 +65,7 @@ export default class Register extends Vue {
         try {
             this.isGoogleLoading = true;
             const token = await registerByGoogle();
-            this.$store.dispatch('login', token);
+            this.$store.dispatch('auth/login', token);
             this.isGoogleLoading = false;
         } catch (error: any) {
             this.toast.error(error.message);

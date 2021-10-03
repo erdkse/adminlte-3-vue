@@ -10,10 +10,10 @@ import Dropdown from '@/components/dropdown/dropdown.vue';
 })
 export default class User extends Vue {
     get user(): IUser {
-        return this.$store.getters.user;
+        return this.$store.getters['auth/user'];
     }
 
     private logout() {
-        this.$store.dispatch('logout');
+        this.$store.dispatch('auth/logout');
     }
 }
