@@ -1,6 +1,6 @@
 import {createStore} from 'vuex';
-import authModule from './authModule';
-import uiModule from './uiModule';
+import authModule from './auth';
+import uiModule from './ui';
 
 export default createStore({
     modules: {
