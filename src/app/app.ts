@@ -1,3 +1,4 @@
+import {calculateWindowSize} from '@/utils/helpers';
 import {Options, Vue} from 'vue-class-component';
 
 @Options({
@@ -16,15 +17,6 @@ export default class App extends Vue {
     }
 
     get windowSize() {
-        if (this.$windowWidth >= 1200) {
-            return 'lg';
-        }
-        if (this.$windowWidth >= 992) {
-            return 'md';
-        }
-        if (this.$windowWidth >= 768) {
-            return 'sm';
-        }
-        return 'xs';
+        return calculateWindowSize(this.$windowWidth);
     }
 }

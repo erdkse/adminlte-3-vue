@@ -9,6 +9,11 @@ import {getProfile} from '@/services/auth';
         'app-header': Header,
         'menu-sidebar': MenuSidebar,
         'app-footer': Footer
+    },
+    watch: {
+        watchLayoutChanges: (value) => {
+            console.log(value);
+        }
     }
 })
 export default class Main extends Vue {
@@ -27,20 +32,38 @@ export default class Main extends Vue {
     }
 
     public unmounted(): void {
-        (this.appElement as HTMLElement).classList.remove('sidebar-mini');
-        (this.appElement as HTMLElement).classList.remove('layout-fixed');
+        this.appElement.classList.remove('sidebar-mini');
+        this.appElement.classList.remove('layout-fixed');
     }
 
     public toggleMenuSidebar(): void {
-        const isCollapsed = (this.appElement as HTMLElement).classList.contains(
-            'sidebar-collapse'
-        );
-        if (isCollapsed) {
-            (this.appElement as HTMLElement).classList.remove(
-                'sidebar-collapse'
-            );
-        } else {
-            (this.appElement as HTMLElement).classList.add('sidebar-collapse');
+        this.$store.dispatch('ui/toggleSidebarMenu');
+    }
+
+    get watchLayoutChanges() {
+        if (!this.appElement) {
+            return;
         }
+        console.log(this.screenSize, this.isSidebarMenuCollapsed);
+        this.appElement.classList.remove('sidebar-closed');
+        this.appElement.classList.remove('sidebar-collapse');
+        this.appElement.classList.remove('sidebar-open');
+        if (this.isSidebarMenuCollapsed && this.screenSize === 'lg') {
+            this.appElement.classList.add('sidebar-collapse');
+        } else if (this.isSidebarMenuCollapsed && this.screenSize === 'xs') {
+            this.appElement.classList.add('sidebar-open');
+        } else if (!this.isSidebarMenuCollapsed && this.screenSize !== 'lg') {
+            this.appElement.classList.add('sidebar-closed');
+            this.appElement.classList.add('sidebar-collapse');
+        }
+        return this.appElement.classList.value;
+    }
+
+    get isSidebarMenuCollapsed() {
+        return this.$store.getters['ui/isSidebarMenuCollapsed'];
+    }
+
+    get screenSize() {
+        return this.$store.getters['ui/screenSize'];
     }
 }
