@@ -5,4 +5,9 @@
         <router-view></router-view>
     </div>
     <app-footer></app-footer>
+    <div
+        id="sidebar-overlay"
+        v-if="screenSize === 'xs' && isSidebarMenuCollapsed"
+        @click="toggleMenuSidebar"
+    ></div>
 </div>

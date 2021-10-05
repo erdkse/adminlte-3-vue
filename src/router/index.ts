@@ -109,9 +109,9 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    if (to.meta.requiresAuth && !store.getters.token) {
+    if (to.meta.requiresAuth && !store.getters['auth/token']) {
         next('/login');
-    } else if (to.meta.requiresUnauth && !!store.getters.token) {
+    } else if (to.meta.requiresUnauth && !!store.getters['auth/token']) {
         next('/');
     } else {
         next();
