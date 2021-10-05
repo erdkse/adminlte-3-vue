@@ -5,8 +5,8 @@ import getters from './getters';
 const uiModule = {
     namespaced: true,
     state: {
-        screenSize: 'lg',
-        isSidebarMenuCollapsed: false
+        isSidebarMenuCollapsed: false,
+        screenSize: 'lg'
     },
     mutations,
     actions,

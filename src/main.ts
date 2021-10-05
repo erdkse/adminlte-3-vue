@@ -1,5 +1,5 @@
 import {createApp} from 'vue';
-import App from './App.vue';
+import App from './app/app.vue';
 import router from './router';
 import store from './store';
 
@@ -10,6 +10,8 @@ import {faFacebook, faGooglePlus} from '@fortawesome/free-brands-svg-icons';
 import {Gatekeeper} from 'gatekeeper-client-sdk';
 import Toast, {PluginOptions} from 'vue-toastification';
 import {createI18n} from 'vue-i18n';
+import {VueWindowSizePlugin} from 'vue-window-size/option-api';
+
 import en from './translation/en.json';
 import es from './translation/es.json';
 import tr from './translation/tr.json';
@@ -33,6 +35,7 @@ createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .use(store)
     .use(router)
+    .use(VueWindowSizePlugin)
     .use(Toast, options)
     .use(i18n)
     .mount('#app');

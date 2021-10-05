@@ -1,4 +1,5 @@
 export default {
     isSidebarMenuCollapsed: (state: any): boolean =>
-        state.isSidebarMenuCollapsed
+        state.isSidebarMenuCollapsed,
+    windowSize: (state: any): boolean => state.windowSize
 };
