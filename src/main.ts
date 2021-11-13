@@ -16,6 +16,7 @@ import en from './translation/en.json';
 import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
+import "vue-toastification/dist/index.css";
 
 library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
 Gatekeeper.configure('de378d9c-38c8-42c1-b961-9e4fa92d6a5e', {
@@ -24,7 +25,20 @@ Gatekeeper.configure('de378d9c-38c8-42c1-b961-9e4fa92d6a5e', {
     facebookAppID: '972653536647742'
 });
 
-const options: PluginOptions = {};
+const options: PluginOptions = {
+    //position: "top-right",
+    timeout: 5000,
+    closeOnClick: true,
+    pauseOnFocusLoss: true,
+    pauseOnHover: true,
+    draggable: true,
+    draggablePercent: 0.6,
+    showCloseButtonOnHover: false,
+    hideProgressBar: false,
+    closeButton: "button",
+    icon: true,
+    rtl: false
+};
 const i18n = createI18n({
     locale: 'en',
     messages: {en, es, tr},
