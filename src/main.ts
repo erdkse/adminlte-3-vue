@@ -16,7 +16,7 @@ import en from './translation/en.json';
 import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
-import "vue-toastification/dist/index.css";
+
 
 library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
 Gatekeeper.configure('de378d9c-38c8-42c1-b961-9e4fa92d6a5e', {
@@ -26,7 +26,6 @@ Gatekeeper.configure('de378d9c-38c8-42c1-b961-9e4fa92d6a5e', {
 });
 
 const options: PluginOptions = {
-    //position: "top-right",
     timeout: 5000,
     closeOnClick: true,
     pauseOnFocusLoss: true,
