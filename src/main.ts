@@ -17,8 +17,8 @@ import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
 
-
 library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
+
 Gatekeeper.initialize('de378d9c-38c8-42c1-b961-9e4fa92d6a5e');
 
 const options: PluginOptions = {
@@ -30,7 +30,7 @@ const options: PluginOptions = {
     draggablePercent: 0.6,
     showCloseButtonOnHover: false,
     hideProgressBar: false,
-    closeButton: "button",
+    closeButton: 'button',
     icon: true,
     rtl: false
 };
