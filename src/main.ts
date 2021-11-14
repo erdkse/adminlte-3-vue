@@ -17,10 +17,23 @@ import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
 
+
 library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
 Gatekeeper.initialize('de378d9c-38c8-42c1-b961-9e4fa92d6a5e');
 
-const options: PluginOptions = {};
+const options: PluginOptions = {
+    timeout: 5000,
+    closeOnClick: true,
+    pauseOnFocusLoss: true,
+    pauseOnHover: true,
+    draggable: true,
+    draggablePercent: 0.6,
+    showCloseButtonOnHover: false,
+    hideProgressBar: false,
+    closeButton: "button",
+    icon: true,
+    rtl: false
+};
 const i18n = createI18n({
     locale: 'en',
     messages: {en, es, tr},
