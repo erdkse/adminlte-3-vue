@@ -15,7 +15,7 @@
         "@fortawesome/free-solid-svg-icons": "5.15.4",
         "@fortawesome/vue-fontawesome": "3.0.0-4",
         "axios": "0.21.4",
-        "gatekeeper-client-sdk": "0.3.0",
+        "gatekeeper-client-sdk": "0.4.2",
         "luxon": "2.0.2",
         "uuid": "^8.3.2",
         "vue": "3.2.18",

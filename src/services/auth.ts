@@ -2,12 +2,7 @@
 import {Gatekeeper} from 'gatekeeper-client-sdk';
 
 const getError = (error: any) => {
-    const message =
-        (error &&
-            error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-        'Failed';
+    const message = error.message || 'Failed';
     return new Error(message);
 };
 

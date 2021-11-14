@@ -18,11 +18,7 @@ import tr from './translation/tr.json';
 import './index.scss';
 
 library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
-Gatekeeper.configure('de378d9c-38c8-42c1-b961-9e4fa92d6a5e', {
-    googleClientID:
-        '816324818723-e2hokn0pvjgkf8jcks6quido903ukeri.apps.googleusercontent.com',
-    facebookAppID: '972653536647742'
-});
+Gatekeeper.initialize('de378d9c-38c8-42c1-b961-9e4fa92d6a5e');
 
 const options: PluginOptions = {};
 const i18n = createI18n({
