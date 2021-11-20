@@ -10,10 +10,44 @@ import User from './user/user.vue';
         'notifications-dropdown': Notifications,
         'languages-dropdown': Languages,
         'user-dropdown': User
+    },
+    watch: {
+        watchLayoutChanges: (value) => {
+            console.log(value);
+        }
     }
 })
 export default class Header extends Vue {
+    private headerElement: HTMLElement | null = null;
+    public async mounted(): Promise<void> {
+        this.headerElement = document.getElementById(
+            'main-header'
+        ) as HTMLElement;
+    }
+
+    get watchLayoutChanges() {
+        if (!this.headerElement) {
+            return;
+        }
+        this.headerElement.classList.remove('navbar-light');
+        this.headerElement.classList.remove('navbar-white');
+        this.headerElement.classList.remove('navbar-dark');
+
+        if (this.darkModeSelected) {
+            this.headerElement.classList.add('navbar-dark');
+        } else {
+            this.headerElement.classList.add('navbar-white');
+            this.headerElement.classList.add('navbar-light');
+        }
+
+        return this.headerElement.classList.value;
+    }
+
     public onToggleMenuSidebar(): void {
         this.$emit('toggle-menu-sidebar');
+    }
+
+    get darkModeSelected() {
+        return this.$store.getters['ui/darkModeSelected'];
     }
 }
