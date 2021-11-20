@@ -50,6 +50,7 @@ export default class Login extends Vue {
             this.isFacebookLoading = true;
             const token = await loginByFacebook();
             this.$store.dispatch('auth/login', token);
+            this.toast.success('Login succeeded');
             this.isFacebookLoading = false;
         } catch (error: any) {
             this.toast.error(error.message);
@@ -62,6 +63,7 @@ export default class Login extends Vue {
             this.isGoogleLoading = true;
             const token = await loginByGoogle();
             this.$store.dispatch('auth/login', token);
+            this.toast.success('Login succeeded');
             this.isGoogleLoading = false;
         } catch (error: any) {
             this.toast.error(error.message);

@@ -6,7 +6,8 @@ import {calculateWindowSize} from '@/utils/helpers';
 const uiModule = {
     namespaced: true,
     state: {
-        isSidebarMenuCollapsed: false,
+        darkMode: false,
+        sidebarMenuCollapsed: false,
         screenSize: calculateWindowSize(window.innerWidth)
     },
     mutations,

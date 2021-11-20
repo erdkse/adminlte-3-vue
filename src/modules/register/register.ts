@@ -54,6 +54,7 @@ export default class Register extends Vue {
             this.isFacebookLoading = true;
             const token = await registerByFacebook();
             this.$store.dispatch('auth/login', token);
+            this.toast.success('Register succeeded');
             this.isFacebookLoading = false;
         } catch (error: any) {
             this.toast.error(error.message);
@@ -66,6 +67,7 @@ export default class Register extends Vue {
             this.isGoogleLoading = true;
             const token = await registerByGoogle();
             this.$store.dispatch('auth/login', token);
+            this.toast.success('Register succeeded');
             this.isGoogleLoading = false;
         } catch (error: any) {
             this.toast.error(error.message);

@@ -44,23 +44,32 @@ export default class Main extends Vue {
         if (!this.appElement) {
             return;
         }
-        console.log(this.screenSize, this.isSidebarMenuCollapsed);
+        this.appElement.classList.remove('dark-mode');
         this.appElement.classList.remove('sidebar-closed');
         this.appElement.classList.remove('sidebar-collapse');
         this.appElement.classList.remove('sidebar-open');
-        if (this.isSidebarMenuCollapsed && this.screenSize === 'lg') {
+
+        if (this.darkModeSelected) {
+            this.appElement.classList.add('dark-mode');
+        }
+
+        if (this.sidebarMenuCollapsed && this.screenSize === 'lg') {
             this.appElement.classList.add('sidebar-collapse');
-        } else if (this.isSidebarMenuCollapsed && this.screenSize === 'xs') {
+        } else if (this.sidebarMenuCollapsed && this.screenSize === 'xs') {
             this.appElement.classList.add('sidebar-open');
-        } else if (!this.isSidebarMenuCollapsed && this.screenSize !== 'lg') {
+        } else if (!this.sidebarMenuCollapsed && this.screenSize !== 'lg') {
             this.appElement.classList.add('sidebar-closed');
             this.appElement.classList.add('sidebar-collapse');
         }
         return this.appElement.classList.value;
     }
 
-    get isSidebarMenuCollapsed() {
-        return this.$store.getters['ui/isSidebarMenuCollapsed'];
+    get darkModeSelected() {
+        return this.$store.getters['ui/darkModeSelected'];
+    }
+
+    get sidebarMenuCollapsed() {
+        return this.$store.getters['ui/sidebarMenuCollapsed'];
     }
 
     get screenSize() {
