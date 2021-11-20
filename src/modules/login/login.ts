@@ -14,8 +14,8 @@ import {useToast} from 'vue-toastification';
 })
 export default class Login extends Vue {
     private appElement: HTMLElement | null = null;
-    public email: string = '';
-    public password: string = '';
+    public email: string = 'admin@example.com';
+    public password: string = 'admin';
     public rememberMe: boolean = false;
     public isAuthLoading: boolean = false;
     public isFacebookLoading: boolean = false;

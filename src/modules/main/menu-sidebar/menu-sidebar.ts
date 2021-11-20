@@ -17,12 +17,18 @@ export default class MenuSidebar extends Vue {
 
 export const MENU = [
     {
-        name: 'labels.dashboard',
+        name: 'Dashboard',
+        icon: 'fas fa-chart-area',
         path: '/'
     },
     {
-        name: 'labels.blank',
+        name: 'Blank',
         path: '/blank'
+    },
+    {
+        name: 'Transactions',
+        icon: 'fas fa-book',
+        path: '/transactions'
     },
     {
         name: 'labels.mainMenu',

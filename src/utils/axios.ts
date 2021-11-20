@@ -1,17 +1,17 @@
 import axios from 'axios';
 
-const intance = axios.create({
+const instance = axios.create({
     baseURL: ``
 });
 
-intance.interceptors.request.use(
+instance.interceptors.request.use(
     (request) => request,
     (error) => Promise.reject(error)
 );
 
-intance.interceptors.response.use(
+instance.interceptors.response.use(
     (response) => response,
     (error) => Promise.reject(error)
 );
 
-export default intance;
+export default instance;

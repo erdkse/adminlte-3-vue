@@ -12,6 +12,7 @@ import RecoverPassword from '@/modules/recover-password/recover-password.vue';
 import PrivacyPolicy from '@/modules/privacy-policy/privacy-policy.vue';
 import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
 import Blank from '@/pages/blank/blank.vue';
+import Transactions from '@/pages/transactions/transactions.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -61,7 +62,15 @@ const routes: Array<RouteRecordRaw> = [
                 meta: {
                     requiresAuth: true
                 }
-            }
+            },
+            {
+                path: 'transactions',
+                name: 'Transactions',
+                component: Transactions,
+                meta: {
+                    requiresAuth: true
+                }
+            },
         ]
     },
     {
