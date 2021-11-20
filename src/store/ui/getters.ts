@@ -1,5 +1,7 @@
 export default {
     darkModeSelected: (state: any): boolean => state.darkMode,
-    sidebarMenuCollapsed: (state: any): boolean => state.sidebarMenuCollapsed,
+    menuSidebarCollapsed: (state: any): boolean => state.menuSidebarCollapsed,
+    controlSidebarCollapsed: (state: any): boolean =>
+        state.controlSidebarCollapsed,
     screenSize: (state: any): boolean => state.screenSize
 };

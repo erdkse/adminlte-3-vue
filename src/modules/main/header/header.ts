@@ -44,7 +44,11 @@ export default class Header extends Vue {
     }
 
     public onToggleMenuSidebar(): void {
-        this.$emit('toggle-menu-sidebar');
+        this.$store.dispatch('ui/toggleMenuSidebar');
+    }
+
+    public onToggleControlSidebar(): void {
+        this.$store.dispatch('ui/toggleControlSidebar');
     }
 
     get darkModeSelected() {

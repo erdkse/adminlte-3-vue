@@ -1,10 +1,11 @@
 <div class="wrapper">
-    <app-header @toggle-menu-sidebar="toggleMenuSidebar"></app-header>
+    <app-header></app-header>
     <menu-sidebar></menu-sidebar>
     <div class="content-wrapper">
         <router-view></router-view>
     </div>
     <app-footer></app-footer>
+    <control-sidebar></control-sidebar>
     <div
         id="sidebar-overlay"
         v-if="screenSize === 'xs' && isSidebarMenuCollapsed"
