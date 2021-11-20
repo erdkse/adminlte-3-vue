@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {Options, Vue} from 'vue-class-component';
 import Header from './header/header.vue';
 import MenuSidebar from './menu-sidebar/menu-sidebar.vue';
@@ -13,9 +15,7 @@ import {getProfile} from '@/services/auth';
         'app-footer': Footer
     },
     watch: {
-        watchLayoutChanges: (value) => {
-            console.log(value);
-        }
+        watchLayoutChanges: (_) => {}
     }
 })
 export default class Main extends Vue {
