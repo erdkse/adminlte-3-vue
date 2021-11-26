@@ -2,7 +2,10 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <router-link to="/" class="h1"><b>{{ $t("labels.admin") }}</b>{{ $t("labels.lte") }}</router-link>
+            <router-link to="/" class="h1"
+                ><b>{{ $t("labels.admin") }}</b>{{ $t("labels.lte")
+                }}</router-link
+            >
         </div>
         <div class="card-body">
             <p class="login-box-msg">{{ $t("labels.signInToStart") }}</p>
@@ -27,7 +30,7 @@
 
                 <div class="row">
                     <div class="col-7">
-                        <app-checkbox v-model="rememberMe">
+                        <app-checkbox type="icheck" v-model="rememberMe">
                             {{ $t("labels.rememberMe") }}
                         </app-checkbox>
                     </div>
@@ -40,7 +43,7 @@
                             :loading="isAuthLoading"
                             :disabled="isFacebookLoading || isGoogleLoading"
                         >
-                        {{ $t("labels.signIn") }}
+                            {{ $t("labels.signIn") }}
                         </app-button>
                     </div>
                     <!-- /.col -->

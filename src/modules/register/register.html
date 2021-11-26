@@ -33,8 +33,9 @@
                 />
                 <div class="row">
                     <div class="col-7">
-                        <app-checkbox v-model="agreeTerms">
-                            {{ $t("labels.iAgree") }} <a href="#">{{ $t("labels.terms") }}</a>
+                        <app-checkbox type="icheck" v-model="agreeTerms">
+                            {{ $t("labels.iAgree") }}
+                            <a href="#">{{ $t("labels.terms") }}</a>
                         </app-checkbox>
                     </div>
                     <!-- /.col -->
