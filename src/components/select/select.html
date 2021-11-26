@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label :for="ID" class="select-label">
+        <slot />
+    </label>
+    <select
+        :class="{'form-control': type === 'default', 'custom-select': type === 'custom'}"
+        :id="ID"
+        :name="ID"
+    >
+        <option>None</option>
+        <option v-for="option in options" :value="option">{{option}}</option>
+    </select>
+</div>

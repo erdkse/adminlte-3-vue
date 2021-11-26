@@ -6,5 +6,20 @@
     <hr class="mb-2" />
     <div style="padding: 8px 0">
         <app-checkbox @change="handleDarkModeChange"> Dark mode </app-checkbox>
+        <app-select class="mt-3" :options="navbarVariants" type="custom">
+            Navbar Variants
+        </app-select>
+        <app-select class="mt-3" :options="navbarVariants" type="custom">
+            Accent Color Variants
+        </app-select>
+        <app-select class="mt-3" :options="navbarVariants" type="custom">
+            Dark Sidebar Variants
+        </app-select>
+        <app-select class="mt-3" :options="navbarVariants" type="custom">
+            Light Sidebar Variants
+        </app-select>
+        <app-select class="mt-3" :options="navbarVariants" type="custom">
+            Brand Logo Variants
+        </app-select>
     </div>
 </aside>
