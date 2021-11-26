@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {Options, Vue} from 'vue-class-component';
 import Header from './header/header.vue';
 import MenuSidebar from './menu-sidebar/menu-sidebar.vue';
+import ControlSidebar from './control-sidebar/control-sidebar.vue';
 import Footer from './footer/footer.vue';
 import {getProfile} from '@/services/auth';
 
@@ -8,12 +11,11 @@ import {getProfile} from '@/services/auth';
     components: {
         'app-header': Header,
         'menu-sidebar': MenuSidebar,
+        'control-sidebar': ControlSidebar,
         'app-footer': Footer
     },
     watch: {
-        watchLayoutChanges: (value) => {
-            console.log(value);
-        }
+        watchLayoutChanges: (_) => {}
     }
 })
 export default class Main extends Vue {
@@ -36,10 +38,6 @@ export default class Main extends Vue {
         this.appElement.classList.remove('layout-fixed');
     }
 
-    public toggleMenuSidebar(): void {
-        this.$store.dispatch('ui/toggleSidebarMenu');
-    }
-
     get watchLayoutChanges() {
         if (!this.appElement) {
             return;
@@ -48,16 +46,21 @@ export default class Main extends Vue {
         this.appElement.classList.remove('sidebar-closed');
         this.appElement.classList.remove('sidebar-collapse');
         this.appElement.classList.remove('sidebar-open');
+        this.appElement.classList.remove('control-sidebar-slide-open');
 
         if (this.darkModeSelected) {
             this.appElement.classList.add('dark-mode');
         }
 
-        if (this.sidebarMenuCollapsed && this.screenSize === 'lg') {
+        if (!this.controlSidebarCollapsed) {
+            this.appElement.classList.add('control-sidebar-slide-open');
+        }
+
+        if (this.menuSidebarCollapsed && this.screenSize === 'lg') {
             this.appElement.classList.add('sidebar-collapse');
-        } else if (this.sidebarMenuCollapsed && this.screenSize === 'xs') {
+        } else if (this.menuSidebarCollapsed && this.screenSize === 'xs') {
             this.appElement.classList.add('sidebar-open');
-        } else if (!this.sidebarMenuCollapsed && this.screenSize !== 'lg') {
+        } else if (!this.menuSidebarCollapsed && this.screenSize !== 'lg') {
             this.appElement.classList.add('sidebar-closed');
             this.appElement.classList.add('sidebar-collapse');
         }
@@ -68,8 +71,12 @@ export default class Main extends Vue {
         return this.$store.getters['ui/darkModeSelected'];
     }
 
-    get sidebarMenuCollapsed() {
-        return this.$store.getters['ui/sidebarMenuCollapsed'];
+    get menuSidebarCollapsed() {
+        return this.$store.getters['ui/menuSidebarCollapsed'];
+    }
+
+    get controlSidebarCollapsed() {
+        return this.$store.getters['ui/controlSidebarCollapsed'];
     }
 
     get screenSize() {

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {Options, Vue} from 'vue-class-component';
 import Messages from './messages/messages.vue';
 import Notifications from './notifications/notifications.vue';
@@ -12,9 +14,7 @@ import User from './user/user.vue';
         'user-dropdown': User
     },
     watch: {
-        watchLayoutChanges: (value) => {
-            console.log(value);
-        }
+        watchLayoutChanges: (_) => {}
     }
 })
 export default class Header extends Vue {
@@ -44,7 +44,11 @@ export default class Header extends Vue {
     }
 
     public onToggleMenuSidebar(): void {
-        this.$emit('toggle-menu-sidebar');
+        this.$store.dispatch('ui/toggleMenuSidebar');
+    }
+
+    public onToggleControlSidebar(): void {
+        this.$store.dispatch('ui/toggleControlSidebar');
     }
 
     get darkModeSelected() {

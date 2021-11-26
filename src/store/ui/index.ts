@@ -7,7 +7,8 @@ const uiModule = {
     namespaced: true,
     state: {
         darkMode: false,
-        sidebarMenuCollapsed: false,
+        menuSidebarCollapsed: false,
+        controlSidebarCollapsed: true,
         screenSize: calculateWindowSize(window.innerWidth)
     },
     mutations,

@@ -2,8 +2,11 @@ export default {
     toggleDarkMode: (context: any): any => {
         context.commit('toggleDarkMode');
     },
-    toggleSidebarMenu: (context: any): any => {
-        context.commit('toggleSidebarMenu');
+    toggleMenuSidebar: (context: any): any => {
+        context.commit('toggleMenuSidebar');
+    },
+    toggleControlSidebar: (context: any): any => {
+        context.commit('toggleControlSidebar');
     },
     setWindowSize: (context: any, payload: string): void => {
         context.commit('setWindowSize', payload);
