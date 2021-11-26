@@ -4,5 +4,5 @@ export default {
     controlSidebarCollapsed: (state: any): boolean =>
         state.controlSidebarCollapsed,
     screenSize: (state: any): boolean => state.screenSize,
-    navbarVariant: (state: any): string => state.navbarVariant || 'navbar-light'
+    navbarVariant: (state: any): string => state.navbarVariant
 };
