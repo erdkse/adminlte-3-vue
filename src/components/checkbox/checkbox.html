@@ -1,11 +1,17 @@
-<div class="icheck-primary">
+<div
+    :class="{'icheck-primary': type === 'icheck', 'form-check': type === 'default', 'custom-control custom-checkbox': type === 'custom'}"
+>
     <input
         type="checkbox"
         :id="ID"
+        :class="{'form-check-input' : type === 'default', 'custom-control-input': type === 'custom'}"
         :checked="modelValue"
         @change="onValueChange($event)"
     />
-    <label :for="ID">
+    <label
+        :for="ID"
+        :class="{'form-check-label':  type === 'default', 'custom-control-label': type === 'custom'}"
+    >
         <slot />
     </label>
 </div>
