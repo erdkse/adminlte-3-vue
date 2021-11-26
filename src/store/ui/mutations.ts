@@ -10,5 +10,8 @@ export default {
     },
     setWindowSize: (state: any, payload: string): void => {
         state.screenSize = payload;
+    },
+    setNavbarVariant: (state: any, payload: string): void => {
+        state.navbarVariant = payload;
     }
 };

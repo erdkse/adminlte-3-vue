@@ -10,5 +10,8 @@ export default {
     },
     setWindowSize: (context: any, payload: string): void => {
         context.commit('setWindowSize', payload);
+    },
+    setNavbarVariant: (context: any, payload: string): void => {
+        context.commit('setNavbarVariant', payload);
     }
 };

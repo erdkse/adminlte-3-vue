@@ -6,19 +6,54 @@
     <hr class="mb-2" />
     <div style="padding: 8px 0">
         <app-checkbox @change="handleDarkModeChange"> Dark mode </app-checkbox>
-        <app-select class="mt-3" :options="navbarVariants" type="custom">
-            Navbar Variants
+        <app-select
+            class="mt-3"
+            :options="navbarLightVariants"
+            type="custom"
+            :disabled="darkModeSelected"
+            @change="onNavbarVariantChange"
+        >
+            Light Navbar Variants
         </app-select>
-        <app-select class="mt-3" :options="navbarVariants" type="custom">
+        <app-select
+            class="mt-3"
+            :options="navbarDarkVariants"
+            type="custom"
+            :disabled="!darkModeSelected"
+            @change="onNavbarVariantChange"
+        >
+            Dark Navbar Variants
+        </app-select>
+        <app-select
+            class="mt-3"
+            :options="navbarLightVariants"
+            type="custom"
+            disabled
+        >
             Accent Color Variants
         </app-select>
-        <app-select class="mt-3" :options="navbarVariants" type="custom">
+        <app-select
+            class="mt-3"
+            :options="navbarLightVariants"
+            type="custom"
+            disabled
+        >
             Dark Sidebar Variants
         </app-select>
-        <app-select class="mt-3" :options="navbarVariants" type="custom">
+        <app-select
+            class="mt-3"
+            :options="navbarLightVariants"
+            type="custom"
+            disabled
+        >
             Light Sidebar Variants
         </app-select>
-        <app-select class="mt-3" :options="navbarVariants" type="custom">
+        <app-select
+            class="mt-3"
+            :options="navbarLightVariants"
+            type="custom"
+            disabled
+        >
             Brand Logo Variants
         </app-select>
     </div>

@@ -6,8 +6,11 @@
         :class="{'form-control': type === 'default', 'custom-select': type === 'custom'}"
         :id="ID"
         :name="ID"
+        :disabled="disabled"
     >
         <option>None</option>
-        <option v-for="option in options" :value="option">{{option}}</option>
+        <option v-for="option in options" :value="option.value">
+            {{option.label}}
+        </option>
     </select>
 </div>

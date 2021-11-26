@@ -3,5 +3,6 @@ export default {
     menuSidebarCollapsed: (state: any): boolean => state.menuSidebarCollapsed,
     controlSidebarCollapsed: (state: any): boolean =>
         state.controlSidebarCollapsed,
-    screenSize: (state: any): boolean => state.screenSize
+    screenSize: (state: any): boolean => state.screenSize,
+    navbarVariant: (state: any): string => state.navbarVariant || 'navbar-light'
 };
