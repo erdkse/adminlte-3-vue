@@ -8,6 +8,7 @@ const uiModule = {
     state: {
         darkMode: false,
         navbarVariant: 'navbar-light',
+        sidebarSkin: 'sidebar-dark-primary',
         menuSidebarCollapsed: false,
         controlSidebarCollapsed: true,
         screenSize: calculateWindowSize(window.innerWidth)

@@ -13,6 +13,10 @@ export default class MenuSidebar extends Vue {
     get user(): IUser {
         return this.$store.getters['auth/user'];
     }
+
+    get sidebarSkin() {
+        return this.$store.getters['ui/sidebarSkin'];
+    }
 }
 
 export const MENU = [

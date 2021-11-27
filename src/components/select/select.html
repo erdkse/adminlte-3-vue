@@ -8,8 +8,12 @@
         :name="ID"
         :disabled="disabled"
     >
-        <option>None</option>
-        <option v-for="option in options" :value="option.value">
+        <option :selected="isNoneSelected">None</option>
+        <option
+            v-for="option in options"
+            :value="option.value"
+            :selected="modelValue === option.value"
+        >
             {{option.label}}
         </option>
     </select>

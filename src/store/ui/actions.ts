@@ -13,5 +13,8 @@ export default {
     },
     setNavbarVariant: (context: any, payload: string): void => {
         context.commit('setNavbarVariant', payload);
+    },
+    setSidebarSkin: (context: any, payload: string): void => {
+        context.commit('setSidebarSkin', payload);
     }
 };

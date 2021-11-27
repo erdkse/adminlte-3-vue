@@ -23,3 +23,41 @@ export const NAVBAR_DARK_VARIANTS: Array<Option> = [
     {value: 'navbar-gray-dark', label: 'Gray Dark'},
     {value: 'navbar-gray', label: 'Gray'}
 ];
+
+export const SIDEBAR_LIGHT_SKINS: Array<Option> = [
+    {value: 'sidebar-dark-primary', label: 'Primary'},
+    {value: 'sidebar-dark-warning', label: 'Warning'},
+    {value: 'sidebar-dark-info', label: 'Info'},
+    {value: 'sidebar-dark-danger', label: 'Danger'},
+    {value: 'sidebar-dark-success', label: 'Success'},
+    {value: 'sidebar-dark-indigo', label: 'Indigo'},
+    {value: 'sidebar-dark-lightblue', label: 'Lightblue'},
+    {value: 'sidebar-dark-navy', label: 'Navy'},
+    {value: 'sidebar-dark-purple', label: 'Purple'},
+    {value: 'sidebar-dark-fuchsia', label: 'Fuchsia'},
+    {value: 'sidebar-dark-pink', label: 'Pink'},
+    {value: 'sidebar-dark-maroon', label: 'Maroon'},
+    {value: 'sidebar-dark-orange', label: 'Orange'},
+    {value: 'sidebar-dark-lime', label: 'Lime'},
+    {value: 'sidebar-dark-teal', label: 'Teal'},
+    {value: 'sidebar-dark-olive', label: 'Olive'}
+];
+
+export const SIDEBAR_DARK_SKINS: Array<Option> = [
+    {value: 'sidebar-light-primary', label: 'Primary'},
+    {value: 'sidebar-light-warning', label: 'Warning'},
+    {value: 'sidebar-light-info', label: 'Info'},
+    {value: 'sidebar-light-danger', label: 'Danger'},
+    {value: 'sidebar-light-success', label: 'Success'},
+    {value: 'sidebar-light-indigo', label: 'Indigo'},
+    {value: 'sidebar-light-lightblue', label: 'Lightblue'},
+    {value: 'sidebar-light-navy', label: 'Navy'},
+    {value: 'sidebar-light-purple', label: 'Purple'},
+    {value: 'sidebar-light-fuchsia', label: 'Fuchsia'},
+    {value: 'sidebar-light-pink', label: 'Pink'},
+    {value: 'sidebar-light-maroon', label: 'Maroon'},
+    {value: 'sidebar-light-orange', label: 'Orange'},
+    {value: 'sidebar-light-lime', label: 'Lime'},
+    {value: 'sidebar-light-teal', label: 'Teal'},
+    {value: 'sidebar-light-olive', label: 'Olive'}
+];

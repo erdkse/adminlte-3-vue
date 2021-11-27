@@ -1,4 +1,8 @@
-import {NAVBAR_DARK_VARIANTS, NAVBAR_LIGHT_VARIANTS} from '@/utils/themes';
+import {
+    NAVBAR_DARK_VARIANTS,
+    NAVBAR_LIGHT_VARIANTS,
+    SIDEBAR_LIGHT_SKINS
+} from '@/utils/themes';
 
 export default {
     toggleDarkMode: (state: any): void => {
@@ -19,6 +23,13 @@ export default {
         state.screenSize = payload;
     },
     setNavbarVariant: (state: any, payload: string): void => {
-        state.navbarVariant = payload;
+        state.navbarVariant =
+            payload ||
+            (state.darkMode
+                ? NAVBAR_DARK_VARIANTS[0].value
+                : NAVBAR_LIGHT_VARIANTS[0].value);
+    },
+    setSidebarSkin: (state: any, payload: string): void => {
+        state.sidebarSkin = payload || SIDEBAR_LIGHT_SKINS[0].value;
     }
 };

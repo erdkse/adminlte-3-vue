@@ -4,5 +4,6 @@ export default {
     controlSidebarCollapsed: (state: any): boolean =>
         state.controlSidebarCollapsed,
     screenSize: (state: any): boolean => state.screenSize,
-    navbarVariant: (state: any): string => state.navbarVariant
+    navbarVariant: (state: any): string => state.navbarVariant,
+    sidebarSkin: (state: any): string => state.sidebarSkin
 };

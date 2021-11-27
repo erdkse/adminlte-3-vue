@@ -28,8 +28,19 @@ export default class Select extends Vue {
     private options: Array<Option>;
 
     public onValueChange(event: any) {
-        console.log(event);
-        // this.$emit('update:modelValue', event.target.checked);
+        this.$emit('update:modelValue', event.target.checked);
+    }
+
+    get isNoneSelected() {
+        if (!this.modelValue) {
+            return true;
+        }
+
+        return (
+            this.options.findIndex(
+                (option) => option.value === this.modelValue
+            ) < 0
+        );
     }
 }
 

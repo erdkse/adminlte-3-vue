@@ -7,19 +7,23 @@
     <div style="padding: 8px 0">
         <app-checkbox @change="handleDarkModeChange"> Dark mode </app-checkbox>
         <app-select
+            v-if="!darkModeSelected"
+            v-model="navbarVariant"
+            :disabled="darkModeSelected"
             class="mt-3"
             :options="navbarLightVariants"
             type="custom"
-            :disabled="darkModeSelected"
             @change="onNavbarVariantChange"
         >
             Light Navbar Variants
         </app-select>
         <app-select
+            v-if="darkModeSelected"
+            v-model="navbarVariant"
+            :disabled="!darkModeSelected"
             class="mt-3"
             :options="navbarDarkVariants"
             type="custom"
-            :disabled="!darkModeSelected"
             @change="onNavbarVariantChange"
         >
             Dark Navbar Variants
@@ -34,19 +38,21 @@
         </app-select>
         <app-select
             class="mt-3"
-            :options="navbarLightVariants"
+            v-model="sidebarSkin"
+            :options="darkSidebarSkins"
             type="custom"
-            disabled
+            @change="onSidebarSkinChange"
         >
-            Dark Sidebar Variants
+            Light Sidebar Variants
         </app-select>
         <app-select
             class="mt-3"
-            :options="navbarLightVariants"
+            v-model="sidebarSkin"
+            :options="lightSidebarSkins"
             type="custom"
-            disabled
+            @change="onSidebarSkinChange"
         >
-            Light Sidebar Variants
+            Dark Sidebar Variants
         </app-select>
         <app-select
             class="mt-3"
