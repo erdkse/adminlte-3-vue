@@ -24,7 +24,7 @@ export const NAVBAR_DARK_VARIANTS: Array<Option> = [
     {value: 'navbar-gray', label: 'Gray'}
 ];
 
-export const SIDEBAR_LIGHT_SKINS: Array<Option> = [
+export const SIDEBAR_DARK_SKINS: Array<Option> = [
     {value: 'sidebar-dark-primary', label: 'Primary'},
     {value: 'sidebar-dark-warning', label: 'Warning'},
     {value: 'sidebar-dark-info', label: 'Info'},
@@ -43,7 +43,7 @@ export const SIDEBAR_LIGHT_SKINS: Array<Option> = [
     {value: 'sidebar-dark-olive', label: 'Olive'}
 ];
 
-export const SIDEBAR_DARK_SKINS: Array<Option> = [
+export const SIDEBAR_LIGHT_SKINS: Array<Option> = [
     {value: 'sidebar-light-primary', label: 'Primary'},
     {value: 'sidebar-light-warning', label: 'Warning'},
     {value: 'sidebar-light-info', label: 'Info'},
