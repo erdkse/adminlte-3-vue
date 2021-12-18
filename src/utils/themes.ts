@@ -2,26 +2,26 @@ import {Option} from '@/components/select/select';
 
 export const NAVBAR_LIGHT_VARIANTS: Array<Option> = [
     {value: 'navbar-light', label: 'Light'},
-    {value: 'navbar-warning', label: 'Warning'},
-    {value: 'navbar-white', label: 'White'},
-    {value: 'navbar-orange', label: 'Orange'}
+    {value: 'navbar-warning navbar-light', label: 'Warning'},
+    {value: 'navbar-white navbar-light', label: 'White'},
+    {value: 'navbar-orange navbar-light', label: 'Orange'}
 ];
 export const NAVBAR_DARK_VARIANTS: Array<Option> = [
     {value: 'navbar-dark', label: 'Dark'},
-    {value: 'navbar-primary', label: 'Primary'},
-    {value: 'navbar-secondary', label: 'Secondary'},
-    {value: 'navbar-info', label: 'Info'},
-    {value: 'navbar-success', label: 'Success'},
-    {value: 'navbar-danger', label: 'Danger'},
-    {value: 'navbar-indigo', label: 'Indigo'},
-    {value: 'navbar-purple', label: 'Purple'},
-    {value: 'navbar-pink', label: 'Pink'},
-    {value: 'navbar-navy', label: 'Navy'},
-    {value: 'navbar-lightblue', label: 'Light Blue'},
-    {value: 'navbar-teal', label: 'Teal'},
-    {value: 'navbar-cyan', label: 'Cyan'},
-    {value: 'navbar-gray-dark', label: 'Gray Dark'},
-    {value: 'navbar-gray', label: 'Gray'}
+    {value: 'navbar-primary navbar-dark', label: 'Primary'},
+    {value: 'navbar-secondary navbar-dark', label: 'Secondary'},
+    {value: 'navbar-info navbar-dark', label: 'Info'},
+    {value: 'navbar-success navbar-dark', label: 'Success'},
+    {value: 'navbar-danger navbar-dark', label: 'Danger'},
+    {value: 'navbar-indigo navbar-dark', label: 'Indigo'},
+    {value: 'navbar-purple navbar-dark', label: 'Purple'},
+    {value: 'navbar-pink navbar-dark', label: 'Pink'},
+    {value: 'navbar-navy navbar-dark', label: 'Navy'},
+    {value: 'navbar-lightblue navbar-dark', label: 'Light Blue'},
+    {value: 'navbar-teal navbar-dark', label: 'Teal'},
+    {value: 'navbar-cyan navbar-dark', label: 'Cyan'},
+    {value: 'navbar-gray-dark navbar-dark', label: 'Gray Dark'},
+    {value: 'navbar-gray navbar-dark', label: 'Gray'}
 ];
 
 export const SIDEBAR_DARK_SKINS: Array<Option> = [
