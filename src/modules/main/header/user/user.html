@@ -17,8 +17,8 @@
             <p>
                 <span>{{user && user.email}}</span>
                 <small>
-                    <span>{{ $t("labels.memberSince") }} </span>
-                    <span>Nov. 2012</span>
+                    <span>{{ $t("labels.memberSince") }}&nbsp;</span>
+                    <span>{{readableCreatedAtDate}}</span>
                 </small>
             </p>
         </li>

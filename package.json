@@ -14,18 +14,18 @@
         "@fortawesome/free-brands-svg-icons": "5.15.4",
         "@fortawesome/free-solid-svg-icons": "5.15.4",
         "@fortawesome/vue-fontawesome": "3.0.0-4",
-        "axios": "0.21.4",
+        "axios": "0.24.0",
         "gatekeeper-client-sdk": "0.4.2",
-        "luxon": "2.0.2",
+        "luxon": "2.2.0",
         "uuid": "^8.3.2",
         "vue": "3.2.26",
         "vue-class-component": "^8.0.0-rc.1",
         "vue-i18n": "^9.1.7",
         "vue-router": "^4.0.11",
-        "vue-toastification": "^2.0.0-rc.1",
+        "vue-toastification": "^2.0.0-rc.5",
         "vue-window-size": "^1.1.2",
         "vuex": "^4.0.2",
-        "yup": "^0.32.9"
+        "yup": "^0.32.11"
     },
     "devDependencies": {
         "@types/jest": "^27.0.1",
