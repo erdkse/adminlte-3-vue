@@ -19,7 +19,8 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-inferrable-types': 'off',
-        'vue/script-setup-uses-vars': 'off'
+        'vue/script-setup-uses-vars': 'off',
+        'vue/multi-word-component-names': 'off'
     },
     overrides: [
         {
