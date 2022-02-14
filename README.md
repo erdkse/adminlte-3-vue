@@ -1,4 +1,4 @@
-# Admin LTE 3.2.0-rc - Vue 3.2.26
+# Admin LTE 3.2.0 - Vue 3.2.31
 
 To login website use:
 
