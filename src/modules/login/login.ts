@@ -39,7 +39,6 @@ export default class Login extends Vue {
             this.toast.success('Login succeeded');
             this.isAuthLoading = false;
         } catch (error: any) {
-            console.log(error);
             this.toast.error(error.message);
             this.isAuthLoading = false;
         }
