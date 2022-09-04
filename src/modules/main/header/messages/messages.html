@@ -1,9 +1,9 @@
-<app-dropdown size="lg">
-    <template v-slot:dropdown-button>
+<pf-dropdown hide-arrow>
+    <div slot="button">
         <i class="far fa-comments"></i>
         <span class="badge badge-danger navbar-badge">4</span>
-    </template>
-    <template v-slot:dropdown-menu>
+    </div>
+    <div slot="menu">
         <a href="#" class="dropdown-item">
             <div class="media">
                 <pf-image
@@ -77,5 +77,5 @@
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-    </template>
-</app-dropdown>
+    </div>
+</pf-dropdown>

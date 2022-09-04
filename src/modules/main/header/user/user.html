@@ -1,5 +1,5 @@
-<app-dropdown class="user-menu">
-    <template v-slot:dropdown-button>
+<pf-dropdown hide-arrow class="user-menu">
+    <div slot="button">
         <pf-image
             :src="user && user.picture"
             :fallbackSrc="require('@/assets/img/default-profile.png')"
@@ -9,8 +9,8 @@
             alt="User Image"
             rounded
         ></pf-image>
-    </template>
-    <template v-slot:dropdown-menu>
+    </div>
+    <div slot="menu">
         <li class="user-header bg-primary">
             <pf-image
                 :src="user && user.picture"
@@ -61,5 +61,5 @@
                 {{ $t("labels.signOut") }}
             </button>
         </li>
-    </template>
-</app-dropdown>
+    </div>
+</pf-dropdown>
