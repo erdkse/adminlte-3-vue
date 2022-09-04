@@ -1,0 +1,12 @@
+.user-img {
+    --pf-border: 3px solid #adb5bd;
+    --pf-padding: 3px;
+}
+
+.user-block {
+    pf-image {
+        --pf-border: 2px solid #adb5bd;
+        --pf-padding: 2px;
+        float: left;
+    }
+}

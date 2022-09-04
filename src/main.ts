@@ -4,21 +4,16 @@ import router from './router';
 import store from './store';
 
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
-import {library} from '@fortawesome/fontawesome-svg-core';
-import {faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import {faFacebook, faGooglePlus} from '@fortawesome/free-brands-svg-icons';
 import {Gatekeeper} from 'gatekeeper-client-sdk';
 import Toast, {PluginOptions} from 'vue-toastification';
 import {createI18n} from 'vue-i18n';
 import {VueWindowSizePlugin} from 'vue-window-size/option-api';
+import {ProfabricComponents} from '@profabric/vue-components';
 
 import en from './translation/en.json';
 import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
-import {ProfabricComponents} from '@profabric/vue-components';
-
-library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
 
 Gatekeeper.initialize('de378d9c-38c8-42c1-b961-9e4fa92d6a5e');
 
