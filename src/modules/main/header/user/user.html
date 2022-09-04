@@ -1,18 +1,26 @@
-<app-dropdown class="user-menu">
-    <template v-slot:dropdown-button>
-        <img
-            :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
-            class="user-image img-circle elevation-2"
+<pf-dropdown hide-arrow class="user-menu">
+    <div slot="button">
+        <pf-image
+            :src="user && user.picture"
+            :fallbackSrc="require('@/assets/img/default-profile.png')"
+            class="user-image-small"
+            width="25"
+            height="25"
             alt="User Image"
-        />
-    </template>
-    <template v-slot:dropdown-menu>
+            rounded
+        ></pf-image>
+    </div>
+    <div slot="menu">
         <li class="user-header bg-primary">
-            <img
-                :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
-                class="img-circle elevation-2"
+            <pf-image
+                :src="user && user.picture"
+                :fallbackSrc="require('@/assets/img/default-profile.png')"
+                class="user-image-big"
                 alt="User Image"
-            />
+                width="90"
+                height="90"
+                rounded
+            ></pf-image>
 
             <p>
                 <span>{{user && user.email}}</span>
@@ -53,5 +61,5 @@
                 {{ $t("labels.signOut") }}
             </button>
         </li>
-    </template>
-</app-dropdown>
+    </div>
+</pf-dropdown>

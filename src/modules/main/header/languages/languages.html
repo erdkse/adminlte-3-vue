@@ -1,8 +1,8 @@
-<app-dropdown>
-    <template v-slot:dropdown-button>
+<pf-dropdown hide-arrow>
+    <div slot="button">
         <i class="flag-icon" :class="flagIcon"></i>
-    </template>
-    <template v-slot:dropdown-menu>
+    </div>
+    <div slot="menu">
         <a
             class="dropdown-item"
             :class="{'active': selectedLanguage === language.key}"
@@ -12,5 +12,5 @@
             <i class="flag-icon mr-2" :class="language.flag"></i>
             {{ $t(language.label) }}
         </a>
-    </template>
-</app-dropdown>
+    </div>
+</pf-dropdown>

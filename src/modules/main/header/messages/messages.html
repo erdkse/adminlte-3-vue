@@ -1,16 +1,18 @@
-<app-dropdown size="lg">
-    <template v-slot:dropdown-button>
+<pf-dropdown hide-arrow>
+    <div slot="button">
         <i class="far fa-comments"></i>
         <span class="badge badge-danger navbar-badge">4</span>
-    </template>
-    <template v-slot:dropdown-menu>
+    </div>
+    <div slot="menu">
         <a href="#" class="dropdown-item">
             <div class="media">
-                <img
-                    src="../../../../assets/img/default-profile.png"
+                <pf-image
+                    :src="require('@/assets/img/default-profile.png')"
                     alt="User Avatar"
-                    class="img-size-50 mr-3 img-circle"
-                />
+                    width="50"
+                    class="mr-2"
+                    rounded
+                ></pf-image>
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         Brad Diesel
@@ -28,11 +30,13 @@
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
             <div class="media">
-                <img
-                    src="../../../../assets/img/default-profile.png"
+                <pf-image
+                    :src="require('@/assets/img/default-profile.png')"
                     alt="User Avatar"
-                    class="img-size-50 img-circle mr-3"
-                />
+                    class="mr-2"
+                    width="50"
+                    rounded
+                ></pf-image>
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         John Pierce
@@ -50,11 +54,13 @@
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
             <div class="media">
-                <img
-                    src="../../../../assets/img/default-profile.png"
+                <pf-image
+                    :src="require('@/assets/img/default-profile.png')"
                     alt="User Avatar"
-                    class="img-size-50 img-circle mr-3"
-                />
+                    class="mr-2"
+                    width="50"
+                    rounded
+                ></pf-image>
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         Nora Silvester
@@ -71,5 +77,5 @@
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-    </template>
-</app-dropdown>
+    </div>
+</pf-dropdown>

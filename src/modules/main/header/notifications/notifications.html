@@ -1,28 +1,38 @@
-<app-dropdown size="lg">
-    <template v-slot:dropdown-button>
+<pf-dropdown hide-arrow>
+    <div slot="button">
         <i class="far fa-bell"></i>
         <span class="badge badge-warning navbar-badge">15</span>
-    </template>
-    <template v-slot:dropdown-menu>
-        <span class="dropdown-item dropdown-header">15 {{ $t("labels.notifications") }}</span>
+    </div>
+    <div slot="menu">
+        <span class="dropdown-item dropdown-header"
+            >15 {{ $t("labels.notifications") }}</span
+        >
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 {{ $t("labels.newMessages") }}
-            <span class="float-right text-muted text-sm">3 {{ $t("labels.mins") }}</span>
+            <i class="fas fa-envelope mr-2"></i> 4 {{ $t("labels.newMessages")
+            }}
+            <span class="float-right text-muted text-sm"
+                >3 {{ $t("labels.mins") }}</span
+            >
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 {{ $t("labels.friendRequests") }}
-            <span class="float-right text-muted text-sm">12 {{ $t("labels.hours") }}</span>
+            <i class="fas fa-users mr-2"></i> 8 {{ $t("labels.friendRequests")
+            }}
+            <span class="float-right text-muted text-sm"
+                >12 {{ $t("labels.hours") }}</span
+            >
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
             <i class="fas fa-file mr-2"></i> 3 {{ $t("labels.newReports") }}
-            <span class="float-right text-muted text-sm">2 {{ $t("labels.days") }}</span>
+            <span class="float-right text-muted text-sm"
+                >2 {{ $t("labels.days") }}</span
+            >
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer"
             >{{ $t("labels.seeAllNotification") }}</a
         >
-    </template>
-</app-dropdown>
+    </div>
+</pf-dropdown>

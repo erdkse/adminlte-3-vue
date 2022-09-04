@@ -1,22 +1,29 @@
 <aside class="main-sidebar elevation-4" :class="sidebarSkin">
     <router-link to="/" class="brand-link">
-        <img
-            src="@/assets/img/logo.png"
+        <pf-image
+            :src="require('@/assets/img/logo.png')"
             alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3"
+            class="brand-image"
+            height="33"
+            width="33"
+            rounded
             style="opacity: 0.8"
-        />
+        ></pf-image>
         <span class="brand-text font-weight-light">AdminLTE 3</span>
     </router-link>
 
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img
-                    :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
-                    class="img-circle elevation-2"
+                <pf-image
+                    :src="user && user.picture"
+                    :fallbackSrc="require('@/assets/img/default-profile.png')"
+                    class="img-circle"
                     alt="User Image"
-                />
+                    width="34"
+                    height="34"
+                    rounded
+                ></pf-image>
             </div>
             <div class="info">
                 <router-link to="/profile" class="d-block">

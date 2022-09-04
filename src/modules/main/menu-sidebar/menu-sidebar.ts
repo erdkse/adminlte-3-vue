@@ -1,11 +1,13 @@
 import {IUser} from '@/interfaces/user';
 import {Options, Vue} from 'vue-class-component';
 import MenuItem from '@/components/menu-item/menu-item.vue';
+import {PfImage} from '@profabric/vue-components';
 
 @Options({
     name: 'app-menu-sidebar',
     components: {
-        'app-menu-item': MenuItem
+        'app-menu-item': MenuItem,
+        'pf-image': PfImage
     }
 })
 export default class MenuSidebar extends Vue {

@@ -1,4 +1,7 @@
-import {Option} from '@/components/select/select';
+export type Option = {
+    value: string;
+    label: string;
+};
 
 export const NAVBAR_LIGHT_VARIANTS: Array<Option> = [
     {value: 'navbar-light', label: 'Light'},

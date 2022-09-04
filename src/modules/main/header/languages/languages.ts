@@ -1,10 +1,10 @@
 import {Options, Vue} from 'vue-class-component';
-import Dropdown from '@/components/dropdown/dropdown.vue';
+import {PfDropdown} from '@profabric/vue-components';
 
 @Options({
     name: 'languages-dropdown',
     components: {
-        'app-dropdown': Dropdown
+        'pf-dropdown': PfDropdown
     }
 })
 export default class Languages extends Vue {
@@ -39,6 +39,7 @@ export default class Languages extends Vue {
 
     public mounted() {
         this.selectedLanguage = this.$i18n.locale;
+        console.log('PfDropdown', PfDropdown);
     }
 
     get flagIcon() {
