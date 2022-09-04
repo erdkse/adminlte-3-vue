@@ -2,14 +2,14 @@ import {Options, Vue} from 'vue-class-component';
 import {loginByAuth, loginByGoogle, loginByFacebook} from '@/services/auth';
 import Checkbox from '@/components/checkbox/checkbox.vue';
 import Input from '@/components/input/input.vue';
-import Button from '@/components/button/button.vue';
 import {useToast} from 'vue-toastification';
+import {PfButton} from '@profabric/vue-components';
 
 @Options({
     components: {
         'app-checkbox': Checkbox,
         'app-input': Input,
-        'app-button': Button
+        'pf-button': PfButton
     }
 })
 export default class Login extends Vue {

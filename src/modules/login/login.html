@@ -36,41 +36,40 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-5">
-                        <app-button
-                            class="btn-primary"
+                        <pf-button
                             type="submit"
                             block="true"
                             :loading="isAuthLoading"
                             :disabled="isFacebookLoading || isGoogleLoading"
                         >
                             {{ $t("labels.signIn") }}
-                        </app-button>
+                        </pf-button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
             <div class="social-auth-links text-center mt-2 mb-3">
-                <app-button
-                    class="btn-primary"
-                    icon="facebook"
+                <pf-button
+                    class="mb-2"
                     block="true"
                     @click="loginByFacebook"
                     :loading="isFacebookLoading"
                     :disabled="isAuthLoading || isGoogleLoading"
                 >
-                    {{ $t("labels.signInUsingFB") }}
-                </app-button>
-                <app-button
-                    class="btn-danger"
-                    icon="google-plus"
+                    <i class="fab fa-facebook mr-2"></i>
+                    <span> {{ $t("labels.signInUsingFB") }}</span>
+                </pf-button>
+                <pf-button
                     block="true"
+                    theme="danger"
                     @click="loginByGoogle"
                     :loading="isGoogleLoading"
                     :disabled="isAuthLoading || isFacebookLoading"
                 >
-                    {{ $t("labels.SignInUsingGoogle") }}
-                </app-button>
+                    <i class="fab fa-google mr-2"></i>
+                    <span>{{ $t("labels.SignInUsingGoogle") }}</span>
+                </pf-button>
             </div>
             <!-- /.social-auth-links -->
 

@@ -1,12 +1,12 @@
 import {Options, Vue} from 'vue-class-component';
-import Button from '@/components/button/button.vue';
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
+import {PfButton} from '@profabric/vue-components';
 
 @Options({
     components: {
         'app-input': Input,
-        'app-button': Button
+        'pf-button': PfButton
     }
 })
 export default class RecoverPassword extends Vue {

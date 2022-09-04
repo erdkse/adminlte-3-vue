@@ -40,41 +40,40 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-5">
-                        <app-button
-                            class="btn-primary"
+                        <pf-button
                             type="submit"
                             block="true"
                             :loading="isAuthLoading"
                             :disabled="isFacebookLoading || isGoogleLoading"
                         >
                             {{ $t("labels.register") }}
-                        </app-button>
+                        </pf-button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
             <div class="social-auth-links text-center">
-                <app-button
-                    class="btn-primary"
-                    icon="facebook"
+                <pf-button
+                    class="mb-2"
                     block="true"
                     @click="registerByFacebook"
                     :loading="isFacebookLoading"
                     :disabled="isAuthLoading || isGoogleLoading"
                 >
-                    {{ $t("labels.signUpUsingFB") }}
-                </app-button>
-                <app-button
-                    class="btn-danger"
-                    icon="google-plus"
+                    <i class="fab fa-facebook mr-2"></i>
+                    <span>{{ $t("labels.signUpUsingFB") }}</span>
+                </pf-button>
+                <pf-button
                     block="true"
+                    theme="danger"
                     @click="registerByGoogle"
                     :loading="isGoogleLoading"
                     :disabled="isAuthLoading || isFacebookLoading"
                 >
-                    {{ $t("labels.signUpUsingGoogle") }}
-                </app-button>
+                    <i class="fab fa-google mr-2"></i>
+                    <span> {{ $t("labels.signUpUsingGoogle") }} </span>
+                </pf-button>
             </div>
 
             <router-link to="/login" class="text-center">

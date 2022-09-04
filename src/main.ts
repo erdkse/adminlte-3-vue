@@ -16,6 +16,7 @@ import en from './translation/en.json';
 import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
+import {ProfabricComponents} from '@profabric/vue-components';
 
 library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
 
@@ -47,4 +48,5 @@ createApp(App)
     .use(VueWindowSizePlugin)
     .use(Toast, options)
     .use(i18n)
+    .use(ProfabricComponents)
     .mount('#app');
