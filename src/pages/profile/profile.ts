@@ -1,6 +1,12 @@
+import {PfImage} from '@profabric/vue-components';
 import {Options, Vue} from 'vue-class-component';
 
-@Options({})
+@Options({
+    name: 'app-profile',
+    components: {
+        'pf-image': PfImage
+    }
+})
 export default class Profile extends Vue {
     private activeTab = 'ACTIVITY';
 

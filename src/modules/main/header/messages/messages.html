@@ -6,11 +6,13 @@
     <template v-slot:dropdown-menu>
         <a href="#" class="dropdown-item">
             <div class="media">
-                <img
-                    src="../../../../assets/img/default-profile.png"
+                <pf-image
+                    :src="require('@/assets/img/default-profile.png')"
                     alt="User Avatar"
-                    class="img-size-50 mr-3 img-circle"
-                />
+                    width="50"
+                    class="mr-2"
+                    rounded
+                ></pf-image>
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         Brad Diesel
@@ -28,11 +30,13 @@
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
             <div class="media">
-                <img
-                    src="../../../../assets/img/default-profile.png"
+                <pf-image
+                    :src="require('@/assets/img/default-profile.png')"
                     alt="User Avatar"
-                    class="img-size-50 img-circle mr-3"
-                />
+                    class="mr-2"
+                    width="50"
+                    rounded
+                ></pf-image>
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         John Pierce
@@ -50,11 +54,13 @@
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
             <div class="media">
-                <img
-                    src="../../../../assets/img/default-profile.png"
+                <pf-image
+                    :src="require('@/assets/img/default-profile.png')"
                     alt="User Avatar"
-                    class="img-size-50 img-circle mr-3"
-                />
+                    class="mr-2"
+                    width="50"
+                    rounded
+                ></pf-image>
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         Nora Silvester

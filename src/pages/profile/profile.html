@@ -7,9 +7,13 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">
-                        <router-link to="/">{{ $t("labels.home") }}</router-link>
+                        <router-link to="/"
+                            >{{ $t("labels.home") }}</router-link
+                        >
                     </li>
-                    <li class="breadcrumb-item active">{{ $t("labels.userProfile") }}</li>
+                    <li class="breadcrumb-item active">
+                        {{ $t("labels.userProfile") }}
+                    </li>
                 </ol>
             </div>
         </div>
@@ -26,11 +30,14 @@
                 <div class="card card-primary card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img
-                                class="profile-user-img img-fluid img-circle"
-                                src="../../assets/img/default-profile.png"
+                            <pf-image
+                                class="user-img"
+                                :src="require('@/assets/img/default-profile.png')"
                                 alt="User profile picture"
-                            />
+                                width="100"
+                                height="100"
+                                rounded
+                            ></pf-image>
                         </div>
 
                         <h3 class="profile-username text-center">
@@ -158,11 +165,13 @@
                             >
                                 <div class="post">
                                     <div class="user-block">
-                                        <img
-                                            class="img-circle img-bordered-sm"
-                                            src="../../assets/img/default-profile.png"
+                                        <pf-image
+                                            :src="require('@/assets/img/default-profile.png')"
                                             alt="user image"
-                                        />
+                                            width="40"
+                                            height="40"
+                                            rounded
+                                        ></pf-image>
                                         <span class="username">
                                             <a href="#">Jonathan Burke Jr.</a>
                                             <a
@@ -353,38 +362,30 @@
                                             </h3>
 
                                             <div class="timeline-body">
-                                                <img
-                                                    src="../../assets/img/default-profile.png"
-                                                    style="
-                                                        width: 1.6rem;
-                                                        height: 1.6rem;
-                                                    "
+                                                <pf-image
+                                                    :src="require('@/assets/img/default-profile.png')"
                                                     alt="..."
-                                                />
-                                                <img
-                                                    src="../../assets/img/default-profile.png"
-                                                    style="
-                                                        width: 1.6rem;
-                                                        height: 1.6rem;
-                                                    "
+                                                    width="100"
+                                                    height="100"
+                                                ></pf-image>
+                                                <pf-image
+                                                    :src="require('@/assets/img/default-profile.png')"
                                                     alt="..."
-                                                />
-                                                <img
-                                                    src="../../assets/img/default-profile.png"
-                                                    style="
-                                                        width: 1.6rem;
-                                                        height: 1.6rem;
-                                                    "
+                                                    width="100"
+                                                    height="100"
+                                                ></pf-image>
+                                                <pf-image
+                                                    :src="require('@/assets/img/default-profile.png')"
                                                     alt="..."
-                                                />
-                                                <img
-                                                    src="../../assets/img/default-profile.png"
-                                                    style="
-                                                        width: 1.6rem;
-                                                        height: 1.6rem;
-                                                    "
+                                                    width="100"
+                                                    height="100"
+                                                ></pf-image>
+                                                <pf-image
+                                                    :src="require('@/assets/img/default-profile.png')"
                                                     alt="..."
-                                                />
+                                                    width="100"
+                                                    height="100"
+                                                ></pf-image>
                                             </div>
                                         </div>
                                     </div>

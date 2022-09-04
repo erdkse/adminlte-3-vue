@@ -41,6 +41,12 @@ const i18n = createI18n({
     fallbackLocale: 'en'
 });
 
+(window as any).PF = {
+    config: {
+        mode: 'bs4'
+    }
+};
+
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .use(store)

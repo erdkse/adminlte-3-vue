@@ -2,11 +2,13 @@ import {IUser} from '@/interfaces/user';
 import {Options, Vue} from 'vue-class-component';
 import Dropdown from '@/components/dropdown/dropdown.vue';
 import {DateTime} from 'luxon';
+import {PfImage} from '@profabric/vue-components';
 
 @Options({
     name: 'user-dropdown',
     components: {
-        'app-dropdown': Dropdown
+        'app-dropdown': Dropdown,
+        'pf-image': PfImage
     }
 })
 export default class User extends Vue {

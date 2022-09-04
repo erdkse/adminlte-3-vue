@@ -1,6 +1,6 @@
 import {Options, Vue} from 'vue-class-component';
-import {Option} from '@/components/select/select';
 import {
+    Option,
     NAVBAR_DARK_VARIANTS,
     NAVBAR_LIGHT_VARIANTS,
     SIDEBAR_DARK_SKINS,
