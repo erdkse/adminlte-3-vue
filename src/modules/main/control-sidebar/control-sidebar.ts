@@ -1,5 +1,4 @@
 import {Options, Vue} from 'vue-class-component';
-import Checkbox from '@/components/checkbox/checkbox.vue';
 import Select from '@/components/select/select.vue';
 import {Option} from '@/components/select/select';
 import {
@@ -8,11 +7,12 @@ import {
     SIDEBAR_DARK_SKINS,
     SIDEBAR_LIGHT_SKINS
 } from '@/utils/themes';
+import {PfCheckbox} from '@profabric/vue-components';
 
 @Options({
     name: 'app-control-sidebar',
     components: {
-        'app-checkbox': Checkbox,
+        'pf-checkbox': PfCheckbox,
         'app-select': Select
     }
 })

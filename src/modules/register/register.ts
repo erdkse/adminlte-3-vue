@@ -4,15 +4,14 @@ import {
     registerByGoogle,
     registerByFacebook
 } from '@/services/auth';
-import Checkbox from '@/components/checkbox/checkbox.vue';
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
-import {PfButton} from '@profabric/vue-components';
+import {PfButton, PfCheckbox} from '@profabric/vue-components';
 
 @Options({
     components: {
-        'app-checkbox': Checkbox,
         'app-input': Input,
+        'pf-checkbox': PfCheckbox,
         'pf-button': PfButton
     }
 })
