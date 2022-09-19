@@ -1,0 +1,46 @@
+<pf-dropdown hide-arrow :openOnButtonClick="false" :isOpen="isDropdownOpen">
+    <div slot="button">
+        <div class="input-group">
+            <input
+                class="form-control form-control-sidebar"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+                :value="searchText"
+                @input="handleSearchTextChange"
+            />
+            <div class="input-group-append">
+                <button class="btn btn-sidebar" @click="handleIconClick()">
+                    <i
+                        :class="{
+                            fas: true,
+                            'fa-search': searchText.length === 0,
+                            'fa-times': searchText.length > 0,
+                            'fa-fw': true
+                        }"
+                    ></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="menu" slot="menu">
+        <div v-if="foundMenuItems.length === 0" class="nothing-found">
+            No Element found
+        </div>
+
+        <div v-if="foundMenuItems.length > 0" class="list-group">
+            <router-link
+                :to="menuItem.path"
+                v-for="menuItem in foundMenuItems"
+                class="list-group-item"
+                @click="handleMenuItemClick"
+            >
+                <div
+                    class="search-title"
+                    v-html="boldString(menuItem.name, searchText)"
+                ></div>
+                <div class="search-path">{{ menuItem.name }}</div>
+            </router-link>
+        </div>
+    </div>
+</pf-dropdown>

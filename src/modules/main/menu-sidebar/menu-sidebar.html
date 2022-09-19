@@ -1,4 +1,4 @@
-<aside class="main-sidebar elevation-4" :class="sidebarSkin">
+<aside v-if="menu" class="main-sidebar elevation-4" :class="sidebarSkin">
     <router-link to="/" class="brand-link">
         <pf-image
             :src="require('@/assets/img/logo.png')"
@@ -32,34 +32,17 @@
             </div>
         </div>
 
-        <nav class="mt-2">
+        <div class="form-inline">
+            <app-sidebar-search></app-sidebar-search>
+        </div>
+
+        <nav class="mt-2" style="overflow-y: hidden">
             <ul
                 class="nav nav-pills nav-sidebar flex-column"
                 data-widget="treeview"
                 role="menu"
                 data-accordion="false"
             >
-                <!-- <li class="nav-item">
-                    <router-link
-                        to="/"
-                        class="nav-link"
-                        exact
-                        exact-active-class="active"
-                    >
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>{{ $t("labels.dashboard") }}</p>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link
-                        to="/profile"
-                        class="nav-link"
-                        active-class="active"
-                    >
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>{{ $t("labels.profile") }}</p>
-                    </router-link>
-                </li> -->
                 <app-menu-item
                     v-for="item in menu"
                     :menuItem="item"

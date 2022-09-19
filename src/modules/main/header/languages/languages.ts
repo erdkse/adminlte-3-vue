@@ -39,7 +39,6 @@ export default class Languages extends Vue {
 
     public mounted() {
         this.selectedLanguage = this.$i18n.locale;
-        console.log('PfDropdown', PfDropdown);
     }
 
     get flagIcon() {

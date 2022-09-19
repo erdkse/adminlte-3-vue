@@ -30,7 +30,7 @@ const options: PluginOptions = {
     icon: true,
     rtl: false
 };
-const i18n = createI18n({
+export const i18n = createI18n({
     locale: 'en',
     messages: {en, es, tr},
     fallbackLocale: 'en'

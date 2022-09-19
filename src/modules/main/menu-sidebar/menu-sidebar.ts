@@ -2,11 +2,13 @@ import {IUser} from '@/interfaces/user';
 import {Options, Vue} from 'vue-class-component';
 import MenuItem from '@/components/menu-item/menu-item.vue';
 import {PfImage} from '@profabric/vue-components';
+import SidebarSearch from '@/components/sidebar-search/sidebar-search.vue';
 
 @Options({
     name: 'app-menu-sidebar',
     components: {
         'app-menu-item': MenuItem,
+        'app-sidebar-search': SidebarSearch,
         'pf-image': PfImage
     }
 })
