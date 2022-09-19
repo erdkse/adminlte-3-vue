@@ -14,7 +14,7 @@
         "@fortawesome/free-brands-svg-icons": "6.2.0",
         "@fortawesome/free-solid-svg-icons": "6.2.0",
         "@fortawesome/vue-fontawesome": "3.0.0-4",
-        "@profabric/vue-components": "0.1.1",
+        "@profabric/vue-components": "0.1.2",
         "axios": "0.27.2",
         "gatekeeper-client-sdk": "0.4.2",
         "luxon": "3.0.3",
