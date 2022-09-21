@@ -1,6 +1,5 @@
 pf-dropdown {
-    width: 100%;
-    --pf-dropdown-width: 100%;
+    width: calc(100% - 12px);
     --pf-dropdown-border: none;
     --pf-dropdown-menu-min-width: 100%;
     --pf-dropdown-menu-margin-top: 0px;
