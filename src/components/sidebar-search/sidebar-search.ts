@@ -42,7 +42,12 @@ export default class SidebarSearch extends Vue {
         }
 
         menu.forEach((menuItem: any) => {
-            if (menuItem.name.includes(this.searchText) && menuItem.path) {
+            if (
+                menuItem.name
+                    .toLowerCase()
+                    .includes(this.searchText.toLowerCase()) &&
+                menuItem.path
+            ) {
                 this.foundMenuItems.push(menuItem);
             }
             if (menuItem.children) {
@@ -57,8 +62,14 @@ export default class SidebarSearch extends Vue {
 
     public boldString(str: string, substr: string) {
         return str.replaceAll(
-            substr,
-            `<strong class="text-light">${substr}</strong>`
+            this.capitalizeFirstLetter(substr),
+            `<strong class="text-light">${this.capitalizeFirstLetter(
+                substr
+            )}</strong>`
         );
+    }
+
+    private capitalizeFirstLetter(string: string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 }
