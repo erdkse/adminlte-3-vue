@@ -5,8 +5,10 @@
         @click="handleMainMenuAction"
     >
         <i class="nav-icon fas fa-tachometer-alt"></i>
-        <p>{{ $t(menuItem.name) }}</p>
-        <i v-if="isExpandable" class="right fas fa-angle-left"></i>
+        <p>
+            {{ $t(menuItem.name) }}
+            <i v-if="isExpandable" class="right fas fa-angle-left"></i>
+        </p>
     </a>
     <ul class="nav nav-treeview" v-for="item in menuItem.children">
         <li class="nav-item">
