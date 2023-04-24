@@ -1,7 +1,6 @@
 import {IUser} from './user';
 export interface IAuthState {
-    token: string;
-    user: IUser;
+    authentication: any;
 }
 
 export interface IAuthModule {

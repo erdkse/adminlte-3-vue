@@ -1,20 +1,41 @@
 import {calculateWindowSize} from '@/utils/helpers';
-import {Component, Vue} from 'vue-facing-decorator';
+import {Component, Vue, Watch} from 'vue-facing-decorator';
 import {useWindowSize} from '@vueuse/core';
+import {GoogleProvider, getFacebookLoginStatus} from '@/utils/oidc-providers';
 
-@Component({
-    // watch: {
-    //     currentWindowSize: (value) => {
-    //         console.log(value);
-    //     }
-    // }
-})
+@Component({})
 export default class App extends Vue {
-    get currentWindowSize() {
-        if (this.$store.getters['ui/screenSize'] !== this.windowSize) {
-            this.$store.dispatch('ui/setWindowSize', this.windowSize);
+    isAppLoading: boolean = true;
+
+    async mounted() {
+        await this.checkSession();
+    }
+
+    async checkSession() {
+        try {
+            let responses: any = await Promise.all([
+                getFacebookLoginStatus(),
+                GoogleProvider.getUser()
+            ]);
+
+            responses = responses.filter((r: any) => Boolean(r));
+
+            console.log('responses', responses);
+
+            if (responses && responses.length > 0) {
+                this.$store.dispatch('auth/setAuthentication', responses[0]);
+            }
+        } catch (error: any) {
+            console.log('error', error);
         }
-        return this.windowSize;
+        this.isAppLoading = false;
+    }
+
+    @Watch('windowSize')
+    watchWindowSize(newValue: any) {
+        if (this.$store.getters['ui/screenSize'] !== newValue) {
+            this.$store.dispatch('ui/setWindowSize', newValue);
+        }
     }
 
     get windowSize() {

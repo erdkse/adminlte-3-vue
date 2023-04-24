@@ -16,8 +16,8 @@ import {i18n} from '@/translation';
 export default class MenuSidebar extends Vue {
     menu = MENU;
 
-    get user(): IUser {
-        return this.$store.getters['auth/user'];
+    get authentication(): IUser {
+        return this.$store.getters['auth/authentication'];
     }
 
     get sidebarSkin() {

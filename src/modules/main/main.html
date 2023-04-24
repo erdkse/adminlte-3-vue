@@ -8,7 +8,7 @@
     <control-sidebar></control-sidebar>
     <div
         id="sidebar-overlay"
-        v-if="screenSize === 'xs' && isSidebarMenuCollapsed"
+        v-if="uiValues.screenSize === 'xs' && uiValues.menuSidebarCollapsed"
         @click="toggleMenuSidebar"
     ></div>
 </div>

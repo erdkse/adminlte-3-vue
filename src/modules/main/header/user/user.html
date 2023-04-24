@@ -1,7 +1,7 @@
 <pf-dropdown hide-arrow class="user-menu">
     <div slot="button">
         <pf-image
-            :src="user && user.picture"
+            :src="authentication && authentication.profile && authentication.profile.picture"
             fallbackSrc="src/assets/img/default-profile.png"
             class="user-image-small"
             width="25"
@@ -13,7 +13,7 @@
     <div slot="menu">
         <li class="user-header bg-primary">
             <pf-image
-                :src="user && user.picture"
+                :src="authentication && authentication.profile && authentication.profile.picture"
                 fallbackSrc="src/assets/img/default-profile.png"
                 class="user-image-big"
                 alt="User Image"
@@ -23,7 +23,10 @@
             ></pf-image>
 
             <p>
-                <span>{{user && user.email}}</span>
+                <span
+                    >{{authentication && authentication.profile &&
+                    authentication.profile.email}}</span
+                >
                 <small>
                     <span>{{ $t("labels.memberSince") }}&nbsp;</span>
                     <span>{{readableCreatedAtDate}}</span>

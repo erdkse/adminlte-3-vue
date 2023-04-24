@@ -1,9 +1,9 @@
 import {Component, Vue} from 'vue-facing-decorator';
-import {loginByAuth, loginByGoogle, loginByFacebook} from '@/services/auth';
 
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
 import {PfButton, PfCheckbox} from '@profabric/vue-components';
+import {GoogleProvider, authLogin, facebookLogin} from '@/utils/oidc-providers';
 
 @Component({
     components: {
@@ -34,8 +34,8 @@ export default class Login extends Vue {
     public async loginByAuth(): Promise<void> {
         try {
             this.isAuthLoading = true;
-            const token = await loginByAuth(this.email, this.password);
-            this.$store.dispatch('auth/login', token);
+            const response = await authLogin(this.email, this.password);
+            this.$store.dispatch('auth/setAuthentication', response);
             this.toast.success('Login succeeded');
             this.isAuthLoading = false;
         } catch (error: any) {
@@ -47,8 +47,8 @@ export default class Login extends Vue {
     public async loginByFacebook(): Promise<void> {
         try {
             this.isFacebookLoading = true;
-            const token = await loginByFacebook();
-            this.$store.dispatch('auth/login', token);
+            const response = await facebookLogin();
+            this.$store.dispatch('auth/setAuthentication', response);
             this.toast.success('Login succeeded');
             this.isFacebookLoading = false;
         } catch (error: any) {
@@ -60,8 +60,8 @@ export default class Login extends Vue {
     public async loginByGoogle(): Promise<void> {
         try {
             this.isGoogleLoading = true;
-            const token = await loginByGoogle();
-            this.$store.dispatch('auth/login', token);
+            const response = await GoogleProvider.signinPopup();
+            this.$store.dispatch('auth/setAuthentication', response);
             this.toast.success('Login succeeded');
             this.isGoogleLoading = false;
         } catch (error: any) {

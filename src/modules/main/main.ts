@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import {Component, Vue} from 'vue-facing-decorator';
+import {Component, Vue, Watch} from 'vue-facing-decorator';
 import Header from './header/header.vue';
 import MenuSidebar from './menu-sidebar/menu-sidebar.vue';
 import ControlSidebar from './control-sidebar/control-sidebar.vue';
 import Footer from './footer/footer.vue';
-import {getProfile} from '@/services/auth';
 
 @Component({
     components: {
@@ -13,10 +12,7 @@ import {getProfile} from '@/services/auth';
         'menu-sidebar': MenuSidebar,
         'control-sidebar': ControlSidebar,
         'app-footer': Footer
-    },
-    // watch: {
-    //     watchLayoutChanges: (_) => {}
-    // }
+    }
 })
 export default class Main extends Vue {
     private appElement: HTMLElement | null = null;
@@ -25,12 +21,6 @@ export default class Main extends Vue {
         this.appElement = document.getElementById('app') as HTMLElement;
         this.appElement.classList.add('sidebar-mini');
         this.appElement.classList.add('layout-fixed');
-        try {
-            const user = await getProfile();
-            this.$store.dispatch('auth/getUser', user);
-        } catch (error) {
-            this.$store.dispatch('auth/logout');
-        }
     }
 
     public unmounted(): void {
@@ -38,7 +28,19 @@ export default class Main extends Vue {
         this.appElement.classList.remove('layout-fixed');
     }
 
-    get watchLayoutChanges() {
+    public toggleMenuSidebar() {
+        this.$store.dispatch('ui/toggleMenuSidebar');
+    }
+
+    @Watch('uiValues')
+    watcher(newValue: any) {
+        const {
+            darkModeSelected,
+            menuSidebarCollapsed,
+            controlSidebarCollapsed,
+            screenSize
+        } = newValue;
+
         if (!this.appElement) {
             return;
         }
@@ -48,38 +50,32 @@ export default class Main extends Vue {
         this.appElement.classList.remove('sidebar-open');
         this.appElement.classList.remove('control-sidebar-slide-open');
 
-        if (this.darkModeSelected) {
+        if (darkModeSelected) {
             this.appElement.classList.add('dark-mode');
         }
 
-        if (!this.controlSidebarCollapsed) {
+        if (!controlSidebarCollapsed) {
             this.appElement.classList.add('control-sidebar-slide-open');
         }
 
-        if (this.menuSidebarCollapsed && this.screenSize === 'lg') {
+        if (menuSidebarCollapsed && screenSize === 'lg') {
             this.appElement.classList.add('sidebar-collapse');
-        } else if (this.menuSidebarCollapsed && this.screenSize === 'xs') {
+        } else if (menuSidebarCollapsed && screenSize === 'xs') {
             this.appElement.classList.add('sidebar-open');
-        } else if (!this.menuSidebarCollapsed && this.screenSize !== 'lg') {
+        } else if (!menuSidebarCollapsed && screenSize !== 'lg') {
             this.appElement.classList.add('sidebar-closed');
             this.appElement.classList.add('sidebar-collapse');
         }
-        return this.appElement.classList.value;
     }
 
-    get darkModeSelected() {
-        return this.$store.getters['ui/darkModeSelected'];
-    }
-
-    get menuSidebarCollapsed() {
-        return this.$store.getters['ui/menuSidebarCollapsed'];
-    }
-
-    get controlSidebarCollapsed() {
-        return this.$store.getters['ui/controlSidebarCollapsed'];
-    }
-
-    get screenSize() {
-        return this.$store.getters['ui/screenSize'];
+    get uiValues() {
+        return {
+            darkModeSelected: this.$store.getters['ui/darkModeSelected'],
+            menuSidebarCollapsed:
+                this.$store.getters['ui/menuSidebarCollapsed'],
+            controlSidebarCollapsed:
+                this.$store.getters['ui/controlSidebarCollapsed'],
+            screenSize: this.$store.getters['ui/screenSize']
+        };
     }
 }
