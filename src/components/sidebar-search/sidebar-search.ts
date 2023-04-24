@@ -1,4 +1,4 @@
-import {Component, Vue} from 'vue-facing-decorator';
+import {Component, Prop, Vue} from 'vue-facing-decorator';
 // import {MENU} from '@/modules/main/menu-sidebar/menu-sidebar';
 import {PfDropdown} from '@profabric/vue-components';
 
@@ -9,7 +9,8 @@ import {PfDropdown} from '@profabric/vue-components';
     }
 })
 export default class SidebarSearch extends Vue {
-    public searchText: string = '';
+    @Prop() menu: any = [];
+    private searchText: string = '';
     public foundMenuItems: any[] = [];
     public isDropdownOpen: boolean = false;
 
@@ -18,7 +19,7 @@ export default class SidebarSearch extends Vue {
 
         if (event.target.value) {
             this.searchText = event.target.value;
-            this.findMenuItems([]);
+            this.findMenuItems(this.menu);
             return;
         } else {
             this.searchText = '';

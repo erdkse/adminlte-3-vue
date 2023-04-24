@@ -6,16 +6,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 // https://vitejs.dev/config/
 export default defineConfig({
     mode: 'development',
-    plugins: [
-        vue({
-            template: {
-                compilerOptions: {
-                    isCustomElement: (tag) => tag.startsWith('pf-')
-                }
-            }
-        }),
-        basicSsl()
-    ],
+    plugins: [vue(), basicSsl()],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),
