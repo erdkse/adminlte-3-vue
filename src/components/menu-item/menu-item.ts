@@ -1,17 +1,10 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Prop, Vue} from 'vue-facing-decorator';
 
-@Options({
-    name: 'app-menu-item',
-    props: {
-        menuItem: Object,
-        icon: String,
-        type: String,
-        placeholder: String,
-        autocomplete: String
-    }
+@Component({
+    name: 'app-menu-item'
 })
 export default class MenuItem extends Vue {
-    private menuItem: any;
+    @Prop() menuItem: any;
     private isMenuExtended: boolean = false;
     private isExpandable: boolean = false;
     private isMainActive: boolean = false;
@@ -50,7 +43,7 @@ export default class MenuItem extends Vue {
                     this.isMenuExtended = true;
                 }
             });
-        } else if (this.menuItem.path === url) {
+        } else if (this.menuItem?.path === url) {
             this.isMainActive = true;
         }
         if (!this.isMainActive && !this.isOneOfChildrenActive) {

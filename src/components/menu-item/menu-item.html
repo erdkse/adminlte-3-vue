@@ -1,4 +1,4 @@
-<li class="nav-item" :class="{'menu-open': isMenuExtended}">
+<li v-if="menuItem" class="nav-item" :class="{'menu-open': isMenuExtended}">
     <a
         class="nav-link"
         :class="{'active': isMainActive || isOneOfChildrenActive}"

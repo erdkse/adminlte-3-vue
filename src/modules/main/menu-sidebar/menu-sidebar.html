@@ -1,7 +1,7 @@
 <aside v-if="menu" class="main-sidebar elevation-4" :class="sidebarSkin">
     <router-link to="/" class="brand-link">
         <pf-image
-            :src="require('@/assets/img/logo.png')"
+            src="src/assets/img/logo.png"
             alt="AdminLTE Logo"
             class="brand-image"
             height="33"
@@ -17,7 +17,7 @@
             <div class="image">
                 <pf-image
                     :src="user && user.picture"
-                    :fallbackSrc="require('@/assets/img/default-profile.png')"
+                    fallbackSrc="src/assets/img/default-profile.png"
                     class="img-circle"
                     alt="User Image"
                     width="34"

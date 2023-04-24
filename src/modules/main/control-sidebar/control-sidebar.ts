@@ -1,4 +1,4 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import {
     Option,
     NAVBAR_DARK_VARIANTS,
@@ -8,7 +8,7 @@ import {
 } from '@/utils/themes';
 import {PfCheckbox, PfSelect} from '@profabric/vue-components';
 
-@Options({
+@Component({
     name: 'app-control-sidebar',
     components: {
         'pf-checkbox': PfCheckbox,

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import Messages from './messages/messages.vue';
 import Notifications from './notifications/notifications.vue';
 import Languages from './languages/languages.vue';
 import User from './user/user.vue';
 
-@Options({
+@Component({
     components: {
         'messages-dropdown': Messages,
         'notifications-dropdown': Notifications,

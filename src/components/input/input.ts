@@ -1,14 +1,7 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 
-@Options({
+@Component({
     name: 'app-input',
-    props: {
-        modelValue: String,
-        icon: String,
-        type: String,
-        placeholder: String,
-        autocomplete: String
-    },
     emits: ['update:modelValue']
 })
 export default class Input extends Vue {

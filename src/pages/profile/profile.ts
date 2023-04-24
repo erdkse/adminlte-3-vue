@@ -1,7 +1,7 @@
 import {PfImage} from '@profabric/vue-components';
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 
-@Options({
+@Component({
     name: 'app-profile',
     components: {
         'pf-image': PfImage

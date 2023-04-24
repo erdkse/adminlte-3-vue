@@ -1,10 +1,10 @@
 <p align="center" style="margin-bottom: 32px">
   <a href="https://erdkse.com" >
-    <img src="https://raw.githubusercontent.com/erdkse/adminlte-3-vue/main/src/assets/img/logo.png" alt="AdminLTE logo" width="75" height="75">
+    <img src="https://raw.githubusercontent.com/erdkse/adminlte-3-vue/main/srcsrc/assets/img/logo.png" alt="AdminLTE logo" width="75" height="75">
   </a>
 </p>
 
-<h1 align="center">Admin LTE 3.2.0 - Vue 3.2.39</h1>
+<h1 align="center">Admin LTE 3.2.0 - Vue 3.2.47</h1>
 
 <p>
   This repository is a form of original AdminLTE project. It is aim to use AdminLTE template with Vue.

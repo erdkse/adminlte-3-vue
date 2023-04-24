@@ -1,4 +1,4 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import {
     registerByAuth,
     registerByGoogle,
@@ -8,7 +8,7 @@ import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
 import {PfButton, PfCheckbox} from '@profabric/vue-components';
 
-@Options({
+@Component({
     components: {
         'app-input': Input,
         'pf-checkbox': PfCheckbox,

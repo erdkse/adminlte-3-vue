@@ -2,7 +2,7 @@
     <div slot="button">
         <pf-image
             :src="user && user.picture"
-            :fallbackSrc="require('@/assets/img/default-profile.png')"
+            fallbackSrc="src/assets/img/default-profile.png"
             class="user-image-small"
             width="25"
             height="25"
@@ -14,7 +14,7 @@
         <li class="user-header bg-primary">
             <pf-image
                 :src="user && user.picture"
-                :fallbackSrc="require('@/assets/img/default-profile.png')"
+                fallbackSrc="src/assets/img/default-profile.png"
                 class="user-image-big"
                 alt="User Image"
                 width="90"

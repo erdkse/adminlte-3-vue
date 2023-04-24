@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import Header from './header/header.vue';
 import MenuSidebar from './menu-sidebar/menu-sidebar.vue';
 import ControlSidebar from './control-sidebar/control-sidebar.vue';
 import Footer from './footer/footer.vue';
 import {getProfile} from '@/services/auth';
 
-@Options({
+@Component({
     components: {
         'app-header': Header,
         'menu-sidebar': MenuSidebar,
         'control-sidebar': ControlSidebar,
         'app-footer': Footer
     },
-    watch: {
-        watchLayoutChanges: (_) => {}
-    }
+    // watch: {
+    //     watchLayoutChanges: (_) => {}
+    // }
 })
 export default class Main extends Vue {
     private appElement: HTMLElement | null = null;

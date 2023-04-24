@@ -1,6 +1,6 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 
-@Options({})
+@Component({})
 export default class ForgotPassword extends Vue {
     private appElement: HTMLElement | null = null;
 

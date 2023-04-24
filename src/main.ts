@@ -7,7 +7,6 @@ import {i18n} from './translation';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 
-import {Gatekeeper} from 'gatekeeper-client-sdk';
 import Toast, {PluginOptions} from 'vue-toastification';
 import {ProfabricComponents} from '@profabric/vue-components';
 
@@ -15,8 +14,6 @@ import './index.scss';
 import {faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEnvelope, faLock);
-
-Gatekeeper.initialize('de378d9c-38c8-42c1-b961-9e4fa92d6a5e');
 
 const options: PluginOptions = {
     timeout: 3000,

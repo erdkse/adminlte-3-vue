@@ -1,4 +1,4 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 
-@Options({})
+@Component({})
 export default class Blank extends Vue {}

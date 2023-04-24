@@ -1,11 +1,11 @@
 import {IUser} from '@/interfaces/user';
-import {Options, Vue} from 'vue-class-component';
+import {Component, Prop, Vue} from 'vue-facing-decorator';
 import MenuItem from '@/components/menu-item/menu-item.vue';
 import {PfImage} from '@profabric/vue-components';
 import SidebarSearch from '@/components/sidebar-search/sidebar-search.vue';
 import {i18n} from '@/translation';
 
-@Options({
+@Component({
     name: 'app-menu-sidebar',
     components: {
         'app-menu-item': MenuItem,
@@ -14,7 +14,7 @@ import {i18n} from '@/translation';
     }
 })
 export default class MenuSidebar extends Vue {
-    public menu = MENU;
+    menu = MENU;
 
     get user(): IUser {
         return this.$store.getters['auth/user'];

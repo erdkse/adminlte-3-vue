@@ -1,9 +1,9 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
 import {PfButton} from '@profabric/vue-components';
 
-@Options({
+@Component({
     components: {
         'app-input': Input,
         'pf-button': PfButton

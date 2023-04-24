@@ -1,13 +1,13 @@
 import {calculateWindowSize} from '@/utils/helpers';
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import {useWindowSize} from '@vueuse/core';
 
-@Options({
-    watch: {
-        currentWindowSize: (value) => {
-            console.log(value);
-        }
-    }
+@Component({
+    // watch: {
+    //     currentWindowSize: (value) => {
+    //         console.log(value);
+    //     }
+    // }
 })
 export default class App extends Vue {
     get currentWindowSize() {

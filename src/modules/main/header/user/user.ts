@@ -1,9 +1,9 @@
 import {IUser} from '@/interfaces/user';
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import {DateTime} from 'luxon';
 import {PfDropdown, PfImage} from '@profabric/vue-components';
 
-@Options({
+@Component({
     name: 'user-dropdown',
     components: {
         'pf-dropdown': PfDropdown,

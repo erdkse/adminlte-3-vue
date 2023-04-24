@@ -1,7 +1,7 @@
-import {Options, Vue} from 'vue-class-component';
+import {Component, Vue} from 'vue-facing-decorator';
 import {PfDropdown} from '@profabric/vue-components';
 
-@Options({
+@Component({
     name: 'languages-dropdown',
     components: {
         'pf-dropdown': PfDropdown
