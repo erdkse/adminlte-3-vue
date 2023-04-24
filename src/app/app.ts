@@ -1,5 +1,6 @@
 import {calculateWindowSize} from '@/utils/helpers';
 import {Options, Vue} from 'vue-class-component';
+import {useWindowSize} from '@vueuse/core';
 
 @Options({
     watch: {
@@ -17,6 +18,7 @@ export default class App extends Vue {
     }
 
     get windowSize() {
-        return calculateWindowSize(this.$windowWidth);
+        const {width} = useWindowSize();
+        return calculateWindowSize(width.value);
     }
 }
