@@ -33,6 +33,7 @@ export default class User extends Vue {
             this.$store.dispatch('auth/setAuthentication', undefined);
             this.$router.replace('/login');
         }
+        localStorage.removeItem('authentication');
     }
 
     get readableCreatedAtDate() {

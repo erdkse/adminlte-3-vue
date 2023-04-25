@@ -16,8 +16,5 @@ export default defineConfig({
             '@modules': path.resolve(__dirname, './src/modules'),
             '@pages': path.resolve(__dirname, './src/pages')
         }
-    },
-    define: {
-        'process.env': process.env
     }
 });

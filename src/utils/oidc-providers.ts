@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import {UserManager, UserManagerSettings} from 'oidc-client-ts';
 import {sleep} from './helpers';
 
@@ -44,7 +45,7 @@ export const facebookLogin = () => {
 };
 
 export const getFacebookLoginStatus = () => {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         let authResponse: any = {};
         FB.getLoginStatus((r: any) => {
             if (r.authResponse) {
@@ -59,19 +60,38 @@ export const getFacebookLoginStatus = () => {
                     }
                 );
             } else {
-                rej();
+                res(undefined);
             }
         });
     });
 };
 
 export const authLogin = (email: string, password: string) => {
-    // eslint-disable-next-line no-async-promise-executor
     return new Promise(async (res, rej) => {
         await sleep(500);
         if (email === 'admin@example.com' && password === 'admin') {
+            localStorage.setItem(
+                'authentication',
+                JSON.stringify({profile: {email: 'admin@example.com'}})
+            );
             return res({profile: {email: 'admin@example.com'}});
         }
         return rej({message: 'Credentials are wrong!'});
+    });
+};
+
+export const getAuthStatus = () => {
+    return new Promise(async (res) => {
+        await sleep(500);
+        try {
+            let authentication = localStorage.getItem('authentication');
+            if (authentication) {
+                authentication = JSON.parse(authentication);
+                return res(authentication);
+            }
+            return res(undefined);
+        } catch (error) {
+            return res(undefined);
+        }
     });
 };
