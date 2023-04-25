@@ -18,22 +18,23 @@ export default class User extends Vue {
     }
 
     async logout() {
-        this.$store.dispatch('auth/logout');
         // setDropdownOpen(false);
-        if (this.authentication.profile.first_name) {
-            await GoogleProvider.signoutPopup();
-            this.$store.dispatch('auth/setAuthentication', undefined);
-            this.$router.replace('/login');
-        } else if (this.authentication.userID) {
-            FB.logout(() => {
+        try {
+            if (this.authentication.profile.first_name) {
+                await GoogleProvider.signoutPopup();
                 this.$store.dispatch('auth/setAuthentication', undefined);
-                this.$router.replace('/login');
-            });
-        } else {
-            this.$store.dispatch('auth/setAuthentication', undefined);
+            } else if (this.authentication.userID) {
+                FB.logout(() => {
+                    this.$store.dispatch('auth/setAuthentication', undefined);
+                    this.$router.replace('/login');
+                });
+            }
+            localStorage.removeItem('authentication');
+            this.$router.replace('/login');
+        } catch (error) {
+            localStorage.removeItem('authentication');
             this.$router.replace('/login');
         }
-        localStorage.removeItem('authentication');
     }
 
     get readableCreatedAtDate() {

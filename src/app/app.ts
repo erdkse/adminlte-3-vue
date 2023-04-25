@@ -25,8 +25,6 @@ export default class App extends Vue {
 
             responses = responses.filter((r: any) => Boolean(r));
 
-            console.log('responses', responses);
-
             if (responses && responses.length > 0) {
                 this.$store.dispatch('auth/setAuthentication', responses[0]);
             }

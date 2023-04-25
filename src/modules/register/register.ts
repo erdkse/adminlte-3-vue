@@ -38,6 +38,7 @@ export default class Register extends Vue {
             this.$store.dispatch('auth/setAuthentication', response);
             this.toast.success('Register succeeded');
             this.isAuthLoading = false;
+            this.$router.replace('/');
         } catch (error: any) {
             this.toast.error(error.message);
             this.isAuthLoading = false;
@@ -51,6 +52,7 @@ export default class Register extends Vue {
             this.$store.dispatch('auth/setAuthentication', response);
             this.toast.success('Register succeeded');
             this.isFacebookLoading = false;
+            this.$router.replace('/');
         } catch (error: any) {
             this.toast.error(error.message);
             this.isFacebookLoading = false;
@@ -64,6 +66,7 @@ export default class Register extends Vue {
             this.$store.dispatch('auth/setAuthentication', response);
             this.toast.success('Register succeeded');
             this.isGoogleLoading = false;
+            this.$router.replace('/');
         } catch (error: any) {
             this.toast.error(error.message);
             this.isGoogleLoading = false;

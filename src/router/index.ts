@@ -12,6 +12,11 @@ import RecoverPassword from '@/modules/recover-password/recover-password.vue';
 import PrivacyPolicy from '@/modules/privacy-policy/privacy-policy.vue';
 import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
 import Blank from '@/pages/blank/blank.vue';
+import {
+    getAuthStatus,
+    getFacebookLoginStatus,
+    GoogleProvider
+} from '@/utils/oidc-providers';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -104,20 +109,40 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory('/'),
     routes
 });
 
 router.beforeEach(async (to, from, next) => {
-    const storedAuthentication = store.getters['auth/authentication'];
+    console.log(to, from);
+    let storedAuthentication = store.getters['auth/authentication'];
 
-    if (to.meta.requiresAuth && !storedAuthentication) {
-        next('/login');
-    } else if (to.meta.requiresUnauth && !!storedAuthentication) {
-        next('/');
-    } else {
-        next();
+    if (!storedAuthentication) {
+        storedAuthentication = await checkSession();
     }
+
+    if (Boolean(to.meta.requiresAuth) && Boolean(!storedAuthentication)) {
+        return next('/login');
+    }
+    return next();
 });
 
 export default router;
+
+export async function checkSession() {
+    try {
+        let responses: any = await Promise.all([
+            getFacebookLoginStatus(),
+            GoogleProvider.getUser(),
+            getAuthStatus()
+        ]);
+
+        responses = responses.filter((r: any) => Boolean(r));
+
+        if (responses && responses.length > 0) {
+            return responses[0];
+        }
+    } catch (error: any) {
+        return;
+    }
+}
