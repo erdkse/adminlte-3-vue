@@ -26,11 +26,15 @@ export default class ControlSidebar extends Vue {
     }
 
     private onNavbarVariantChange(event: any) {
-        this.$store.dispatch('ui/setNavbarVariant', event.target.value);
+        if (event && event.target) {
+            this.$store.dispatch('ui/setNavbarVariant', event.target.value);
+        }
     }
 
     private onSidebarSkinChange(event: any) {
-        this.$store.dispatch('ui/setSidebarSkin', event.target.value);
+        if (event && event.target) {
+            this.$store.dispatch('ui/setSidebarSkin', event.target.value);
+        }
     }
 
     get darkModeSelected() {

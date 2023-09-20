@@ -1,5 +1,5 @@
 import {IUser} from '@/interfaces/user';
-import {Component, Prop, Vue} from 'vue-facing-decorator';
+import {Component, Vue} from 'vue-facing-decorator';
 import MenuItem from '@/components/menu-item/menu-item.vue';
 import {PfImage} from '@profabric/vue-components';
 import SidebarSearch from '@/components/sidebar-search/sidebar-search.vue';

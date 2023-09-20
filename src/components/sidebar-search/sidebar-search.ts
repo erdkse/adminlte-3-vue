@@ -17,7 +17,7 @@ export default class SidebarSearch extends Vue {
     public handleSearchTextChange(event: any) {
         this.foundMenuItems = [];
 
-        if (event.target.value) {
+        if (event && event.target && event.target.value) {
             this.searchText = event.target.value;
             this.findMenuItems(this.menu);
             return;
