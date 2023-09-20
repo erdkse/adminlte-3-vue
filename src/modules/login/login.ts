@@ -3,7 +3,7 @@ import {Component, Vue} from 'vue-facing-decorator';
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
 import {PfButton, PfCheckbox} from '@profabric/vue-components';
-import {GoogleProvider, authLogin, facebookLogin} from '@/utils/oidc-providers';
+import {GoogleProvider, authLogin} from '@/utils/oidc-providers';
 
 @Component({
     components: {
@@ -18,7 +18,6 @@ export default class Login extends Vue {
     public password: string = '';
     public rememberMe: boolean = false;
     public isAuthLoading: boolean = false;
-    public isFacebookLoading: boolean = false;
     public isGoogleLoading: boolean = false;
     private toast = useToast();
 
@@ -42,20 +41,6 @@ export default class Login extends Vue {
         } catch (error: any) {
             this.toast.error(error.message);
             this.isAuthLoading = false;
-        }
-    }
-
-    public async loginByFacebook(): Promise<void> {
-        try {
-            this.isFacebookLoading = true;
-            const response = await facebookLogin();
-            this.$store.dispatch('auth/setAuthentication', response);
-            this.toast.success('Login succeeded');
-            this.isFacebookLoading = false;
-            this.$router.replace('/');
-        } catch (error: any) {
-            this.toast.error(error.message);
-            this.isFacebookLoading = false;
         }
     }
 

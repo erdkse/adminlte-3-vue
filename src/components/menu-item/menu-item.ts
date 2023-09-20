@@ -15,7 +15,9 @@ export default class MenuItem extends Vue {
             this.menuItem &&
             this.menuItem.children &&
             this.menuItem.children.length > 0;
-        this.calculateIsActive(this.$router.currentRoute.value.path);
+        if (this.$router.currentRoute && this.$router.currentRoute.value) {
+            this.calculateIsActive(this.$router.currentRoute.value.path);
+        }
         this.$router.afterEach((to) => {
             this.calculateIsActive(to.path);
         });

@@ -1,11 +1,7 @@
 import {calculateWindowSize} from '@/utils/helpers';
 import {Component, Vue, Watch} from 'vue-facing-decorator';
 import {useWindowSize} from '@vueuse/core';
-import {
-    GoogleProvider,
-    getAuthStatus,
-    getFacebookLoginStatus
-} from '@/utils/oidc-providers';
+import {GoogleProvider, getAuthStatus} from '@/utils/oidc-providers';
 
 @Component({})
 export default class App extends Vue {
@@ -18,7 +14,6 @@ export default class App extends Vue {
     async checkSession() {
         try {
             let responses: any = await Promise.all([
-                getFacebookLoginStatus(),
                 GoogleProvider.getUser(),
                 getAuthStatus()
             ]);

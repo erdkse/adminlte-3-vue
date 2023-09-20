@@ -40,7 +40,7 @@
                             type="submit"
                             block="true"
                             :loading="isAuthLoading"
-                            :disabled="isFacebookLoading || isGoogleLoading"
+                            :disabled="isGoogleLoading"
                         >
                             {{ $t("labels.signIn") }}
                         </pf-button>
@@ -51,21 +51,11 @@
 
             <div class="social-auth-links text-center mt-2 mb-3">
                 <pf-button
-                    class="mb-2"
-                    block="true"
-                    @click="loginByFacebook"
-                    :loading="isFacebookLoading"
-                    :disabled="isAuthLoading || isGoogleLoading"
-                >
-                    <i class="fab fa-facebook mr-2"></i>
-                    <span> {{ $t("labels.signInUsingFB") }}</span>
-                </pf-button>
-                <pf-button
                     block="true"
                     theme="danger"
                     @click="loginByGoogle"
                     :loading="isGoogleLoading"
-                    :disabled="isAuthLoading || isFacebookLoading"
+                    :disabled="isAuthLoading"
                 >
                     <i class="fab fa-google mr-2"></i>
                     <span>{{ $t("labels.SignInUsingGoogle") }}</span>

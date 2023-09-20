@@ -12,11 +12,7 @@ import RecoverPassword from '@/modules/recover-password/recover-password.vue';
 import PrivacyPolicy from '@/modules/privacy-policy/privacy-policy.vue';
 import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
 import Blank from '@/pages/blank/blank.vue';
-import {
-    getAuthStatus,
-    getFacebookLoginStatus,
-    GoogleProvider
-} from '@/utils/oidc-providers';
+import {getAuthStatus, GoogleProvider} from '@/utils/oidc-providers';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -114,7 +110,6 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-    console.log(to, from);
     let storedAuthentication = store.getters['auth/authentication'];
 
     if (!storedAuthentication) {
@@ -132,7 +127,6 @@ export default router;
 export async function checkSession() {
     try {
         let responses: any = await Promise.all([
-            getFacebookLoginStatus(),
             GoogleProvider.getUser(),
             getAuthStatus()
         ]);

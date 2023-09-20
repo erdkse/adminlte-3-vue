@@ -44,7 +44,7 @@
                             type="submit"
                             block="true"
                             :loading="isAuthLoading"
-                            :disabled="isFacebookLoading || isGoogleLoading"
+                            :disabled="isGoogleLoading"
                         >
                             {{ $t("labels.register") }}
                         </pf-button>
@@ -55,21 +55,11 @@
 
             <div class="social-auth-links text-center">
                 <pf-button
-                    class="mb-2"
-                    block="true"
-                    @click="registerByFacebook"
-                    :loading="isFacebookLoading"
-                    :disabled="isAuthLoading || isGoogleLoading"
-                >
-                    <i class="fab fa-facebook mr-2"></i>
-                    <span>{{ $t("labels.signUpUsingFB") }}</span>
-                </pf-button>
-                <pf-button
                     block="true"
                     theme="danger"
                     @click="registerByGoogle"
                     :loading="isGoogleLoading"
-                    :disabled="isAuthLoading || isFacebookLoading"
+                    :disabled="isAuthLoading"
                 >
                     <i class="fab fa-google mr-2"></i>
                     <span> {{ $t("labels.signUpUsingGoogle") }} </span>
