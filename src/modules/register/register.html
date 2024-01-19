@@ -33,10 +33,15 @@
                 />
                 <div class="row">
                     <div class="col-7">
-                        <pf-checkbox type="icheck" v-model="agreeTerms">
-                            {{ $t("labels.iAgree") }}
-                            <a href="#">{{ $t("labels.terms") }}</a>
-                        </pf-checkbox>
+                        <div style="display: flex; align-items: center">
+                            <pf-checkbox type="icheck" v-model="agreeTerms" />
+                            <label
+                                style="margin: 0; padding: 0; padding-left: 4px"
+                            >
+                                {{ $t("labels.iAgree") }}
+                                <a href="#">{{ $t("labels.terms") }}</a>
+                            </label>
+                        </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-5">
@@ -54,12 +59,31 @@
             </form>
 
             <div class="social-auth-links text-center">
-                <pf-button
+                <!-- <pf-button
                     block="true"
                     theme="danger"
                     @click="registerByGoogle"
                     :loading="isGoogleLoading"
                     :disabled="isAuthLoading"
+                >
+                    <i class="fab fa-google mr-2"></i>
+                    <span> {{ $t("labels.signUpUsingGoogle") }} </span>
+                </pf-button> -->
+                <pf-button
+                    class="mb-2"
+                    variant="primary"
+                    :loading="isFacebookLoading"
+                    :disabled="isAuthLoading || isGoogleLoading"
+                    @click="registerByFacebook"
+                >
+                    <i class="fab fa-facebook mr-2"></i>
+                    <span> {{ $t("labels.signUpUsingFB") }} </span>
+                </pf-button>
+                <pf-button
+                    variant="danger"
+                    :loading="isGoogleLoading"
+                    :disabled="isAuthLoading || isFacebookLoading"
+                    @click="registerByGoogle"
                 >
                     <i class="fab fa-google mr-2"></i>
                     <span> {{ $t("labels.signUpUsingGoogle") }} </span>

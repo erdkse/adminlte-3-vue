@@ -30,9 +30,14 @@
 
                 <div class="row">
                     <div class="col-7">
-                        <pf-checkbox type="icheck" v-model="rememberMe">
-                            {{ $t("labels.rememberMe") }}
-                        </pf-checkbox>
+                        <div style="display: flex; align-items: center">
+                            <pf-checkbox type="icheck" v-model="rememberMe" />
+                            <label
+                                style="margin: 0; padding: 0; padding-left: 4px"
+                            >
+                                {{ $t("labels.rememberMe") }}
+                            </label>
+                        </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-5">
@@ -41,6 +46,7 @@
                             block="true"
                             :loading="isAuthLoading"
                             :disabled="isGoogleLoading"
+                            @click="loginByAuth"
                         >
                             {{ $t("labels.signIn") }}
                         </pf-button>
@@ -51,14 +57,23 @@
 
             <div class="social-auth-links text-center mt-2 mb-3">
                 <pf-button
-                    block="true"
-                    theme="danger"
-                    @click="loginByGoogle"
+                    class="mb-2"
+                    variant="primary"
+                    :loading="isFacebookLoading"
+                    :disabled="isAuthLoading || isGoogleLoading"
+                    @click="loginByFacebook"
+                >
+                    <i class="fab fa-facebook mr-2"></i>
+                    <span>{{ $t("labels.signInUsingFB") }}</span>
+                </pf-button>
+                <pf-button
+                    variant="danger"
                     :loading="isGoogleLoading"
-                    :disabled="isAuthLoading"
+                    :disabled="isAuthLoading || isFacebookLoading"
+                    @click="loginByGoogle"
                 >
                     <i class="fab fa-google mr-2"></i>
-                    <span>{{ $t("labels.SignInUsingGoogle") }}</span>
+                    <span>{{ $t("labels.signInUsingGoogle") }}</span>
                 </pf-button>
             </div>
             <!-- /.social-auth-links -->

@@ -3,7 +3,7 @@ import {Component, Vue} from 'vue-facing-decorator';
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
 import {Button, Checkbox} from '@profabric/vue-components';
-import {GoogleProvider, authLogin} from '@/utils/oidc-providers';
+import {authLogin} from '@/utils/oidc-providers';
 
 @Component({
     components: {
@@ -19,6 +19,7 @@ export default class Login extends Vue {
     public rememberMe: boolean = false;
     public isAuthLoading: boolean = false;
     public isGoogleLoading: boolean = false;
+    public isFacebookLoading: boolean = false;
     private toast = useToast();
 
     public mounted(): void {
@@ -47,14 +48,25 @@ export default class Login extends Vue {
     public async loginByGoogle(): Promise<void> {
         try {
             this.isGoogleLoading = true;
-            const response = await GoogleProvider.signinPopup();
-            this.$store.dispatch('auth/setAuthentication', response);
-            this.toast.success('Login succeeded');
-            this.isGoogleLoading = false;
-            this.$router.replace('/');
+            // const response = await GoogleProvider.signinPopup();
+            // this.$store.dispatch('auth/setAuthentication', response);
+            // this.toast.success('Login succeeded');
+            // this.isGoogleLoading = false;
+            // this.$router.replace('/');
+            throw new Error('Not implemented');
         } catch (error: any) {
             this.toast.error(error.message);
             this.isGoogleLoading = false;
+        }
+    }
+
+    public async loginByFacebook(): Promise<void> {
+        try {
+            this.isFacebookLoading = true;
+            throw new Error('Not implemented');
+        } catch (error: any) {
+            this.toast.error(error.message);
+            this.isFacebookLoading = false;
         }
     }
 }

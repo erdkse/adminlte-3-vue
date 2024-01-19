@@ -36,5 +36,5 @@ createApp(App)
     .use(router)
     .use(Toast, options)
     .use(i18n as any)
-    .use(ProfabricComponents as any)
+    .use(ProfabricComponents)
     .mount('#app');
