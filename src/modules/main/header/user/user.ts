@@ -1,6 +1,6 @@
 import {Component, Vue} from 'vue-facing-decorator';
 import {DateTime} from 'luxon';
-import {PfDropdown, PfImage} from '@profabric/vue-components';
+import {Dropdown, Image} from '@profabric/vue-components';
 import {GoogleProvider} from '@/utils/oidc-providers';
 
 declare const FB: any;
@@ -8,8 +8,8 @@ declare const FB: any;
 @Component({
     name: 'user-dropdown',
     components: {
-        'pf-dropdown': PfDropdown,
-        'pf-image': PfImage
+        'pf-dropdown': Dropdown,
+        'pf-image': Image
     }
 })
 export default class User extends Vue {

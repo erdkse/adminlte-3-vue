@@ -1,10 +1,10 @@
 import {Component, Vue} from 'vue-facing-decorator';
-import {PfDropdown} from '@profabric/vue-components';
+import {Dropdown} from '@profabric/vue-components';
 
 @Component({
     name: 'notifications-dropdown',
     components: {
-        'pf-dropdown': PfDropdown
+        'pf-dropdown': Dropdown
     }
 })
 export default class Notifications extends Vue {}

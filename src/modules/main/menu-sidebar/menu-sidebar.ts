@@ -1,7 +1,7 @@
 import {IUser} from '@/interfaces/user';
 import {Component, Vue} from 'vue-facing-decorator';
 import MenuItem from '@/components/menu-item/menu-item.vue';
-import {PfImage} from '@profabric/vue-components';
+import {Image} from '@profabric/vue-components';
 import SidebarSearch from '@/components/sidebar-search/sidebar-search.vue';
 import {i18n} from '@/translation';
 
@@ -10,7 +10,7 @@ import {i18n} from '@/translation';
     components: {
         'app-menu-item': MenuItem,
         'app-sidebar-search': SidebarSearch,
-        'pf-image': PfImage
+        'pf-image': Image
     }
 })
 export default class MenuSidebar extends Vue {

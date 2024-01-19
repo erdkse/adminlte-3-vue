@@ -1,11 +1,11 @@
 import {Component, Prop, Vue} from 'vue-facing-decorator';
 // import {MENU} from '@/modules/main/menu-sidebar/menu-sidebar';
-import {PfDropdown} from '@profabric/vue-components';
+import {Dropdown} from '@profabric/vue-components';
 
 @Component({
     name: 'app-sidebar-search',
     components: {
-        'pf-dropdown': PfDropdown
+        'pf-dropdown': Dropdown
     }
 })
 export default class SidebarSearch extends Vue {

@@ -1,11 +1,11 @@
 import {Component, Vue} from 'vue-facing-decorator';
-import {PfDropdown, PfImage} from '@profabric/vue-components';
+import {Dropdown, Image} from '@profabric/vue-components';
 
 @Component({
     name: 'messages-dropdown',
     components: {
-        'pf-dropdown': PfDropdown,
-        'pf-image': PfImage
+        'pf-dropdown': Dropdown,
+        'pf-image': Image
     }
 })
 export default class Messages extends Vue {}

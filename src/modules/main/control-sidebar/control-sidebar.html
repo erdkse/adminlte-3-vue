@@ -5,7 +5,12 @@
     <h5>Customize AdminLTE</h5>
     <hr class="mb-2" />
     <div style="padding: 8px 0">
-        <pf-checkbox @change="handleDarkModeChange"> Dark mode </pf-checkbox>
+        <div style="display: flex; align-items: center">
+            <pf-checkbox @change="handleDarkModeChange" />
+            <label style="margin: 0; padding: 0; padding-left: 4px">
+                Dark mode
+            </label>
+        </div>
         <pf-select
             label="Light Navbar Variants"
             :value="navbarVariant"

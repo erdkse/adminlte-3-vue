@@ -6,13 +6,13 @@ import {
     SIDEBAR_DARK_SKINS,
     SIDEBAR_LIGHT_SKINS
 } from '@/utils/themes';
-import {PfCheckbox, PfSelect} from '@profabric/vue-components';
+import {Checkbox, Select} from '@profabric/vue-components';
 
 @Component({
     name: 'app-control-sidebar',
     components: {
-        'pf-checkbox': PfCheckbox,
-        'pf-select': PfSelect
+        'pf-checkbox': Checkbox,
+        'pf-select': Select
     }
 })
 export default class ControlSidebar extends Vue {

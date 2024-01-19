@@ -2,14 +2,14 @@ import {Component, Vue} from 'vue-facing-decorator';
 
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
-import {PfButton, PfCheckbox} from '@profabric/vue-components';
+import {Button, Checkbox} from '@profabric/vue-components';
 import {GoogleProvider, authLogin} from '@/utils/oidc-providers';
 
 @Component({
     components: {
         'app-input': Input,
-        'pf-checkbox': PfCheckbox,
-        'pf-button': PfButton
+        'pf-checkbox': Checkbox,
+        'pf-button': Button
     }
 })
 export default class Login extends Vue {
