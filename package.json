@@ -8,7 +8,11 @@
         "preview": "vite preview",
         "test:unit": "vue-cli-service test:unit",
         "test:e2e": "vue-cli-service test:e2e",
-        "lint": "vue-cli-service lint"
+        "lint": "vue-cli-service lint",
+        "store-version": "echo '{\"version\" : '$(cat package.json | jq .version )'}' > public/version.json && git add public/version.json && git commit -m \"version upgrade \"",
+        "release:patch": "standard-version --release-as patch && npm run store-version",
+        "release:minor": "standard-version --release-as minor && npm run store-version",
+        "release:major": "standard-version --release-as major && npm run store-version"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "6.5.1",
@@ -33,7 +37,7 @@
     },
     "devDependencies": {
         "@types/jest": "29.5.11",
-        "@types/luxon": "3.4.1",
+        "@types/luxon": "3.4.2",
         "@types/uuid": "9.0.7",
         "@typescript-eslint/eslint-plugin": "6.19.0",
         "@typescript-eslint/parser": "6.19.0",
@@ -55,6 +59,7 @@
         "eslint-plugin-vue": "9.20.1",
         "prettier": "3.2.4",
         "sass": "1.70.0",
+        "standard-version": "9.5.0",
         "typescript": "~5.3.3",
         "vite": "5.0.12",
         "vue-jest": "3.0.7"
