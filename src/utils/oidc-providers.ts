@@ -4,7 +4,7 @@ import {sleep} from './helpers';
 
 const GOOGLE_CONFIG: UserManagerSettings = {
     authority: 'https://accounts.google.com',
-    client_id:'',
+    client_id: '',
     client_secret: '',
     redirect_uri: `${window.location.protocol}//${window.location.host}/callback`,
     scope: 'openid email profile',

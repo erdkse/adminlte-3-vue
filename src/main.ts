@@ -29,7 +29,6 @@ const options: PluginOptions = {
     rtl: false
 };
 
-
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .use(store)

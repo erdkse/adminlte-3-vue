@@ -1,4 +1,3 @@
-import {IUser} from './user';
 export interface IAuthState {
     authentication: any;
 }

@@ -9,7 +9,6 @@ import Dashboard from '@/pages/dashboard/dashboard.vue';
 import Profile from '@/pages/profile/profile.vue';
 import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
 import RecoverPassword from '@/modules/recover-password/recover-password.vue';
-import PrivacyPolicy from '@/modules/privacy-policy/privacy-policy.vue';
 import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
 import Blank from '@/pages/blank/blank.vue';
 import {getAuthStatus, GoogleProvider} from '@/utils/oidc-providers';
@@ -96,11 +95,6 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
             requiresUnauth: true
         }
-    },
-    {
-        path: '/privacy-policy',
-        name: 'RecoverPassword',
-        component: PrivacyPolicy
     }
 ];
 
