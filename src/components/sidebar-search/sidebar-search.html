@@ -1,5 +1,5 @@
 <pf-dropdown hideArrow  :openOnButtonClick="false" :isOpen="isDropdownOpen">
-    <div slot="button">
+    <div slot="head">
         <div class="input-group">
             <input
                 class="form-control form-control-sidebar"
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="menu" slot="menu">
+    <div class="menu" slot="body">
         <div v-if="foundMenuItems.length === 0" class="nothing-found">
             No Element found
         </div>

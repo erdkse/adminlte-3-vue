@@ -1,5 +1,5 @@
 <pf-dropdown hideArrow  class="user-menu">
-    <div slot="button">
+    <div slot="head">
         <pf-image
             :src="authentication && authentication.profile && authentication.profile.picture"
             fallbackSrc="assets/img/default-profile.png"
@@ -10,7 +10,7 @@
             rounded
         ></pf-image>
     </div>
-    <div slot="menu">
+    <div slot="body">
         <li class="user-header bg-primary">
             <pf-image
                 :src="authentication && authentication.profile && authentication.profile.picture"
