@@ -13,10 +13,10 @@
 
 <span align="center">
 
-![Stars](https://img.shields.io/github/stars/erdkse/adminlte-3-vue)
-![Forks](https://img.shields.io/github/forks/erdkse/adminlte-3-vue)
-![Issues](https://img.shields.io/github/issues/erdkse/adminlte-3-vue)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+![Stars](https://img.shields.io/github/stars/erdkse/adminlte-3-vue?style=flat-square)
+![Forks](https://img.shields.io/github/forks/erdkse/adminlte-3-vue?style=flat-square)
+![Issues](https://img.shields.io/github/issues/erdkse/adminlte-3-vue?style=flat-square)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-green.svg?style=flat-square)](#contributors-)
 ![GitHub last commit](https://img.shields.io/github/last-commit/erdkse/adminlte-3-vue.svg)
 [![License](https://img.shields.io/github/license/erdkse/adminlte-3-vue.svg)](LICENSE)
 ![Sponsors](https://img.shields.io/github/sponsors/erdkse.svg)
