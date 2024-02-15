@@ -23,27 +23,26 @@
 
 </span>
 
-<br>
+## Demo
+
+Online demo: https://adminlte-vue.erdkse.com
 
 To login website use:
 
 `username:` admin@example.com<br />
 `password:` admin<br />
 
-## Project setup
+## Available Scripts
 
-```
-npm install
-```
+In the project directory, you can run:
 
-### Compiles and hot-reloads for development
+### `npm run dev`
 
-```
-npm run dev
-```
+Runs the app in the development mode.<br />
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-### Compiles and minifies for production
+## License
 
-```
-npm run build
-```
+[![License](https://img.shields.io/github/license/erdkse/adminlte-3-vue.svg)](/LICENSE)
+
+Released 2021 by [Erdi Köse](https://erdkse.com)
