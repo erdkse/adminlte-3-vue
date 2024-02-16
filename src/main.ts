@@ -16,6 +16,8 @@ import {faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
 
 const {VITE_NODE_ENV, VITE_GA_ID} = import.meta.env;
 
+console.log('Env', VITE_NODE_ENV);
+
 library.add(faEnvelope, faLock);
 
 const options: PluginOptions = {

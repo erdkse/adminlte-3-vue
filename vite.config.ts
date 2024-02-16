@@ -16,8 +16,6 @@ export default ({mode}) => {
         }
     });
 
-    console.log('viteEnv', viteEnv);
-
     return defineConfig({
         mode: 'development',
         define: viteEnv,
