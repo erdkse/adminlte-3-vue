@@ -12,7 +12,6 @@ import RecoverPassword from '@/modules/recover-password/recover-password.vue';
 import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
 import Blank from '@/pages/blank/blank.vue';
 import {getAuthStatus, GoogleProvider} from '@/utils/oidc-providers';
-import {pageview} from 'vue-gtag';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -106,7 +105,6 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
     let storedAuthentication = store.getters['auth/authentication'];
-    pageview((to as any).path);
 
     if (!storedAuthentication) {
         storedAuthentication = await checkSession();

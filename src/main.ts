@@ -14,7 +14,7 @@ import VueGtag from 'vue-gtag';
 import './index.scss';
 import {faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
 
-const {VITE_NODE_ENV, VITE_GA_ID} = import.meta.env;
+const {VITE_GA_ID} = import.meta.env;
 
 library.add(faEnvelope, faLock);
 
@@ -40,10 +40,14 @@ app.component('font-awesome-icon', FontAwesomeIcon)
     .use(i18n as any)
     .use(ProfabricComponents);
 
-if (VITE_NODE_ENV === 'production' && VITE_GA_ID) {
-    app.use(VueGtag, {
-        config: {id: VITE_GA_ID}
-    });
+if (VITE_GA_ID) {
+    app.use(
+        VueGtag,
+        {
+            config: {id: VITE_GA_ID}
+        },
+        router
+    );
 }
 
 app.mount('#app');
