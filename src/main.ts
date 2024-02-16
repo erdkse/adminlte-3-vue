@@ -16,8 +16,6 @@ import {faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEnvelope, faLock);
 
-// G-8WLZCM2ZEH
-
 const options: PluginOptions = {
     timeout: 3000,
     closeOnClick: true,
