@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.0...v0.2.1) (2024-02-16)
+
+
+### Bug Fixes
+
+* change vite build command ([5ad1857](https://github.com/erdkse/adminlte-3-vue/commit/5ad1857d4f4042668d312c8f30f0c82f9d82d5d5))
+
 ## 0.2.0 (2024-01-21)
 
 
