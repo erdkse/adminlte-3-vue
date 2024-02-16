@@ -14,6 +14,8 @@ import VueGtag from 'vue-gtag';
 import './index.scss';
 import {faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
 
+const {VITE_NODE_ENV, VITE_GA_ID} = import.meta.env;
+
 library.add(faEnvelope, faLock);
 
 const options: PluginOptions = {
@@ -30,8 +32,6 @@ const options: PluginOptions = {
     rtl: false
 };
 
-const {VITE_NODE_ENV, VITE_GA_ID} = import.meta.env;
-
 const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon)
     .use(store)
@@ -41,14 +41,9 @@ app.component('font-awesome-icon', FontAwesomeIcon)
     .use(ProfabricComponents);
 
 if (VITE_NODE_ENV === 'production' && VITE_GA_ID) {
-    app.use(
-        VueGtag,
-        {
-            pageTrackerScreenviewEnabled: true,
-            config: {id: VITE_GA_ID}
-        },
-        router
-    );
+    app.use(VueGtag, {
+        config: {id: VITE_GA_ID}
+    });
 }
 
 app.mount('#app');
