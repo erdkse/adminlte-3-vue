@@ -28,6 +28,7 @@
         "uuid": "9.0.1",
         "vue": "3.4.19",
         "vue-facing-decorator": "3.0.4",
+        "vue-gtag": "2.0.1",
         "vue-i18n": "9.9.1",
         "vue-router": "4.2.5",
         "vue-toastification": "2.0.0-rc.5",

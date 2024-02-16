@@ -9,11 +9,14 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 
 import Toast, {PluginOptions} from 'vue-toastification';
 import {ProfabricComponents} from '@profabric/vue-components';
+import VueGtag from 'vue-gtag';
 
 import './index.scss';
 import {faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEnvelope, faLock);
+
+// G-8WLZCM2ZEH
 
 const options: PluginOptions = {
     timeout: 3000,
@@ -29,11 +32,24 @@ const options: PluginOptions = {
     rtl: false
 };
 
-createApp(App)
-    .component('font-awesome-icon', FontAwesomeIcon)
+const {VITE_NODE_ENV, VITE_GA_ID} = import.meta.env;
+
+const app = createApp(App);
+app.component('font-awesome-icon', FontAwesomeIcon)
     .use(store)
     .use(router)
     .use(Toast, options)
     .use(i18n as any)
-    .use(ProfabricComponents)
-    .mount('#app');
+    .use(ProfabricComponents);
+
+if (VITE_NODE_ENV === 'production' && VITE_GA_ID) {
+    app.use(
+        VueGtag,
+        {
+            config: {id: VITE_GA_ID}
+        },
+        router
+    );
+}
+
+app.mount('#app');
