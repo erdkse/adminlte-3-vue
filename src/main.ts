@@ -44,6 +44,7 @@ if (VITE_NODE_ENV === 'production' && VITE_GA_ID) {
     app.use(
         VueGtag,
         {
+            pageTrackerScreenviewEnabled: true,
             config: {id: VITE_GA_ID}
         },
         router
