@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.9...v0.2.10) (2024-05-12)
+
+
+### Features
+
+* update vercel rewrite rule ([5029f50](https://github.com/erdkse/adminlte-3-vue/commit/5029f50163e5898c61c9cc68ff4111a832dd4952))
+
 ### [0.2.9](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.8...v0.2.9) (2024-02-16)
 
 ### [0.2.8](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.7...v0.2.8) (2024-02-16)
