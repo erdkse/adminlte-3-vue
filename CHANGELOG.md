@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.10...v0.2.11) (2024-05-13)
+
+
+### Features
+
+* add firebase as backend service ([bf72858](https://github.com/erdkse/adminlte-3-vue/commit/bf728588f9869ee02d9778fc93bcc4dbd7561f2c))
+* update packages ([10929e8](https://github.com/erdkse/adminlte-3-vue/commit/10929e8ad5b9da0e859645e559c79513b379d1b3))
+
 ### [0.2.10](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.9...v0.2.10) (2024-05-12)
 
 
