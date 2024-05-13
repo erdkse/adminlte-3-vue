@@ -1,9 +1,7 @@
 import {Component, Vue} from 'vue-facing-decorator';
 import {DateTime} from 'luxon';
 import {Dropdown, Image} from '@profabric/vue-components';
-import {GoogleProvider} from '@/utils/oidc-providers';
-
-declare const FB: any;
+import {firebaseAuth} from '@/firebase';
 
 @Component({
     name: 'user-dropdown',
@@ -18,30 +16,24 @@ export default class User extends Vue {
     }
 
     async logout() {
-        // setDropdownOpen(false);
         try {
-            if (this.authentication.profile.first_name) {
-                await GoogleProvider.signoutPopup();
-                this.$store.dispatch('auth/setAuthentication', undefined);
-            } else if (this.authentication.userID) {
-                FB.logout(() => {
-                    this.$store.dispatch('auth/setAuthentication', undefined);
-                    this.$router.replace('/login');
-                });
-            }
-            localStorage.removeItem('authentication');
+            await firebaseAuth.signOut();
+            this.$store.dispatch('auth/setAuthentication', undefined);
             this.$router.replace('/login');
         } catch (error) {
-            localStorage.removeItem('authentication');
-            this.$router.replace('/login');
+            console.log(error);
         }
     }
 
     get readableCreatedAtDate() {
-        if (this.authentication && this.authentication.createdAt) {
-            return DateTime.fromISO(this.authentication.createdAt).toFormat(
-                'dd LLLL yyyy'
-            );
+        if (
+            this.authentication &&
+            this.authentication.metadata &&
+            this.authentication.metadata.createdAt
+        ) {
+            return DateTime.fromMillis(
+                +this.authentication.metadata.createdAt
+            ).toFormat('dd LLLL yyyy');
         }
         return '';
     }

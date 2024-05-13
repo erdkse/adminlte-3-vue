@@ -16,7 +16,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <pf-image
-                    :src="authentication && authentication.profile && authentication.profile.picture"
+                    :src="authentication && authentication.photoURL"
                     fallbackSrc="assets/img/default-profile.png"
                     class="img-circle"
                     alt="User Image"
@@ -27,8 +27,7 @@
             </div>
             <div class="info">
                 <router-link to="/profile" class="d-block">
-                    {{authentication && authentication.profile &&
-                    authentication.profile.email}}
+                    {{authentication && authentication.email}}
                 </router-link>
             </div>
         </div>

@@ -73,7 +73,7 @@
                     class="mb-2"
                     variant="primary"
                     :loading="isFacebookLoading"
-                    :disabled="isAuthLoading || isGoogleLoading"
+                    :disabled="true || isAuthLoading || isGoogleLoading"
                     @click="registerByFacebook"
                 >
                     <i class="fab fa-facebook mr-2"></i>

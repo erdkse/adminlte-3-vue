@@ -1,5 +1,7 @@
+import {User} from 'firebase/auth';
+
 export interface IAuthState {
-    authentication: any;
+    authentication?: User;
 }
 
 export interface IAuthModule {

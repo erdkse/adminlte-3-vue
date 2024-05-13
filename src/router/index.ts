@@ -11,7 +11,8 @@ import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
 import RecoverPassword from '@/modules/recover-password/recover-password.vue';
 import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
 import Blank from '@/pages/blank/blank.vue';
-import {getAuthStatus, GoogleProvider} from '@/utils/oidc-providers';
+import {sleep} from '@/utils/helpers';
+import {firebaseAuth} from '@/firebase';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -98,8 +99,10 @@ const routes: Array<RouteRecordRaw> = [
     }
 ];
 
+export const {BASE_URL} = import.meta.env;
+
 const router = createRouter({
-    history: createWebHistory('/'),
+    history: createWebHistory(BASE_URL),
     routes
 });
 
@@ -108,6 +111,7 @@ router.beforeEach(async (to, from, next) => {
 
     if (!storedAuthentication) {
         storedAuthentication = await checkSession();
+        store.dispatch('auth/setAuthentication', storedAuthentication);
     }
 
     if (Boolean(to.meta.requiresAuth) && Boolean(!storedAuthentication)) {
@@ -121,16 +125,8 @@ export default router;
 
 export async function checkSession() {
     try {
-        let responses: any = await Promise.all([
-            GoogleProvider.getUser(),
-            getAuthStatus()
-        ]);
-
-        responses = responses.filter((r: any) => Boolean(r));
-
-        if (responses && responses.length > 0) {
-            return responses[0];
-        }
+        await sleep(500);
+        return firebaseAuth.currentUser;
     } catch (error: any) {
         return;
     }

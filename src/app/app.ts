@@ -1,7 +1,8 @@
 import {calculateWindowSize} from '@/utils/helpers';
 import {Component, Vue, Watch} from 'vue-facing-decorator';
 import {useWindowSize} from '@vueuse/core';
-import {GoogleProvider, getAuthStatus} from '@/utils/oidc-providers';
+import {onAuthStateChanged} from 'firebase/auth';
+import {firebaseAuth} from '@/firebase';
 
 @Component({})
 export default class App extends Vue {
@@ -12,21 +13,23 @@ export default class App extends Vue {
     }
 
     async checkSession() {
-        try {
-            let responses: any = await Promise.all([
-                GoogleProvider.getUser(),
-                getAuthStatus()
-            ]);
-
-            responses = responses.filter((r: any) => Boolean(r));
-
-            if (responses && responses.length > 0) {
-                this.$store.dispatch('auth/setAuthentication', responses[0]);
+        this.isAppLoading = true;
+        onAuthStateChanged(
+            firebaseAuth,
+            (user) => {
+                if (user) {
+                    this.$store.dispatch('auth/setAuthentication', user);
+                } else {
+                    this.$store.dispatch('auth/setAuthentication', undefined);
+                }
+                this.isAppLoading = false;
+            },
+            (e) => {
+                console.log(e);
+                this.$store.dispatch('auth/setAuthentication', undefined);
+                this.isAppLoading = false;
             }
-        } catch (error: any) {
-            console.log('error', error);
-        }
-        this.isAppLoading = false;
+        );
     }
 
     @Watch('windowSize')

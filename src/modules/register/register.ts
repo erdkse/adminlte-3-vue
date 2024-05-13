@@ -2,7 +2,7 @@ import {Component, Vue} from 'vue-facing-decorator';
 import Input from '@/components/input/input.vue';
 import {useToast} from 'vue-toastification';
 import {Button, Checkbox} from '@profabric/vue-components';
-import {authLogin} from '@/utils/oidc-providers';
+import {registerWithEmail, signInByGoogle} from '@/services/auth';
 
 @Component({
     components: {
@@ -34,7 +34,7 @@ export default class Register extends Vue {
     public async registerByAuth(): Promise<void> {
         try {
             this.isAuthLoading = true;
-            const response = await authLogin(this.email, this.password);
+            const response = await registerWithEmail(this.email, this.password);
             this.$store.dispatch('auth/setAuthentication', response);
             this.toast.success('Register succeeded');
             this.isAuthLoading = false;
@@ -48,7 +48,11 @@ export default class Register extends Vue {
     public async registerByGoogle(): Promise<void> {
         try {
             this.isGoogleLoading = true;
-            throw new Error('Not implemented');
+            const response = await signInByGoogle();
+            this.$store.dispatch('auth/setAuthentication', response);
+            this.toast.success('Login succeeded');
+            this.isGoogleLoading = false;
+            this.$router.replace('/');
         } catch (error: any) {
             this.toast.error(error.message);
             this.isGoogleLoading = false;
