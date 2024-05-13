@@ -4,11 +4,13 @@ env:
     VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     VITE_NODE_ENV: ${{ secrets.VITE_NODE_ENV }}
     VITE_GA_ID: ${{ secrets.VITE_GA_ID }}
+    VITE_FIREBASE_CONFIG: ${{ secrets.VITE_FIREBASE_CONFIG }}
+    BASE_URL: ${{ secrets.BASE_URL }}
 on:
+    workflow_dispatch:
     push:
-        # Pattern matched against refs/tags
         tags:
-            - '*' # Push events to every tag not containing /
+            - '*'
 jobs:
     Deploy-Production:
         runs-on: ubuntu-latest
