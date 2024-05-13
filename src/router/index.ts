@@ -11,7 +11,6 @@ import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
 import RecoverPassword from '@/modules/recover-password/recover-password.vue';
 import SubMenu from '@/pages/main-menu/sub-menu/sub-menu.vue';
 import Blank from '@/pages/blank/blank.vue';
-import {sleep} from '@/utils/helpers';
 import {firebaseAuth} from '@/firebase';
 
 const routes: Array<RouteRecordRaw> = [
@@ -114,6 +113,8 @@ router.beforeEach(async (to, from, next) => {
         store.dispatch('auth/setAuthentication', storedAuthentication);
     }
 
+    console.log('storedAuthentication', storedAuthentication);
+
     if (Boolean(to.meta.requiresAuth) && Boolean(!storedAuthentication)) {
         return next('/login');
     }
@@ -125,7 +126,7 @@ export default router;
 
 export async function checkSession() {
     try {
-        await sleep(500);
+        await firebaseAuth.authStateReady();
         return firebaseAuth.currentUser;
     } catch (error: any) {
         return;

@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Admin LTE 3.2.0 - Vue 3.4.19</h1>
+<h1 align="center">Admin LTE 3.2.0 - Vue 3.4.27</h1>
 
 <p>
   This repository is a form of original AdminLTE project. It is aim to use AdminLTE template with Vue.
@@ -25,16 +25,17 @@
 
 ## Demo
 
-Online demo: https://adminlte-vue.erdkse.com
+Online demo: https://erdkse.com/adminlte-vue
 
-To login website use:
+To login website you can `create` a user. All authenication related features are `working` and `live`!
 
-`username:` admin@example.com<br />
-`password:` admin<br />
+`Firebase` is added as backend provider to increase better user experince.
 
 ## Available Scripts
 
-In the project directory, you can run:
+`Note`: Please first copy `.env.example` file as `.env` add fill the required fields.
+
+Then, in the project directory, you can run:
 
 ### `npm run dev`
 
@@ -46,3 +47,9 @@ Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 [![License](https://img.shields.io/github/license/erdkse/adminlte-3-vue.svg)](/LICENSE)
 
 Released 2021 by [Erdi Köse](https://erdkse.com)
+
+## Support for more
+
+If you liked my work and would like to support for my expenses like server costs, please; (ie. `Firebase`)
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/erdkse)

@@ -3,6 +3,7 @@ import {Component, Vue, Watch} from 'vue-facing-decorator';
 import {useWindowSize} from '@vueuse/core';
 import {onAuthStateChanged} from 'firebase/auth';
 import {firebaseAuth} from '@/firebase';
+import {IUser} from '@/interfaces/user';
 
 @Component({})
 export default class App extends Vue {
@@ -10,6 +11,11 @@ export default class App extends Vue {
 
     async mounted() {
         await this.checkSession();
+    }
+
+    get authentication(): IUser {
+        console.log(this.$store.getters);
+        return this.$store.getters['auth/authentication'];
     }
 
     async checkSession() {
