@@ -98,10 +98,8 @@ const routes: Array<RouteRecordRaw> = [
     }
 ];
 
-export const {BASE_URL} = import.meta.env;
-
 const router = createRouter({
-    history: createWebHistory(BASE_URL),
+    history: createWebHistory(),
     routes
 });
 
