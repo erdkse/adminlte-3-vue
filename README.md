@@ -25,7 +25,7 @@
 
 ## Demo
 
-Online demo: https://www.erdkse.com/projects/preview?project=adminlte-vue
+Online demo: https://www.erdkse.com/projects/preview/adminlte-vue
 
 To login website you can `create` a user. All authenication related features are `working` and `live`!
 
