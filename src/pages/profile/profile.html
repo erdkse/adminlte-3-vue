@@ -128,31 +128,28 @@
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
-                                <button
-                                    class="nav-link"
-                                    :class="{'active' : activeTab === 'ACTIVITY'}"
+                                <pf-button
+                                    :variant="activeTab === 'ACTIVITY' ? 'primary' : 'light'"
                                     @click="setActiveTab('ACTIVITY')"
                                 >
                                     Activity
-                                </button>
+                                </pf-button>
                             </li>
                             <li class="nav-item">
-                                <button
-                                    class="nav-link"
-                                    :class="{'active' : activeTab === 'TIMELINE'}"
+                                <pf-button
+                                    :variant="activeTab === 'TIMELINE' ? 'primary' : 'light'"
                                     @click="setActiveTab('TIMELINE')"
                                 >
                                     Timeline
-                                </button>
+                                </pf-button>
                             </li>
                             <li class="nav-item">
-                                <button
-                                    class="nav-link"
-                                    :class="{'active' : activeTab === 'SETTINGS'}"
+                                <pf-button
+                                    :variant="activeTab === 'SETTINGS' ? 'primary' : 'light'"
                                     @click="setActiveTab('SETTINGS')"
                                 >
                                     Settings
-                                </button>
+                                </pf-button>
                             </li>
                         </ul>
                     </div>

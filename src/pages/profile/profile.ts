@@ -1,10 +1,11 @@
-import {Image} from '@profabric/vue-components';
+import {Button, Image} from '@profabric/vue-components';
 import {Component, Vue} from 'vue-facing-decorator';
 
 @Component({
     name: 'app-profile',
     components: {
-        'pf-image': Image
+        'pf-image': Image,
+        'pf-button': Button
     }
 })
 export default class Profile extends Vue {
