@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.15](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.14...v0.2.15) (2024-05-24)
+
+
+### Bug Fixes
+
+* handle social sigin issues ([9443901](https://github.com/erdkse/adminlte-3-vue/commit/9443901f7a5dd9d59e99f5037e4caea6ddaa8ff3))
+* setting user to state ([b5b5aec](https://github.com/erdkse/adminlte-3-vue/commit/b5b5aecc124a17480ac9766a717c1c9bfa732c1c))
+
 ### [0.2.14](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.13...v0.2.14) (2024-05-14)
 
 ### [0.2.13](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.12...v0.2.13) (2024-05-13)
