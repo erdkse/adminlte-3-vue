@@ -6,7 +6,7 @@
         <div class="card-body">
             <p class="login-box-msg">{{ $t("labels.registerMembership") }}</p>
 
-            <form @submit.prevent="registerByAuth">
+            <form>
                 <app-input
                     icon="envelope"
                     class="mb-3"
@@ -48,6 +48,7 @@
                         <pf-button
                             type="submit"
                             block="true"
+                            @click="registerByAuth"
                             :loading="isAuthLoading"
                             :disabled="isGoogleLoading"
                         >
@@ -59,16 +60,6 @@
             </form>
 
             <div class="social-auth-links text-center">
-                <!-- <pf-button
-                    block="true"
-                    theme="danger"
-                    @click="registerByGoogle"
-                    :loading="isGoogleLoading"
-                    :disabled="isAuthLoading"
-                >
-                    <i class="fab fa-google mr-2"></i>
-                    <span> {{ $t("labels.signUpUsingGoogle") }} </span>
-                </pf-button> -->
                 <pf-button
                     class="mb-2"
                     variant="primary"

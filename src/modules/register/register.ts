@@ -34,8 +34,8 @@ export default class Register extends Vue {
     public async registerByAuth(): Promise<void> {
         try {
             this.isAuthLoading = true;
-            const response = await registerWithEmail(this.email, this.password);
-            this.$store.dispatch('auth/setCurrentUser', response);
+            const {user} = await registerWithEmail(this.email, this.password);
+            this.$store.dispatch('auth/setCurrentUser', user);
             this.toast.success('Register succeeded');
             this.isAuthLoading = false;
             this.$router.replace('/');

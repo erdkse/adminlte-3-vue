@@ -1,9 +1,10 @@
-import {IUser} from '@/interfaces/user';
 import {Component, Vue} from 'vue-facing-decorator';
 import MenuItem from '@/components/menu-item/menu-item.vue';
 import {Image} from '@profabric/vue-components';
 import SidebarSearch from '@/components/sidebar-search/sidebar-search.vue';
 import {i18n} from '@/translation';
+import {IUser} from '@/types/user';
+import {toRaw} from 'vue';
 
 @Component({
     name: 'app-menu-sidebar',
@@ -16,8 +17,10 @@ import {i18n} from '@/translation';
 export default class MenuSidebar extends Vue {
     menu = MENU;
 
-    get authentication(): IUser {
-        return this.$store.getters['auth/currentUser'];
+    get currentUser(): IUser | undefined {
+        const user = this.$store.getters['auth/currentUser'];
+        console.log('USER', toRaw(user));
+        return user;
     }
 
     get sidebarSkin() {

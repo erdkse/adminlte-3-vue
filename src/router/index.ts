@@ -107,14 +107,20 @@ router.beforeEach(async (to, from, next) => {
     let storedAuthentication = store.getters['auth/currentUser'];
 
     if (!storedAuthentication) {
-        storedAuthentication = await checkSession();
-        store.dispatch('auth/setCurrentUser', storedAuthentication);
+        try {
+            storedAuthentication = await checkSession();
+            store.dispatch('auth/setCurrentUser', storedAuthentication);
+        } catch (error) {
+            console.error('Error checking session:', error);
+        }
     }
 
-    console.log('storedAuthentication', storedAuthentication);
-
-    if (Boolean(to.meta.requiresAuth) && Boolean(!storedAuthentication)) {
+    if (to.meta.requiresAuth && !storedAuthentication) {
         return next('/login');
+    }
+
+    if (to.meta.requiresUnauth && storedAuthentication) {
+        return next('/');
     }
 
     return next();

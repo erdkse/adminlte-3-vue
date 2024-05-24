@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div v-if="currentUser" class="wrapper">
     <app-header></app-header>
     <menu-sidebar></menu-sidebar>
     <div class="content-wrapper">
@@ -12,3 +12,5 @@
         @click="toggleMenuSidebar"
     ></div>
 </div>
+
+<div v-else>Loading</div>

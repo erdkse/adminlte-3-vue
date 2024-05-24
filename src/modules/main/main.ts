@@ -5,6 +5,8 @@ import Header from './header/header.vue';
 import MenuSidebar from './menu-sidebar/menu-sidebar.vue';
 import ControlSidebar from './control-sidebar/control-sidebar.vue';
 import Footer from './footer/footer.vue';
+import {IUser} from '@/types/user';
+import {mapGetters} from 'vuex';
 
 @Component({
     components: {
@@ -30,6 +32,10 @@ export default class Main extends Vue {
 
     public toggleMenuSidebar() {
         this.$store.dispatch('ui/toggleMenuSidebar');
+    }
+
+    get currentUser(): IUser | undefined {
+        return this.$store.getters['auth/currentUser'];
     }
 
     @Watch('uiValues')
