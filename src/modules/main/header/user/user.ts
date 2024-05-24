@@ -12,13 +12,13 @@ import {firebaseAuth} from '@/firebase';
 })
 export default class User extends Vue {
     get authentication(): any {
-        return this.$store.getters['auth/authentication'];
+        return this.$store.getters['auth/currentUser'];
     }
 
     async logout() {
         try {
             await firebaseAuth.signOut();
-            this.$store.dispatch('auth/setAuthentication', undefined);
+            this.$store.dispatch('auth/setCurrentUser', undefined);
             this.$router.replace('/login');
         } catch (error) {
             console.log(error);

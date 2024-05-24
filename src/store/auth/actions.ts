@@ -1,7 +1,7 @@
-import {User} from 'firebase/auth';
+import {IUser} from '@/types/user';
 
 export default {
-    setAuthentication: (context: any, payload: User): void => {
-        context.commit('setAuthentication', payload);
+    setCurrentUser: (context: any, payload: IUser): void => {
+        context.commit('setCurrentUser', payload);
     }
 };

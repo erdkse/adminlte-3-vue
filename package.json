@@ -9,10 +9,10 @@
         "test:unit": "vue-cli-service test:unit",
         "test:e2e": "vue-cli-service test:e2e",
         "lint": "vue-cli-service lint",
-        "store-version": "echo '{\"version\" : '$(cat package.json | jq .version )'}' > public/version.json && git add public/version.json && git commit -m \"version upgrade \"",
-        "release:patch": "standard-version --release-as patch && npm run store-version",
-        "release:minor": "standard-version --release-as minor && npm run store-version",
-        "release:major": "standard-version --release-as major && npm run store-version"
+        "firebase:start": "firebase emulators:start",
+        "release:patch": "standard-version --release-as patch",
+        "release:minor": "standard-version --release-as minor",
+        "release:major": "standard-version --release-as major"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "6.5.2",

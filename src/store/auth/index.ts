@@ -6,7 +6,8 @@ import {IAuthModule} from '@/interfaces/state';
 const authModule: IAuthModule = {
     namespaced: true,
     state: {
-        authentication: undefined
+        authentication: undefined,
+        currentUser: undefined
     },
     mutations,
     actions,

@@ -25,3 +25,6 @@ pnpm-debug.log*
 *.sw?
 
 .env
+
+firebase-debug.log
+ui-debug.log

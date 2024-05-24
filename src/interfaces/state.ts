@@ -1,7 +1,7 @@
-import {User} from 'firebase/auth';
+import {IUser} from '@/types/user';
 
 export interface IAuthState {
-    authentication?: User;
+    currentUser?: IUser | null;
 }
 
 export interface IAuthModule {

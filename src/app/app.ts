@@ -15,7 +15,7 @@ export default class App extends Vue {
 
     get authentication(): IUser {
         console.log(this.$store.getters);
-        return this.$store.getters['auth/authentication'];
+        return this.$store.getters['auth/currentUser'];
     }
 
     async checkSession() {
@@ -24,15 +24,15 @@ export default class App extends Vue {
             firebaseAuth,
             (user) => {
                 if (user) {
-                    this.$store.dispatch('auth/setAuthentication', user);
+                    this.$store.dispatch('auth/setCurrentUser', user);
                 } else {
-                    this.$store.dispatch('auth/setAuthentication', undefined);
+                    this.$store.dispatch('auth/setCurrentUser', undefined);
                 }
                 this.isAppLoading = false;
             },
             (e) => {
                 console.log(e);
-                this.$store.dispatch('auth/setAuthentication', undefined);
+                this.$store.dispatch('auth/setCurrentUser', undefined);
                 this.isAppLoading = false;
             }
         );

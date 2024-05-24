@@ -1,6 +1,7 @@
 import {IAuthState} from '@/interfaces/state';
-import {User} from 'firebase/auth';
+import {IUser} from '@/types/user';
 
 export default {
-    authentication: (state: IAuthState): User => state.authentication
+    currentUser: (state: IAuthState): IUser | undefined | null =>
+        state.currentUser
 };

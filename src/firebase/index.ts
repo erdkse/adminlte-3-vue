@@ -1,16 +1,16 @@
 import {FirebaseOptions, initializeApp} from 'firebase/app';
-import {getAuth} from 'firebase/auth';
+import {connectAuthEmulator, getAuth} from 'firebase/auth';
 
-// import {getAnalytics} from 'firebase/analytics';
+let {VITE_FIREBASE_CONFIG, PROD} = import.meta.env;
 
-const {VITE_FIREBASE_CONFIG} = import.meta.env;
-
-if (!VITE_FIREBASE_CONFIG) {
-    throw new Error('Firebase config is missing!');
-}
-
-const firebaseConfig: FirebaseOptions = JSON.parse(VITE_FIREBASE_CONFIG);
+const firebaseConfig: FirebaseOptions = VITE_FIREBASE_CONFIG
+    ? JSON.parse(VITE_FIREBASE_CONFIG)
+    : {apiKey: 'MOCK_KEY'};
 
 const app = initializeApp(firebaseConfig);
 
 export const firebaseAuth = getAuth(app);
+
+if (!PROD) {
+    connectAuthEmulator(firebaseAuth, 'http://localhost:9099');
+}

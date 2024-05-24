@@ -35,7 +35,7 @@ export default class Login extends Vue {
         try {
             this.isAuthLoading = true;
             const response = await loginWithEmail(this.email, this.password);
-            this.$store.dispatch('auth/setAuthentication', response);
+            this.$store.dispatch('auth/setCurrentUser', response);
             this.toast.success('Login succeeded');
             this.isAuthLoading = false;
             this.$router.replace('/');
@@ -49,7 +49,7 @@ export default class Login extends Vue {
         try {
             this.isGoogleLoading = true;
             const response = await signInByGoogle();
-            this.$store.dispatch('auth/setAuthentication', response);
+            this.$store.dispatch('auth/setCurrentUser', response);
             this.toast.success('Login succeeded');
             this.isGoogleLoading = false;
             this.$router.replace('/');

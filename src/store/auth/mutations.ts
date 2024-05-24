@@ -1,8 +1,8 @@
 import {IAuthState} from '@/interfaces/state';
-import {User} from 'firebase/auth';
+import {IUser} from '@/types/user';
 
 export default {
-    setAuthentication: (state: IAuthState, payload: User): void => {
-        state.authentication = payload;
+    setCurrentUser: (state: IAuthState, payload: IUser): void => {
+        state.currentUser = payload;
     }
 };

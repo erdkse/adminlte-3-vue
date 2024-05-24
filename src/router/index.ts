@@ -104,11 +104,11 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-    let storedAuthentication = store.getters['auth/authentication'];
+    let storedAuthentication = store.getters['auth/currentUser'];
 
     if (!storedAuthentication) {
         storedAuthentication = await checkSession();
-        store.dispatch('auth/setAuthentication', storedAuthentication);
+        store.dispatch('auth/setCurrentUser', storedAuthentication);
     }
 
     console.log('storedAuthentication', storedAuthentication);
