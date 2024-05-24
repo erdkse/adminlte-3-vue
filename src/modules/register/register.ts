@@ -48,8 +48,8 @@ export default class Register extends Vue {
     public async registerByGoogle(): Promise<void> {
         try {
             this.isGoogleLoading = true;
-            const response = await signInByGoogle();
-            this.$store.dispatch('auth/setCurrentUser', response);
+            const {user} = await signInByGoogle();
+            this.$store.dispatch('auth/setCurrentUser', user);
             this.toast.success('Login succeeded');
             this.isGoogleLoading = false;
             this.$router.replace('/');

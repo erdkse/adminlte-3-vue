@@ -19,7 +19,6 @@ export default class MenuSidebar extends Vue {
 
     get currentUser(): IUser | undefined {
         const user = this.$store.getters['auth/currentUser'];
-        console.log('USER', toRaw(user));
         return user;
     }
 
