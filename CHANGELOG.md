@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.18](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.17...v0.2.18) (2024-05-28)
+
+
+### Bug Fixes
+
+* change all styles to scoped ([bdb647c](https://github.com/erdkse/adminlte-3-vue/commit/bdb647cca14aa36df9e486104a5e8b23c9eecf7d))
+
 ### [0.2.17](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.16...v0.2.17) (2024-05-25)
 
 ### [0.2.16](https://github.com/erdkse/adminlte-3-vue/compare/v0.2.15...v0.2.16) (2024-05-24)
